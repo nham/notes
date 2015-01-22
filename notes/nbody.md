@@ -47,11 +47,28 @@
 
     The other term, the one with the sum, is the force (per unit mass) due to all the other bodies in the system. It is called the *perturbation term* (unless it gets large enough, in which case it may rival the main term in magnitude and thus make the terminology not make sense).
 
-    ![Equations of the N-body problem, both inertial and heliocentric coords](nbody_eqns_inertial_heliocentric.png)
+8. The center of mass is defined by
 
-X. TODO: need to consider the center of mass.
+$$C(t) := \frac{1}{M} \sum_0^n m_i x_i$$.
 
-The sun actually orbits the *center of mass* of the system, as will be explained below.
+It's simple to prove that $\ddot C(t) = \sum_{i=0}^n \sum_{j = 0, j \neq i}^n F_{i \to j} = 0$, where $F_{i \to j}$ is the force on particle $i$ from particle $j$.
 
-Of course, being much more massive than any other body, the sun has very little motion (it is always much nearer the center of mass than the other bodies), but it does move.
+
+9. For one, the center of mass is by far not the only inertial point definable from the $x_i$'s. Notice that:
+
+$$\sum_0^n m_i \ddot x_i = 0$$
+
+so that for any $f(t) := a + tv + c \sum_0^n m_i$ where $a, v$ are vectors and $c$ is a scalar, we have
+
+$$\ddot f = c \sum_0^n m_i \ddot x_i = 0$$
+
+So the reason we invent the center of mass is not just because it's inertial. I believe it's because both that it's inertial and that it is the unique trajectory that is, for all time $t$, in the convex hull of the points. Note that if $\sum_0^n C m_i x_i(t)$ is a convex combination for all $t$, then we must have
+
+$$\sum_0^n C m_i = 1$$
+
+or
+
+$$C = \frac{1}{M}$$
+
+where $M := \sum_0^n m_i$.
 
