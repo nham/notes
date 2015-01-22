@@ -140,7 +140,7 @@ def gen_log(gen):
             # assume it's something that needs to be copied to output
             # folder (like an image)
             # TODO: I think this has a problem. need to check
-            gen.copy_file(folder_name+fname,)
+            gen.copy_file(folder_name, fname)
 
 
     index_md = """---
