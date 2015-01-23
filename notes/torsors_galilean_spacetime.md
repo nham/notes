@@ -21,11 +21,32 @@ With $(x, y) + (x,z) := (x, x + (y-x  z-x)$ for $y, z \in \mathcal{A}$ and $c \c
 
 5. An **affine map** is any map $f: \mathcal{A} \to \mathcal{B}$ between affine spaces such that the induced map $f_x^{\triangle}: \mathcal{A}_x \to \mathcal{B}_{f(x)}$ is linear for every $x$.
 
-6. An alternative way of viewing affine maps is as those maps between affine spaces that preserve barycenters of any finite collection of points. Recall that the **barycenter** of points $p_1, \ldots, p_n \in \mathcal{A}$ with weights (scalars) $\lambda_1, \ldots, \lambda_n$ such that $\sum_1^n \lambda_i = 1$ is the point $G := P_1 + \sum_1^n \lambda_i (p_i - p_1)$. Another way of saying this is that it is the point $G$ such that $\sum_1^n (G - p_i) = 0$. (Also recall that $\sum_1^n \mu_i v_i$ for some vectors $v_i$ and some scalars $\mu_i$ such that $\sum_1^n \mu_i = 0$ is called a **convex combination** of the $v_i$. We usually only define this for real vector spaces. The convex combinations of a collection of points are exactly those points in the convex hull of the points.)
-
-TODO: The above is half-baked. Decide whether to study more or just remove it for now.
-
-7. Alternatively, an affine map $f: \mathcal{A} \to \mathcal{B}$ may be thought of as a linear map $V \to V$ composed with a translation of $W$, where $V$ and $W$ are the underlying vector spaces of $\mathcal{A}$ and $\mathcal{B}$, respectively.
+6. Alternatively, an affine map $f: \mathcal{A} \to \mathcal{B}$ may be thought of as a linear map $V \to V$ composed with a translation of $W$, where $V$ and $W$ are the underlying vector spaces of $\mathcal{A}$ and $\mathcal{B}$, respectively.
 
 
-TODO: understand the convexity things in 1.1
+7. A **Galilean spacetime** is a tuple $\mathcal{G} = (\mathcal{E}, V, g, \tau)$ where
+
+     - $V$ is a real, four-dimensional vector space
+     - $(\mathcal{E}, V)$ is an affine space
+     - $g$ is a (Euclidean) inner product on $\ker \tau$, (which is a 3-d subspace of $\mathcal{V}$ by the rank-nullity theorem)
+     - $\tau: V \to \mathbb{R}$ is a surjective linear map called the **time map**
+
+8. For any two points $x, y \in \mathcal{E}$, we say $x$ and $y$ are **events**. We say any two events $x$ and $y$ are **simultaneous** iff $\tau(x) = \tau(y)$. This is clearly an equivalence relation on $\mathcal{E}$, and the equivalence classes are precisely the fibers $\tau^{pre}(c)$ of the time map $\tau$. The collection of equivalence classes/fibers of Galilean spacetime $\mathcal{G}$ is called the **set of instants** and denoted by $I_{\mathcal{G}}$. Each instant is a three-dimensional affine subspace of $\mathcal{E}$.
+
+9. Recall that under any Galilean spacetime, $g$ is an inner product for a 3-d subspace of the underlying 4-d real vector space. So if we are considering any instant $s \in I_{\mathcal{G}}$, then for any $x, y \in s$ we have $y - x \in \ker \tau$, which means $g(x-y, x-y)$ is known. Therefore we can define the distance $d(x, y) := \sqrt{g(x-y, x-y)}$ between simultaneous events $x$ and $y$ (but not between non-simultaneous events). The distance here is often the familiar Euclidean distance (whenever we have the standard Euclidean inner product).
+
+
+10. $I_{\mathcal{G}}$ may be considered as an affine space in itself as well, over the vector space $\mathcal{R}$.
+
+11. If $\mathcal{G}$ is any Galilean spacetime, then define
+
+    $$V_{\mathcal{G}}$ := \{v \in V : \tau(v) = 1\}$$
+
+    We can turn $V_{\mathcal{G}}$ into an affine space over the 3-d vector space $\ker \tau$ by noting that $w - v \in \ker \tau$ for all $w, v \in V_{\mathcal{G}}$. This space is said to be the affine space of **Galilean velocities**.
+
+12. **Standard Galilean spacetime** is where we use
+
+     - $\mathcal{E} = \mathcal{R}^3 \times \mathcal{R}$
+     - $V = \mathbb{R}^4$
+     - $\tau$ is the projection map $(x,y,z,t) \mapsto t$.
+     - $g(a, b) = \sum_1^3 a_i b_i$ for $a, b \in \ker \tau$ ($a_4 = b_4 = 0$)
