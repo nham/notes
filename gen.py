@@ -135,7 +135,8 @@ def gen_log(gen):
                   )
 
             fpath = folder_name + fname
-            gen.gen_page_file(fpath, fpath.replace('.md', '.html'))
+            gen.gen_page_file(fpath, fpath.replace('.md', '.html'),
+                              is_mathjax_on=True)
         else:
             # assume it's something that needs to be copied to output
             # folder (like an image)
@@ -144,9 +145,9 @@ def gen_log(gen):
 
 
     index_md = """---
-title: daily log
+title: log
 ---
-<div id="titlenav"><span id="title">daily log</span> / <a href="notes/">notes</a></div>
+<div id="titlenav"><span id="title">log</span> / <a href="notes/">notes</a></div>
 
 {}
 """.format(list_md)
