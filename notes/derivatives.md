@@ -45,3 +45,13 @@
 8. When the derivative of $f$ exists everywhere on some neighborhood $U$, then we can consider $Df$ as a function $U \to \mathcal{L}(\mathbb{R}^n, \mathbb{R}^k)$. This function $Df$ need not be continuous: consider 
 
     TODO: give an example
+
+9. The mean value theorem from calculus is this: given $f: [a, b] \to \mathbb{R}$ which is continuous on $[a, b]$ and differentiable on $]a, b[$, there must exist a $c \in ]a, b[$ such that
+
+    $$f(b)-f(a) = f'(c) (b - a)$$
+
+    This can be extended to multivariable functions. Given any $f: A \to \mathbb{R}$ where $A \subseteq \mathbb{R}^n$, if $a, h \in \mathbb{R}^n$ are such that the line segment $[a, a+h] \subseteq A$, if $f$ is continuous on $[a, a+h]$ and differentiable on $]a, a+h[$, then we again have a $c \in ]a, a+h[$ such that
+
+    $$f(a+h)-f(a) = D[f @ c] \circ (\lambda \mapsto \lambda h)$$
+
+    The above is proved via the single variable MVT and the chain rule applied to $\phi(t) := f(a + th)$.
