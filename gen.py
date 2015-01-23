@@ -146,9 +146,7 @@ def gen_log(gen):
     index_md = """---
 title: daily log
 ---
-[notes](notes/)
-
-## log entries
+<div id="titlenav"><span id="title">daily log</span> / <a href="notes/">notes</a></div>
 
 {}
 """.format(list_md)
@@ -182,12 +180,11 @@ def gen_notes(gen):
             gen.copy_file(folder_name, fname)
 
 
+
     notes_md = """---
 title: notes
 ---
-[daily log](../)
-
-## notes
+<div id="titlenav"><span id="title">notes</span> / <a href="../">log</a></div>
 
 {}
 """.format(list_md)

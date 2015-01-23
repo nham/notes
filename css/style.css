@@ -5,6 +5,15 @@ body {
     background-color: #607ec7;
 }
 
+h1.title {
+    display: none;
+}
+
+#titlenav {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 div#body {
     max-width: 800px;
     min-width: 580px;
