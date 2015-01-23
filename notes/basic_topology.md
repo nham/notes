@@ -14,9 +14,9 @@
 
 8. Given any set $S \subseteq X$, $X$ can always be partitioned into three disjoint sets:
 
- - the interior of $S$
- - the boundary of $S$
- - the exterior of $S$
+     - the interior of $S$
+     - the boundary of $S$
+     - the exterior of $S$
     
     The union of the first two is disjoint and yields the closure of $S$.
 
