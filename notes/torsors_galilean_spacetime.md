@@ -1,23 +1,23 @@
-1. A **torsor** is a "group that has forgotten its origin". This is achieved formally by considering a *group action* of a group $G$ on a set $X$ (i.e. a group homomorphism $G \to Sym X$) that obeys a certain property:
+1. A **torsor** is a "group that has forgotten its origin". More formally, for any group $G$, a **$G$-torsor** is any set $X$ equipped with a group action $\phi$ of $G$ on $X$ (a group homomorphism $\phi: G \to \text{Sym } X$) that obeys this property:
 
-for all $a, b \in X$, there is exactly one $g \in G$ such that $g(a) = b$.
+    for all $a, b \in X$, there is exactly one $g \in G$ such that $g(a) = b$.
 
-This condition implies that the group action is faithful (the homomorphism $G \to Sym X$ is injective), so that a $G$-torsor $X$ can be thought of as a group of permutations of $X$ that is isomorphic to $G$.
+    This condition implies that the group action is faithful (the homomorphism $G \to Sym X$ is injective), so that a $G$-torsor on $X$ can alternatively be thought of as a set $X$ and a group of permutations of $X$ that is isomorphic to $G$.
 
-We will work in a slightly less general setting...
+    We are primarily concerned with the case where the group $G$ is a vector space.
 
 2. An **affine space** is a $V$-torsor where $V$ is the group of vectors of a vector space. More formally, it consists of the data:
 
- 1. an *underlying vector space* $V$
- 2. a $V$-torsor, $\mathcal{A}$, called the *underlying space*
+     1. an *underlying vector space* $V$
+     2. a $V$-torsor, $\mathcal{A}$, called the *underlying space*
 
 3. An **affine subspace** is determined by a point in the affine space, a **point of origin**, and a subspace of the underlying vector space.
 
 4. for any point $x \in \mathcal{A}$ there is an associated vector space $\mathcal{A}_x$ defined on the set 
 
-$\mathcal{A}_x := \{(x, y) : y \in \mathcal{A} \}$
+    $\mathcal{A}_x := \{(x, y) : y \in \mathcal{A} \}$
 
-With $(x, y) + (x,z) := (x, x + (y-x  z-x)$ for $y, z \in \mathcal{A}$ and $c \cdot (x, y) := (x, x + c(y-x))$ for $c \in \mathbb{R}, y \in \mathcal{A}$. We call this the **linear space of $\mathcal{A}$ rooted at $x$**. This vector space is of course isomorphic to the underlying vector space of $\mathcal{A}$.
+    With $(x, y) + (x,z) := (x, x + (y-x  z-x)$ for $y, z \in \mathcal{A}$ and $c \cdot (x, y) := (x, x + c(y-x))$ for $c \in \mathbb{R}, y \in \mathcal{A}$. We call this the **linear space of $\mathcal{A}$ rooted at $x$**. This vector space is of course isomorphic to the underlying vector space of $\mathcal{A}$.
 
 5. An **affine map** is any map $f: \mathcal{A} \to \mathcal{B}$ between affine spaces such that the induced map $f_x^{\triangle}: \mathcal{A}_x \to \mathcal{B}_{f(x)}$ is linear for every $x$.
 
