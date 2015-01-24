@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<div id="body">
+<ol type="1">
+<li><p>If <span class="math">\(f: D \to \mathbb{R}^k\)</span> where <span class="math">\(D \subseteq \mathbb{R}^n\)</span>, then a <strong>derivative</strong> of <span class="math">\(f\)</span> at <span class="math">\(a\)</span> for any interior point <span class="math">\(a\)</span> of <span class="math">\(D\)</span> is defined to be any map <span class="math">\(L: \mathbb{R}^n \to \mathbb{R}^k\)</span> such that</p>
+<p><span class="math">\[lim_{h \to 0} \frac{f(a+h) - f(a) - L(h)}{|h|} = 0\]</span></p>
+<p>Equivalently, the function <span class="math">\(\boldsymbol \epsilon (h) := f(a+h) - f(a) - L(h)\)</span> has <span class="math">\(\frac{\boldsymbol \epsilon(h)}{|h|} \to 0\)</span> as <span class="math">\(h \to 0\)</span>.</p></li>
+<li><p>The derivative is always unique. This is proved via a lemma: if <span class="math">\(T: \mathbb{R}^n \to \mathbb{R}^k\)</span> is linear and such that <span class="math">\(\frac{T(h)}{|h|} \to 0\)</span> as <span class="math">\(h \to 0\)</span>, then <span class="math">\(T\)</span> is the zero map. After this, if we have any two derivatives <span class="math">\(L\)</span> and <span class="math">\(M\)</span> of <span class="math">\(f\)</span> at <span class="math">\(a\)</span>, then it can be proved that <span class="math">\(L - M\)</span> has the above property and so must be the zero map, establishing <span class="math">\(L = M\)</span>. We notate this unique map by <span class="math">\(Df(a)\)</span>, called <strong>the differential of <span class="math">\(f\)</span> at <span class="math">\(a\)</span></strong>.</p></li>
+<li><p>Note that if <span class="math">\(f\)</span> is real-valued, the derivative of <span class="math">\(f\)</span> at any <span class="math">\(a\)</span> is a covector (element of the dual space) of <span class="math">\(\mathbb{R}^n\)</span>.</p></li>
+<li><p>The <strong>directional derivative</strong> in direction <span class="math">\(u\)</span> of some <span class="math">\(f\)</span> at <span class="math">\(a \in \text{int} \text{ dom} f\)</span>, where <span class="math">\(|u| = 1\)</span>, is defined to be</p>
+<p><span class="math">\[D_u f(a) := lim_{t \to 0} \frac{(f(a+tu) - f(a)}{t}\]</span></p>
+<p>if it exists.</p>
+<p>Note that as we have defined it, the <span class="math">\(u\)</span>-th directional derivative of f at <span class="math">\(a\)</span>, <span class="math">\(D_u f(a)\)</span>, is a vector in <span class="math">\(\mathbb{R}^k\)</span> (scalar in the case of <span class="math">\(k = 1\)</span>) and not a function, in contrast to total derivatives. Of course, we can always consider for any <span class="math">\(v \in \mathbb{R}^k\)</span> as a function <span class="math">\(\mathbb{R} \to \mathbb{R}^k\)</span> defined by scalar multiplication <span class="math">\(x \mapsto x \cdot v\)</span>.</p>
+<p>In particular, the directional derivatives for <span class="math">\(e_1, \ldots, e_n\)</span>, the standard basis vectors of <span class="math">\(\mathbb{R}^n\)</span>, are denoted <span class="math">\(D_1 f, \ldots, D_n f\)</span>, each one <span class="math">\(D_i\)</span> being called <strong>the <span class="math">\(i\)</span>-th partial derivative</strong>.</p></li>
+<li><p>Consider the case of real-valued <span class="math">\(f\)</span>. We can view the graph of <span class="math">\(f\)</span> as a subset of <span class="math">\(\mathbb{R}^{n+1}\)</span>, an <span class="math">\(n\)</span>-dimensional differentiable manifold of some sort. Then the derivative can be thought of, geometrically, as the <strong>tangent hyperplane</strong> to the surface at <span class="math">\(a\)</span>. This is why some books occasionally talk about “affine approximation” in conjunction with derivatives: you are locally approximating some <span class="math">\(n\)</span>-dimensional surface with a certain affine subspace (an affine hyperplane, specifically).</p></li>
+<li><p><span class="math">\(D_u f(a) = Df(a)[u]\)</span> for any direction <span class="math">\(u\)</span>. We can see this by noting that since</p>
+<p><span class="math">\[\boldsymbol \epsilon(h) = f(a+h) - f(a) - Df(a)[h]\]</span></p>
+<p>is true for sufficiently small <span class="math">\(h\)</span>, we must have</p>
+<p><span class="math">\[\boldsymbol \epsilon(tu) = f(a+tu) - f(a) - t Df(a)[u]\]</span></p>
+<p>Since <span class="math">\(\frac{ \boldsymbol \epsilon(h) }{ |h| } \to 0\)</span> as <span class="math">\(h \to 0\)</span>, we similarly have <span class="math">\(\frac{ \boldsymbol \epsilon(tu) }{ |tu|} \to 0\)</span> as <span class="math">\(t \to 0\)</span>. This implies that <span class="math">\(\frac{ \boldsymbol \epsilon(tu) }{ |t| } \to 0\)</span> as <span class="math">\(t \to 0\)</span>, which further implies</p>
+<p><span class="math">\[lim_{t \to 0} \frac{ \boldsymbol \epsilon(tu) }{ t } = 0\]</span></p>
+<p>But <span class="math">\(lim_{t \to 0} \frac{ \boldsymbol \epsilon(tu) }{ t } = lim_{t \to 0} \frac{ f(a+tu)-f(a) }{t} - Df(a)[u] = 0\)</span>, so</p>
+<p><span class="math">\[D_u f(a) = Df(a)[u]\]</span>.</p>
+<p>This proves that the existence of the differential at <span class="math">\(a\)</span> implies the existence of all directional derivatives at <span class="math">\(a\)</span>. In</p></li>
+<li><p>If <span class="math">\(Df(a)\)</span> exists, then <span class="math">\(f\)</span> is continuous at <span class="math">\(a\)</span>.</p>
+<p>One proof uses the operator norm <span class="math">\(\|L\| := \inf \{c \geq 0 : \forall v |Lv| \leq c |v|\}\)</span>. This is always finite for linear maps between finite dimensional spaces (TODO: proof isn’t in notes?)</p></li>
+<li><p>When the derivative of <span class="math">\(f\)</span> exists everywhere on some neighborhood <span class="math">\(U\)</span>, then we can consider <span class="math">\(Df\)</span> as a function <span class="math">\(U \to \mathcal{L}(\mathbb{R}^n, \mathbb{R}^k)\)</span>. This function <span class="math">\(Df\)</span> need not be continuous: consider</p>
+<p>TODO: give an example</p></li>
+<li><p>The mean value theorem from calculus is this: given <span class="math">\(f: [a, b] \to \mathbb{R}\)</span> which is continuous on <span class="math">\([a, b]\)</span> and differentiable on <span class="math">\(]a, b[\)</span>, there must exist a <span class="math">\(c \in ]a, b[\)</span> such that</p>
+<p><span class="math">\[f(b)-f(a) = f&#39;(c) (b - a)\]</span></p>
+<p>This can be extended to multivariable functions. Given any <span class="math">\(f: A \to \mathbb{R}\)</span> where <span class="math">\(A \subseteq \mathbb{R}^n\)</span>, if <span class="math">\(a, h \in \mathbb{R}^n\)</span> are such that the line segment <span class="math">\([a, a+h] \subseteq A\)</span>, if <span class="math">\(f\)</span> is continuous on <span class="math">\([a, a+h]\)</span> and differentiable on <span class="math">\(]a, a+h[\)</span>, then we again have a <span class="math">\(c \in ]a, a+h[\)</span> such that</p>
+<p><span class="math">\[f(a+h)-f(a) = D[f @ c] \circ (\lambda \mapsto \lambda h)\]</span></p>
+<p>The above is proved via the single variable MVT and the chain rule applied to <span class="math">\(\phi(t) := f(a + th)\)</span>.</p></li>
+</ol>
+</div>
+</body>
+</html>

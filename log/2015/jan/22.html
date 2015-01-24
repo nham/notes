@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<div id="body">
+<h1 id="summary">Summary</h1>
+<p>One thing I did not do today that I’d prefer to have done is review the TODO list and formulate a plan for the day first thing in the morning.</p>
+<p>I made more progress today than I did yesterday, but there is still substantial room for improvement. Here’s what I think I did:</p>
+<ul>
+<li>read Beutler a bit and studied the center of mass</li>
+<li>study multivariable chain rule</li>
+<li>update Rust, read some of the Rust book</li>
+<li>start importing topology notes from wordpress</li>
+</ul>
+<p>I would like to make more progress on math stuff.</p>
+<h2 id="jan-23-000048">2015 Jan 23 00:00:48</h2>
+<p>I just spent an hour reading Brooks’ ALRCS paper. I got to page 4, section III.A, which is not fast enough going by Michael Nielsen’s account:</p>
+<blockquote>
+<p>I was a theoretical physicist for 13 years, and struggled a lot with this question. I found it very useful to develop several different styles for reading mathematics and physics. Mostly I did this in the context of reading papers, not books, but the comments below are easily adapted to books.</p>
+<p>One unusual but very useful style was to set a goal like reading 15 papers in 3 hours. I use the term “reading” here in an unusual way. Of course, I don’t mean understanding everything in the papers. Instead, I’d do something like this: for each paper, I had 12 minutes to read it. The goal was to produce a 3-point written LaTeX summary of the most important material I could extract: usually questions, open problems, results, new techniques, or connections I hadn’t seen previously. When time was up, it was onto the next paper. A week later, I’d make a revision pass over the material, typically it would take an hour or so.</p>
+<p>I found this a great way of rapidly getting an overview of a field, understanding what was important, what was not, what the interesting questions were, and so on. In particular, it really helped identify the most important papers, for a deeper read.</p>
+<p>For deeper reads of important papers or sections of books I would take days, weeks or months. Giving lectures about the material and writing LaTeX lecture notes helped a lot.</p>
+<p>Other ideas I found useful:</p>
+<ul>
+<li><p>Often, when struggling with a book or paper, it’s not you that’s the problem, it’s the author. Finding another source can quickly clear stuff up.</p></li>
+<li><p>The more you make this a social activity, the better off you’ll be. I organize lecture courses, write notes, blog the notes, and so on. E.g. http://michaelnielsen.org/blog/?p=252 (on Yang-Mills theories) and http://michaelnielsen.org/blog/?page_id=503 (links to some of my notes on distributed computing).</p></li>
+<li><p>On being stuck: if you feel like you’re learning things, keep doing whatever you’re doing, but if you feel stuck, try another approach. Early on, I’d sometimes get stuck on a book or a paper for a week. It was only later that I realized that I mostly got stuck when either (a) it was an insubstantive point; or (b) the book was badly written; or (c) I was reading something written at the wrong level for me. In any case, remaining stuck was rarely the right thing to do.</p></li>
+<li><p>Have a go at proving theorems / solving problems yourself, before reading the solution. You’ll learn a lot more.</p></li>
+<li><p>Most material isn’t worth spending a lot of time on. It’s better to spend an hour each seriously reviewing 10 quantum texts, and finding one that’s good, and will repay hundreds of hours of study, than it is to spend 10 hours ploughing through the first quantum text that looks okay when you browse through it in the library. Understanding mathematics deeply takes a lot of time. That means effort spent in identifying high quality material is often repaid far more than with (say) a novel or lighter non-fiction.</p></li>
+</ul>
+</blockquote>
+<h2 id="jan-22-230013">2015 Jan 22 23:00:13</h2>
+<p>I got a decent start on importing Topology notes from wordpress. I think everything from “Basic Topology, part 1” is in the notes now except for the last stuff on bases.</p>
+<h2 id="jan-22-205758">2015 Jan 22 20:57:58</h2>
+<p>I started reading the Rust book at 19:35. I have just finished reading through the end of 2.10, looping. I am now on 2.11, Strings.</p>
+<h2 id="jan-22-180008">2015 Jan 22 18:00:08</h2>
+<p>Around 16:15 I switched to studying Fleming. I was looking at the first proposition on p. 86, but quickly realized that it followed immediately from the chain rule, so I had another session studying the chain rule and trying to intuitively understand it. After some effort trying to get the correct statement of the chain rule via “type-checking”, I attempted to do two things:</p>
+<ol type="1">
+<li><p>specialize it to a composition <span class="math">\(g \circ f\)</span> where <span class="math">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> and <span class="math">\(g: \mathbb{R} \to \mathbb{R}\)</span>. Here we have the case where the derivatives of <span class="math">\(f\)</span> and <span class="math">\(g\)</span> are tangent plane and tangent line, respectively.</p></li>
+<li><p>Prove it using the infinitesimal approach, <span class="math">\(D[g @ a](\epsilon) = g(a + \epsilon) - g(a)\)</span> for all “infinitesimal vectors” <span class="math">\(\epsilon\)</span>.</p></li>
+</ol>
+<p>I also came up with slightly more compact notation for representing it.</p>
+<p>TODO: None of the notes just mentioned are in the computer yet. So get on that</p>
+<h2 id="jan-22-161441">2015 Jan 22 16:14:41</h2>
+<p>I am studying Fleming, starting at p. 86 (skipping recording the proof of diff. @ a =&gt; cont. @ a for now. Also skippig the example that follows in the book).</p>
+<h2 id="jan-22-154947">2015 Jan 22 15:49:47</h2>
+<p>I ended up studying just the center of mass out of Beutler and independently. These notes are not on the computer yet.</p>
+<p>I spent some time working out my intuition with the center of mass. I got confused because there are scalar multiples <span class="math">\(C \sum_0^n m_i x_i(t)\)</span> with <span class="math">\(C \neq \frac{1}{M}\)</span> that are convex combinations of <span class="math">\(x_i(t)\)</span>’s. What makes them not useful is that the same <span class="math">\(C\)</span> doesn’t work for all <span class="math">\(t\)</span>, I believe, unless <span class="math">\(C = \frac{1}{M}\)</span>.</p>
+<p>I am now up to p. 56 in Beutler.</p>
+<h2 id="jan-22-135529">2015 Jan 22 13:55:29</h2>
+<p>I was reading 3.2, hit the part about the heliocentric diff-eqns being representable as the gradient of some functions and got confused. I then tried to skip to 4.1 on the Two-body problem, but that used material from ch 3 (angular momentum).</p>
+<p>So, instead I’m going to skip the gradient stuff and proceed to 3.2.2, “First Integrals”. I also see that this gets into the virial theorem, which I’ve heard of before and look forward to reading about.</p>
+</div>
+</body>
+</html>

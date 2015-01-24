@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<div id="body">
+<ol type="1">
+<li><p>A <strong>torsor</strong> is a “group that has forgotten its origin”. More formally, for any group <span class="math">\(G\)</span>, a <strong><span class="math">\(G\)</span>-torsor</strong> is any set <span class="math">\(X\)</span> equipped with a group action <span class="math">\(\phi\)</span> of <span class="math">\(G\)</span> on <span class="math">\(X\)</span> (a group homomorphism <span class="math">\(\phi: G \to \text{Sym } X\)</span>) that obeys this property:</p>
+<p>for all <span class="math">\(a, b \in X\)</span>, there is exactly one <span class="math">\(g \in G\)</span> such that <span class="math">\(g(a) = b\)</span>.</p>
+<p>This condition implies that the group action is faithful (the homomorphism <span class="math">\(G \to Sym X\)</span> is injective), so that a <span class="math">\(G\)</span>-torsor on <span class="math">\(X\)</span> can alternatively be thought of as a set <span class="math">\(X\)</span> and a group of permutations of <span class="math">\(X\)</span> that is isomorphic to <span class="math">\(G\)</span> and obeys the property above.</p>
+<p>We are primarily concerned with the case where the group <span class="math">\(G\)</span> is a vector space.</p></li>
+<li><p>An <strong>affine space</strong> is a <span class="math">\(V\)</span>-torsor where <span class="math">\(V\)</span> is the group of vectors of a vector space. More formally, it consists of the data:</p>
+<ol type="1">
+<li>an <em>underlying vector space</em> <span class="math">\(V\)</span></li>
+<li>a <span class="math">\(V\)</span>-torsor, <span class="math">\(\mathcal{A}\)</span>, called the <em>underlying space</em></li>
+</ol></li>
+<li><p>An <strong>affine subspace</strong> is determined by a point in the affine space, a <strong>point of origin</strong>, and a subspace of the underlying vector space.</p></li>
+<li><p>for any point <span class="math">\(x \in \mathcal{A}\)</span> there is an associated vector space <span class="math">\(\mathcal{A}_x\)</span> defined on the set</p>
+<p><span class="math">\(\mathcal{A}_x := \{(x, y) : y \in \mathcal{A} \}\)</span></p>
+<p>With <span class="math">\((x, y) + (x,z) := (x, x + (y-x  z-x)\)</span> for <span class="math">\(y, z \in \mathcal{A}\)</span> and <span class="math">\(c \cdot (x, y) := (x, x + c(y-x))\)</span> for <span class="math">\(c \in \mathbb{R}, y \in \mathcal{A}\)</span>. We call this the <strong>linear space of <span class="math">\(\mathcal{A}\)</span> rooted at <span class="math">\(x\)</span></strong>. This vector space is of course isomorphic to the underlying vector space of <span class="math">\(\mathcal{A}\)</span>.</p></li>
+<li><p>An <strong>affine map</strong> is any map <span class="math">\(f: \mathcal{A} \to \mathcal{B}\)</span> between affine spaces such that the induced map <span class="math">\(f_x^{\triangle}: \mathcal{A}_x \to \mathcal{B}_{f(x)}\)</span> is linear for every <span class="math">\(x\)</span>.</p></li>
+<li><p>Alternatively, an affine map <span class="math">\(f: \mathcal{A} \to \mathcal{B}\)</span> may be thought of as a linear map <span class="math">\(V \to V\)</span> composed with a translation of <span class="math">\(W\)</span>, where <span class="math">\(V\)</span> and <span class="math">\(W\)</span> are the underlying vector spaces of <span class="math">\(\mathcal{A}\)</span> and <span class="math">\(\mathcal{B}\)</span>, respectively.</p></li>
+<li><p>A <strong>Galilean spacetime</strong> is a tuple <span class="math">\(\mathcal{G} = (\mathcal{E}, V, g, \tau)\)</span> where</p>
+<ul>
+<li><span class="math">\(V\)</span> is a real, four-dimensional vector space</li>
+<li><span class="math">\((\mathcal{E}, V)\)</span> is an affine space</li>
+<li><span class="math">\(g\)</span> is a (Euclidean) inner product on <span class="math">\(\ker \tau\)</span>, (which is a 3-d subspace of <span class="math">\(\mathcal{V}\)</span> by the rank-nullity theorem)</li>
+<li><span class="math">\(\tau: V \to \mathbb{R}\)</span> is a surjective linear map called the <strong>time map</strong></li>
+</ul></li>
+<li><p>For any two points <span class="math">\(x, y \in \mathcal{E}\)</span>, we say <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are <strong>events</strong>. We say any two events <span class="math">\(x\)</span> and <span class="math">\(y\)</span> are <strong>simultaneous</strong> iff <span class="math">\(\tau(x) = \tau(y)\)</span>. This is clearly an equivalence relation on <span class="math">\(\mathcal{E}\)</span>, and the equivalence classes are precisely the fibers <span class="math">\(\tau^{pre}(c)\)</span> of the time map <span class="math">\(\tau\)</span>. The collection of equivalence classes/fibers of Galilean spacetime <span class="math">\(\mathcal{G}\)</span> is called the <strong>set of instants</strong> and denoted by <span class="math">\(I_{\mathcal{G}}\)</span>. Each instant is a three-dimensional affine subspace of <span class="math">\(\mathcal{E}\)</span>.</p></li>
+<li><p>Recall that under any Galilean spacetime, <span class="math">\(g\)</span> is an inner product for a 3-d subspace of the underlying 4-d real vector space. So if we are considering any instant <span class="math">\(s \in I_{\mathcal{G}}\)</span>, then for any <span class="math">\(x, y \in s\)</span> we have <span class="math">\(y - x \in \ker \tau\)</span>, which means <span class="math">\(g(x-y, x-y)\)</span> is known. Therefore we can define the distance <span class="math">\(d(x, y) := \sqrt{g(x-y, x-y)}\)</span> between simultaneous events <span class="math">\(x\)</span> and <span class="math">\(y\)</span> (but not between non-simultaneous events). The distance here is often the familiar Euclidean distance (whenever we have the standard Euclidean inner product).</p></li>
+<li><p><span class="math">\(I_{\mathcal{G}}\)</span> may be considered as an affine space in itself as well, over the vector space <span class="math">\(\mathcal{R}\)</span>.</p></li>
+<li><p>If <span class="math">\(\mathcal{G}\)</span> is any Galilean spacetime, then define</p>
+<p><span class="math">\[V_{\mathcal{G}}$ := \{v \in V : \tau(v) = 1\}\]</span></p>
+<p>We can turn <span class="math">\(V_{\mathcal{G}}\)</span> into an affine space over the 3-d vector space <span class="math">\(\ker \tau\)</span> by noting that <span class="math">\(w - v \in \ker \tau\)</span> for all <span class="math">\(w, v \in V_{\mathcal{G}}\)</span>. This space is said to be the affine space of <strong>Galilean velocities</strong>.</p></li>
+<li><p><strong>Standard Galilean spacetime</strong> is where we use</p>
+<ul>
+<li><span class="math">\(\mathcal{E} = \mathcal{R}^3 \times \mathcal{R}\)</span></li>
+<li><span class="math">\(V = \mathbb{R}^4\)</span></li>
+<li><span class="math">\(\tau\)</span> is the projection map <span class="math">\((x,y,z,t) \mapsto t\)</span>.</li>
+<li><span class="math">\(g(a, b) = \sum_1^3 a_i b_i\)</span> for <span class="math">\(a, b \in \ker \tau\)</span> (<span class="math">\(a_4 = b_4 = 0\)</span>)</li>
+</ul></li>
+</ol>
+</div>
+</body>
+</html>

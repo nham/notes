@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">MathJax.Hub.Queue(["Typeset",MathJax.Hub]);</script>
+</head>
+<body>
+<div id="body">
+<ol type="1">
+<li><p>A <strong>topology</strong> on any set <span class="math">\(X\)</span> is a collection of subsets <span class="math">\(\mathcal{T}\)</span> of <span class="math">\(X\)</span> that is closed under arbitrary union and finite intersection and contains both <span class="math">\(\emptyset\)</span> and <span class="math">\(X\)</span>. The pair <span class="math">\((X, \mathcal{T})\)</span> is said to be a <strong>topological space</strong>. Alternatively, <span class="math">\(X\)</span> is said to be a topological space under the topology <span class="math">\(\mathcal{T}\)</span>. The sets in the topology are said to be the <strong>open subsets</strong> of <span class="math">\(X\)</span>. A subset <span class="math">\(U \subseteq X\)</span> is said to be a <strong>neighborhood</strong> of <span class="math">\(x \in X\)</span> if both <span class="math">\(x \in U\)</span> and <span class="math">\(U\)</span> is open.</p></li>
+<li><p>A point <span class="math">\(x \in X\)</span> is said to be an <strong>interior point</strong> of a subset <span class="math">\(S \subseteq X\)</span> precisely when there is a neighborhood <span class="math">\(U\)</span> of <span class="math">\(x\)</span> contained in <span class="math">\(S\)</span>. Also, a point <span class="math">\(x\)</span> is said to be a <strong>closure point</strong> of <span class="math">\(S\)</span> when every neighborhood of <span class="math">\(x\)</span> intersects <span class="math">\(S\)</span>. (Note that every <span class="math">\(s \in S\)</span> is a closure point of <span class="math">\(S\)</span>, but there may be other closure points not in <span class="math">\(S\)</span>. Not every <span class="math">\(s \in S\)</span> is an interior point, on the other hand, but all the interior points must be in <span class="math">\(S\)</span>). The <strong>interior</strong> of a set <span class="math">\(S\)</span> is the collection of interior points, and the <strong>closure</strong> is the set of all closure points.</p></li>
+<li><p>It is straightforward to prove that open subsets are precisely the sets that are equal to their interiors. Analogously to this, we can <em>define</em> <strong>closed subsets</strong> to be those sets that are equal to their closures.</p></li>
+<li><p>It turns out that when you use the above definition, you can prove that a set is closed iff its complement is open. One can then prove, via DeMorgan’s laws, that the collection of all closed sets is closed under arbitrary intersection, finite union, and contains both <span class="math">\(\emptyset\)</span> and <span class="math">\(X\)</span> (yes, <span class="math">\(\emptyset\)</span> and <span class="math">\(X\)</span> are simultaneously closed and open, a condition often called <strong>clopen</strong>).</p></li>
+<li><p>Another characterization of closure and interior: interior of any set <span class="math">\(S\)</span> is the union of all open sets contained in <span class="math">\(S\)</span>, while the closure of <span class="math">\(S\)</span> is the intersection of all closed sets that contain <span class="math">\(S\)</span>. By these definitions, the interior is the largest open set contained in <span class="math">\(S\)</span>, and the closure is the smallest closed set containing <span class="math">\(S\)</span>.</p></li>
+<li><p>A <strong>boundary point</strong> of a set is a point that is neither in the interior of the set, nor in the interior of the complement of the set. Equivalently, every neighborhood of a boundary point intersects both <span class="math">\(S\)</span> and <span class="math">\(X - S\)</span>. The <strong>boundary</strong> of a set <span class="math">\(S\)</span> is the collection of all boundary points of <span class="math">\(S\)</span>.</p></li>
+<li><p>The <strong>exterior</strong> of a set <span class="math">\(S\)</span> is defined to be <span class="math">\(\text{int}(X - S)\)</span>. It can be proved that this is always identical to <span class="math">\(X - \text{clo}(S)\)</span>.</p></li>
+<li><p>Given any set <span class="math">\(S \subseteq X\)</span>, <span class="math">\(X\)</span> can always be partitioned into three disjoint sets:</p>
+<ul>
+<li>the interior of <span class="math">\(S\)</span></li>
+<li>the boundary of <span class="math">\(S\)</span></li>
+<li>the exterior of <span class="math">\(S\)</span></li>
+</ul>
+<p>The union of the first two is disjoint and yields the closure of <span class="math">\(S\)</span>.</p></li>
+<li><p>An <strong>accumulation point</strong> of a set <span class="math">\(S\)</span> is some point <span class="math">\(x \in X\)</span> such that every neighborhood of <span class="math">\(x\)</span> intersects <span class="math">\(X - x\)</span>. These points are designed to exclude the <strong>isolated points</strong> of <span class="math">\(X\)</span>, which are points <span class="math">\(x\)</span> in <span class="math">\(S\)</span> such that some neighborhood <span class="math">\(U\)</span> of <span class="math">\(x\)</span> contains no other point of <span class="math">\(S\)</span> other than <span class="math">\(x\)</span>. Each isolated point of <span class="math">\(S\)</span> is a closure point of <span class="math">\(S\)</span>, but no isolated point is an accumulation point. So the closure is actually the disjoint union of isolated points and accumulation points.</p></li>
+</ol>
+</div>
+</body>
+</html>
