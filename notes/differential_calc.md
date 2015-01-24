@@ -83,3 +83,9 @@ title: Differential calculus
     $$f(a+h)-f(a) = D[f @ c] \circ (\lambda \mapsto \lambda h)$$
 
     The above is proved via the single variable MVT and the chain rule applied to $\phi(t) := f(a + th)$.
+
+10. A function $f: A \to \mathbb{R}^k$ with $A \subseteq \mathbb{R}^n$ and $A$ being open, is said to be **$C^0$** if $f$ is continuous on $A$. It is instead said to be **$C^1$** if every partial derivative $D_j f_i: A \to \mathbb{R}$ exists is a $C^0$ function on $A$, where $f_1, \ldots, f_k$ are the real-valued component functions of $f$.
+
+    In general, a function $f$ as above is said to be **$C^k$** whenever each of its partial derivatives $D_j f_i$ exists and is $C^{k-1}$ on $A$.
+
+    Some sources define $C^k$ as having $k$-derivatives at every point of the domain. My guess is that these two definitions are equivalent, given that it is proved, both in Munkres and Fleming, that $C_1$ implies differentiable (the other direction holds immediately).
