@@ -51,7 +51,7 @@ title: Affine spaces and Galilean spacetime
 
 10. If $\mathcal{G}$ is any Galilean spacetime, then define
 
-    $$V_{\mathcal{G}}$ := \{v \in V : \tau(v) = 1\}$$
+    $$V_{\mathcal{G}} := \{v \in V : \tau(v) = 1\}$$
 
     We can turn $V_{\mathcal{G}}$ into an affine space over the 3-d vector space $\ker \tau$ by noting that $w - v \in \ker \tau$ for all $w, v \in V_{\mathcal{G}}$. This space is said to be the affine space of **Galilean velocities**.
 
