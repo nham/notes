@@ -40,7 +40,31 @@
 
 7. If $Df(a)$ exists, then $f$ is continuous at $a$.
 
-    One proof uses the operator norm $\|L\| := \inf \{c \geq 0 : \forall v |Lv| \leq c |v|\}$. This is always finite for linear maps between finite dimensional spaces (TODO: proof isn't in notes?)
+    One proof uses the operator norm $\|T\| := \inf \{c \geq 0 : \forall v, |Tv| \leq c |v|\}$ defined for any linear map $T$. This is always finite for linear maps between finite dimensional spaces (TODO: proof isn't in notes?)
+
+    We proceed: since $Df(a)$ exists, we have that
+
+    $$\epsilon_a(h) := f(a+h) - f(a) - Df(a)[h]$$
+
+    is such that $\frac{\epsilon_a(h)}{|h|} \to 0$ as $h \to 0$.
+
+    Let's write $\triangle_h f(a) := f(a+h) - f(a)$. So we have
+
+    $$\triangle_h f(a) = Df(a)[h] + \epsilon_a(h)$$
+
+    And hence by the triangle inequality,
+
+    $$|\triangle_h f(a)| \leq \|Df(a)\| |h| + |\epsilon_a(h)|$$
+
+    From the assumed properties of $\epsilon_a$, we can pick a $\delta > 0$ such that $|\epsilon_a(h)| < |h|$ for all $h$ with $0 < |h| < \delta$. So for any $\epsilon > 0$, if we take $h$ such that
+
+    $$0 < |h| < \min \{\delta, \frac{\epsilon}{1 + \|Df(a)\|} \}$$
+
+    then we must have
+
+    $$|\triangle_h f(a)| < \epsilon$$
+
+    This proves we can always find an input neighborhood around $a$ on which the output of $f$ is arbitrarily close to $f(a)$.
 
 8. When the derivative of $f$ exists everywhere on some neighborhood $U$, then we can consider $Df$ as a function $U \to \mathcal{L}(\mathbb{R}^n, \mathbb{R}^k)$. This function $Df$ need not be continuous: consider 
 
