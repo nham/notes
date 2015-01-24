@@ -2,7 +2,7 @@
 
     for all $a, b \in X$, there is exactly one $g \in G$ such that $g(a) = b$.
 
-    This condition implies that the group action is faithful (the homomorphism $G \to Sym X$ is injective), so that a $G$-torsor on $X$ can alternatively be thought of as a set $X$ and a group of permutations of $X$ that is isomorphic to $G$.
+    This condition implies that the group action is faithful (the homomorphism $G \to Sym X$ is injective), so that a $G$-torsor on $X$ can alternatively be thought of as a set $X$ and a group of permutations of $X$ that is isomorphic to $G$ and obeys the property above.
 
     We are primarily concerned with the case where the group $G$ is a vector space.
 
