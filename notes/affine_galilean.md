@@ -1,3 +1,6 @@
+---
+title: Affine spaces and Galilean spacetime
+---
 1. A **torsor** is a "group that has forgotten its origin". More formally, for any group $G$, a **$G$-torsor** is any set $X$ equipped with a group action $\phi$ of $G$ on $X$ (a group homomorphism $\phi: G \to \text{Sym } X$) that obeys this property:
 
     for all $a, b \in X$, there is exactly one $g \in G$ such that $g(a) = b$.

@@ -1,3 +1,7 @@
+---
+title: Differential calculus
+---
+
 1. If $f: D \to \mathbb{R}^k$ where $D \subseteq \mathbb{R}^n$, then a **derivative** of $f$ at $a$ for any interior point $a$ of $D$ is defined to be any map $L: \mathbb{R}^n \to \mathbb{R}^k$ such that
 
     $$lim_{h \to 0} \frac{f(a+h) - f(a) - L(h)}{|h|} = 0$$

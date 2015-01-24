@@ -1,3 +1,6 @@
+---
+title: N-body problem
+---
 1. The **$N$-body problem** is this: There are $N$ point masses experiencing only gravitational forces from amongst themselves. We assume this system of $N$ bodies is **isolated**, that is experiences no forces from anything else in the universe.
 
 2. Recall that **Newton's law of gravitation** is that for any two particles at positions $p_1$ and $p_2$ with masses $m_1$ and $m_2$, respectively, the force on particle $i$, denoted by $F_i$, is defined to be
