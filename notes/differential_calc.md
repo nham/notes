@@ -89,3 +89,30 @@ title: Differential calculus
     In general, a function $f$ as above is said to be **$C^k$** whenever each of its partial derivatives $D_j f_i$ exists and is $C^{k-1}$ on $A$.
 
     Some sources define $C^k$ as having $k$-derivatives at every point of the domain. My guess is that these two definitions are equivalent, given that it is proved, both in Munkres and Fleming, that $C_1$ implies differentiable (the other direction holds immediately).
+
+11. This is an "infinitesimal proof" of the chain rule. Warning: None of what follows is rigorous math. Much of it is downright fictitious.
+
+    We will say an $n$-dimensional **infinitesimal vector** of $\mathbb{R}^n$ is any vector whose magnitude is an infinitesimal real number. (Or maybe infinitesimal vectors are primitives defined in some way?).
+
+    Then for any differentiable function $f: U \to \mathbb{R}^k$, where $U \subseteq \mathbb{R}^n$, we have that for all $x \in U$ and any infinitesimal vector $\epsilon$, we have
+
+    $$f(x + \epsilon) - f(x) := D[f \ @\  x](\epsilon)$$
+
+    where $D[f \ @\  x]$ is a unique linear map $\mathbb{R}^n \to \mathbb{R}^k$ called the **derivative of $f$ at $x$**. $D[f \ @\  a]$ is the "local linear approximation of $f$ at $a$".
+
+    We can prove the chain rule in this set up.
+
+    **Chain Rule:** If $f: A \to \mathbb{R}^p$, $g: B \to \mathbb{R}^k$, where $A$ and $B$ are some sets $A \subseteq \mathbb{R}^n$, $B \subseteq \mathbb{R}^p$, and $x \in A$ is such that $D[f \ @\  x]$ and $D[g \ @\  f(x)]$ both exist, then we have
+
+    $$D[g \ @\  f(x)] \circ D[f \ @\  x] = D[g \circ f \ @\  x]$$
+
+    *Proof:* For any infinitesimal vector $\epsilon$, we have
+
+    $$\begin{align}
+        D[g \circ f \ @\  x](\epsilon) &= g(f(x+\epsilon) - g(f(x)) \\
+        &= g(f(x) + D[f \ @\  x](\epsilon)) - g(f(x)) \\
+        &= D[g \ @\  f(x)]( D[f \ @\  x](\epsilon) ) \\
+        &= {D[g \ @\  f(x)] \circ D[f \ @\  x]} (\epsilon)
+      \end{align}$$
+
+    where above we are assuming that applying any linear map to an infinitesimal vector yields an infinitesimal vector.
