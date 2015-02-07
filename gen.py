@@ -19,9 +19,12 @@ class Generator:
         self.default_css_files = default_css_files
 
 
-    def copy_file(self, folder, filename):
-        in_file = folder + filename
-        out_file = self.output_path + in_file
+    def copy_file(self, in_path, filename, out_path=None):
+        if out_path is None:
+            out_path = in_path
+
+        in_file = in_path + filename
+        out_file = self.output_path + out_path + filename
         ensure_dir(out_file)
         subprocess.call(['cp', in_file, out_file])
 
@@ -148,8 +151,7 @@ def gen_notes(gen):
         else:
             # assume it's something that needs to be copied to output
             # folder (like an image)
-            # TODO: I think this has a problem. need to check
-            gen.copy_file(folder_name, fname)
+            gen.copy_file(folder_name, fname, '/')
 
 
 
