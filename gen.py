@@ -123,38 +123,6 @@ class Generator:
 
 
 
-def gen_log(gen):
-    list_md = ""
-    folder_name = 'log/2015/jan/'
-
-    for i, fname in enumerate( os.listdir(folder_name) ):
-        if fname.endswith('.md'):
-            list_md += " - [{}]({})\n".format(
-                    folder_name.replace('log/', '')+fname.replace('.md', ''),
-                    folder_name+fname.replace('.md', '.html')
-                  )
-
-            fpath = folder_name + fname
-            gen.gen_page_file(fpath, fpath.replace('.md', '.html'),
-                              is_mathjax_on=True)
-        else:
-            # assume it's something that needs to be copied to output
-            # folder (like an image)
-            # TODO: I think this has a problem. need to check
-            gen.copy_file(folder_name, fname)
-
-
-    index_md = """---
-title: log
----
-<div id="titlenav"><span id="title">log</span> / <a href="notes/">notes</a></div>
-
-{}
-""".format(list_md)
-
-    gen.gen_page_string(index_md, 'index.html')
-
-
 # first concern is the exact organization of
 # notes. if each note is a unit of review, it seems like they
 # should be fairly small.
@@ -165,13 +133,16 @@ def gen_notes(gen):
 
     for i, fname in enumerate( os.listdir(folder_name) ):
         if fname.endswith('.md'):
+            fname_html = fname.replace('.md', '.html')
+
             list_md += " - [{}]({})\n".format(
                     fname.replace('.md', ''),
-                    fname.replace('.md', '.html')
+                    fname_html
                   )
 
             fpath = folder_name + fname
-            gen.gen_page_file(fpath, fpath.replace('.md', '.html'),
+            out_fpath = '/' + fname_html
+            gen.gen_page_file(fpath, out_fpath,
                               is_mathjax_on=True)
 
         else:
@@ -185,13 +156,13 @@ def gen_notes(gen):
     notes_md = """---
 title: notes
 ---
-<div id="titlenav"><span id="title">notes</span> / <a href="../">log</a></div>
+<div id="titlenav"><span id="title">notes</span></div>
 
 {}
 """.format(list_md)
 
     # generate notes index
-    gen.gen_page_string(notes_md, 'notes/index.html')
+    gen.gen_page_string(notes_md, 'index.html')
 
 
 
@@ -199,6 +170,5 @@ gen = Generator(default_css_files=['/css/style.css'],
                 default_page_before_body='includes/before_body.html',
                 default_page_after_body='includes/after_body.html')
 
-gen_log(gen)
 gen_notes(gen)
 gen.copy_file('css/', 'style.css')
