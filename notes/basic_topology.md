@@ -44,17 +44,30 @@ Related notes: [metric spaces](metric_spaces.html)
 
     A **topological embedding** is an injective continuous map $f: X \to Y$ such that the codomain restriction $X \to f(X)$ is a homeomorphism
 
-13. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+13. There's a bunch of equivalent definitions for continuous maps. Here are three. Let $f: X \to Y$ be a map between topological spaces. Then $f$ is continuous exactly when either of these hold:
+
+    1. For every $x \in X$ and any neighborhood $V$ of $f(x)$ in $Y$, there is a neighborhood $U$ of $x$ such that $f(U) \subseteq V$.
+    2. $f^{pre}(C) is closed for every $C$ closed in $Y$
+    3. For any $A \subseteq X$, $f$ maps closure points of $A$ to closure points of $f(A)$.
+
+    If (1) is true, for any open $V$ in $Y$, either there is some $x \in X$ such that $f(x) \in V$, or $f^{pre}(V) = \emptyset$ and is hence open. In the former case by hypothesis there is some neighborhood of $x$ contained in $f^{pre}(V)$, so this set is open, proving $f$ is continuous. The converse is proved by noting that for every $x \in X$ and neighborhood $V$ of $f(x)$, $f^{pre}(V)$ is an open neighborhood of $x$ that works.
+
+    For (2), note that $f^{pre}(Y - S) = X - f^{pre}(S)$ for any $S \subseteq Y$. So if preimages of open sets are all open, then so are preimages of closed sets, and vice versa.
+
+    For (3), if $f$ is continuous and $A \subseteq X$, $\bar{f(A)}$ is closed in $Y$, so $f^{pre}(\bar{f(A)})$ is closed too (by what was just proved). Clearly $A \subseteq f^{pre}(\bar{f(A)})$, and since every closure point of a subset is a closure point of the whole set, $\bar{A} \subseteq f^{pre}(\bar{f(A)})$ (since the latter set is closed). So we have $f(\bar{A}) \subseteq \bar{f(A)}$, proving (3). Conversely, if (3) holds and $C$ is closed in $Y$, every closure point of $f^{pre}(C)$ gets mapped into a closure point of $f(f^{pre}(C)) = C$. $C$ being closed, this proves that $f^{pre}(C)$ contains its closure, so is closed.
 
 
-14. A **local homeomorphism** is a function $f: X \to Y$ such that for every $x \in X$ there is a neighborhood $U$ of $x$ with 
+14. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+
+
+15. A **local homeomorphism** is a function $f: X \to Y$ such that for every $x \in X$ there is a neighborhood $U$ of $x$ with 
 
      - $f(U)$ open in $Y$
      - the two-sided restriction of $f$, $F: U \to f(U)$, is a homeomorphism
 
     The only use I've ever seen for local homeomorphisms (so far) is in the definition of topological manifolds.
 
-15. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
+16. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
 
     ![three point topological space with non-unique limits](non_unique_limits.png)
 
@@ -62,12 +75,12 @@ Related notes: [metric spaces](metric_spaces.html)
 
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
-16. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
+17. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
 
     Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
 
 
-17. One important notion for topological spaces is **bases**. One way to think about these is as generalizations of the open balls of a metric space, which are used to generate the metric space topology. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. Specifically, the open sets are defined to be exactly the unions of basis sets (including the empty union).
+18. One important notion for topological spaces is **bases**. One way to think about these is as generalizations of the open balls of a metric space, which are used to generate the metric space topology. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. Specifically, the open sets are defined to be exactly the unions of basis sets (including the empty union).
 
     Not just any collection of subsets of a topological space will work as a basis. We need to verify that the topology axioms all hold. Let $\mathcal{B}$ be some collection of subsets of $X$ and let $\mathcal{T} := \{ \bigcup \mathcal{S} : \mathcal{S} \subseteq \mathcal{B} \}$. By definition, $\emptyset \in \mathcal{T}$. Also by definition, if $\mathcal{X} \subseteq \mathcal{T}$, then $\bigcup \mathcal{X}$ is a union of unions of basis elements, hence still a union a basis elements, hence in $\mathcal{T}$. So the collections $\mathcal{B}$ that work as bases are exactly those that ensure
 
@@ -83,7 +96,7 @@ Related notes: [metric spaces](metric_spaces.html)
     - $\bigcup \mathcal{B} = X$
     - for all $B, C \in \mathcal{B}$, for all $x \in B \cap C$, there is a $D \in \mathcal{B}$ with $x \in D \subseteq B \cap C$
 
-18. A space is **second-countable** if it has a countable basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
+19. A space is **second-countable** if it has a countable basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
 
      - $\mathbb{Q}$ is dense in $\mathbb{R}$ by basic properties of the reals
      - $\mathbb{Q}^n$ is countable since it is a finite cartesian product of countable sets
