@@ -61,3 +61,9 @@ Related notes: [basic topology](basic_topology.html)
 10. One interesting characterization of continuous maps is as *locally approximately constant* maps. (The following is non-standard. I have not seen it anywhere, I made it up). Let's say that a map $f$ is **locally approximately constant at $a$ of tolerance $\epsilon$** ($\epsilon > 0$) if there is a neighborhood around $a$ such that when $f$ is restricted to that neighborhood, the output is always within $\epsilon$ of $f(a)$.
     
     If we further say that $f$ is **locally approximately constant at $a$** if it is locally approximately constant at $a$ of tolerance $\epsilon$ for all $\epsilon > 0$, then **locally approximately constant** maps are exactly continuous maps.
+
+11. An **isometry** is any map between metric spaces that preserves distance: $d_X(a, b) = d_Y(f(a), f(b))$ for all $a, b \in X$. Every isometry $f$ is a topological embedding:
+
+     - it is injective since $f(a) = f(b)$ implies that $d_X(a, b) = 0$, which implies that $a = b$
+     - it is continuous since for any $x$, any $a$ within $\epsilon$ of $x$ will have $f(a) also within $\epsilon of $f(x)$
+     - letting $g: X \to f(X)$ be the codomain restriction of $f$, letting $u, v \in Y$ and $a = g(u)$, $b = g(v)$, we have $d_Y(u, v) = d_Y(f(a), f(b)) = d_X(a, b) = d_X(g(u), g(v))$, so $g$ is also an isometry, hence continuous.

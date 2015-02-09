@@ -38,9 +38,11 @@ Related notes: [metric spaces](metric_spaces.html)
 
 11. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior is empty. Equivalently, $S$ is dense if every non-empty open subset of $X$ contains an element of $S$, and nowhere dense if every non-empty open subset of $X$ contains an element of $X - S$.
 
-12. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$. This definition makes no sense unless you've studied enough metric space topology to prove that it is equivalent to the usual epsilon-delta definition of continuity for metric spaces.
+12. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
 
     If $f$ is bijective, continuous, with continuous inverse, it is called a **homeomorphism**. This is the notion of isomorphism for topological spaces.
+
+    A **topological embedding** is an injective continuous map $f: X \to Y$ such that the codomain restriction $X \to f(X)$ is a homeomorphism
 
 13. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
 
@@ -61,3 +63,30 @@ Related notes: [metric spaces](metric_spaces.html)
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
 16. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
+
+    Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
+
+
+17. One important notion for topological spaces is **bases**. One way to think about these is as generalizations of the open balls of a metric space, which are used to generate the metric space topology. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. Specifically, the open sets are defined to be exactly the unions of basis sets (including the empty union).
+
+    Not just any collection of subsets of a topological space will work as a basis. We need to verify that the topology axioms all hold. Let $\mathcal{B}$ be some collection of subsets of $X$ and let $\mathcal{T} := \{ \bigcup \mathcal{S} : \mathcal{S} \subseteq \mathcal{B} \}$. By definition, $\emptyset \in \mathcal{T}$. Also by definition, if $\mathcal{X} \subseteq \mathcal{T}$, then $\bigcup \mathcal{X}$ is a union of unions of basis elements, hence still a union a basis elements, hence in $\mathcal{T}$. So the collections $\mathcal{B}$ that work as bases are exactly those that ensure
+
+     - $X \in \mathcal{T}$
+     - if $A, B \in \mathcal{T}$, then $A \cap B \in \mathcal{T}$
+
+    The necessary and sufficient condition for the first is that $\bigcup \mathcal{B} = X$. If we want the second to be true, then we must at least have that the intersection of basis elements is in $\mathcal{T}$. Equivalently, for any basis elements $B_1, B_2$, we have for all $x \in B_1 \cap B_2$, there is some basis element $D$ such that $x \in D \subseteq B_1 \cap B_2$. Conversely, if the intersection of basis elements is in $\mathcal{T}$, then for any $A, B \in \mathcal{T}$, $A = \bigcup \mathcal{S}_1$ and $B = \bigcup \mathcal{S}_2$ for some $\mathcal{S}_1, \mathcal{S}_2$, so
+
+    $$A \cap B = (\bigcup \mathcal{S}_1) \cap B = \bigcup_{S_1 \in \mathcal{S}_1} S_1 \cap B = \bigcup_{S_1 \in \mathcal{S}_1, S_2 \in \mathcal{S}_2} S_1 \cap S_2$$
+
+    So $A \cap B$ is a union of intersections of basis elements, each of which is a union of basis elements by hypothesis, yadda yadda. Essentially the two conditions below are exactly the conditions that ensure the set induced by $\mathcal{B}$ is a topology
+
+    - $\bigcup \mathcal{B} = X$
+    - for all $B, C \in \mathcal{B}$, for all $x \in B \cap C$, there is a $D \in \mathcal{B}$ with $x \in D \subseteq B \cap C$
+
+18. A space is **second-countable** if it has a countable basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
+
+     - $\mathbb{Q}$ is dense in $\mathbb{R}$ by basic properties of the reals
+     - $\mathbb{Q}^n$ is countable since it is a finite cartesian product of countable sets
+     - the collection of open balls centered at $x \in \mathbb{Q}^n$ with rational radii is countable since it is a countable union of countable sets
+     - the sup-norm on $\mathbb{R}^n$ is topologically equivalent to the Euclidean norm, and every open box under the sup-norm contains a point with rational coordinates (using density of $\mathbb{Q}$ in $\mathbb{R}$) so $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ 
+     - from this we get that the collection of open balls centered at rational coordinates with rational radii covers the whole space. Intersections of such balls are clearly open, so the collection is a countable basis for $\mathbb{R}^n$
