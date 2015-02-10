@@ -43,4 +43,4 @@
 
     You can prove that any orthogonal collection of vectors is linearly independent.
 
-7.
+7. Two norms are said to be **equivalent** if there are positive reals $C, D$, with $C \leq D$, such that $C \|v\|_1 \leq \|v\|_2 \leq D \|v\|_1$ for all $v$. This relation between norms on a given vector space is clearly reflexive and symmetric, and fairly easy to see that it's transitive. Equivalent norms induce the same topology since this condition implies that the induced metrics have nesting open balls (see metric space notes).
