@@ -67,3 +67,16 @@ Related notes: [basic topology](basic_topology.html)
      - it is injective since $f(a) = f(b)$ implies that $d_X(a, b) = 0$, which implies that $a = b$
      - it is continuous since for any $x$, any $a$ within $\epsilon$ of $x$ will have $f(a) also within $\epsilon of $f(x)$
      - letting $g: X \to f(X)$ be the codomain restriction of $f$, letting $u, v \in Y$ and $a = g(u)$, $b = g(v)$, we have $d_Y(u, v) = d_Y(f(a), f(b)) = d_X(a, b) = d_X(g(u), g(v))$, so $g$ is also an isometry, hence continuous.
+
+12. Different metrics on the same set can nevertheless induce the same metric topologies. We say that two such metrics are **topologically equivalent**. Metrics are topologically equivalent iff the open balls *nest*, meaning for every $x \in X$ and every $\epsilon > 0$, there are $\delta, \gamma > 0$ such that
+
+    $$B_1(x; \delta) \subseteq B_2(x; \epsilon), B_2(x; \gamma) \subseteq B_1(x; \epsilon)$$
+
+    Proof: Nesting open balls implies the same topology since every $1$-open set $U$ is a union of $1$-open balls, so by nesting $U$ will be a union of $2$-open balls as well (and vice versa). Conversely if the topologies are the same, every $1$-open ball  will be $2$-open, hence some $2$-open ball centered at the point will be contained in the $1$-open ball (and vice versa).
+
+
+13. For any metric spaces $X$ and $Y$, a sequence $(f_n)$ of functions $f_n: X \to Y$ is said to **converge pointwise** to $g: X \to Y$ if each sequence $(f_n(x))$ for $x \in X$ converges to $g(x)$. Think of it like slicing the functions in the sequence by input value. If each sliced sequence converges to each value of $g$, then $(f_n)$ converges pointwise to $g$.
+
+    A sequence $(f_n)$ is alternatively said to **converge uniformly** to $g: X \to Y$ if $\forall \epsilon > 0$ there is an $N \in \mathbb{N}$ such that $\sup \{d_Y(f_n(x), g(x)) : x \in X\} < \epsilon$ for all $n \geq N$. The value $\sup \{d_Y(f_n(x), g(x)) : x \in X\}$ can be thought of as the max distance between outputs of $f_n$ and $g$ across all inputs.
+
+    In fact we can define $U[f, g] := \sup \{d_Y(f(x), g(x)) : x \in X\}$ for all $f, g: X \to Y$. Note that this is not quite a metric, since $U[f, g]$ might not be finite. Still, we can reformulate our definition above using the idea behind Cauchy sequences: $(f_n)$ converges uniformly to $g$ iff for all $\epsilon > 0$ there is an $N \in \mathbb{N}$ such that $U[f_n, f_m] < \epsilon$ for all $m, n \geq N$.
