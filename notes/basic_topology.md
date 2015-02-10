@@ -54,11 +54,15 @@ Related notes: [metric spaces](metric_spaces.html)
 
     For (3), if $f$ is continuous and $A \subseteq X$, $\bar{f(A)}$ is closed in $Y$, so $f^{pre}(\bar{f(A)})$ is closed too (by what was just proved). Clearly $A \subseteq f^{pre}(\bar{f(A)})$, and since every closure point of a subset is a closure point of the whole set, $\bar{A} \subseteq f^{pre}(\bar{f(A)})$ (since the latter set is closed). So we have $f(\bar{A}) \subseteq \bar{f(A)}$, proving (3). Conversely, if (3) holds and $C$ is closed in $Y$, every closure point of $f^{pre}(C)$ gets mapped into a closure point of $f(f^{pre}(C)) = C$. $C$ being closed, this proves that $f^{pre}(C)$ contains its closure, so is closed.
 
+14. It's actually improper to say that $f: X \to Y$ is a continuous map, since we have to specify topologies for $X$ and $Y$ as well. It's more accurate to say that $(f: X \to Y, \mathcal{T}, \mathcal{U})$ is a continuous map. Indeed, a given function $f: X \to Y$ can be continuous when $X$ is considered to have one topology, but not continuous when it has another. One way to see this has applications to coarseness of topologies:
 
-14. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+    If $\mathcal{S}, \mathcal{T}$ are two topologies on $X$, then $\mathcal{S}$ is finer than $\mathcal{T}$ iff the identity on $X$ is continuous when the domain has topology $\mathcal{S}$ and the codomain has topology $\mathcal{T}$. (This follows immediately from the definition of continuity). Intuitively, if the codomain topology is finer, then the domain topology lacks the necessary "precision" needed for the output to be kept within any neighborhood in the codomain.
 
 
-15. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
+15. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+
+
+16. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
 
     ![three point topological space with non-unique limits](non_unique_limits.png)
 
@@ -66,12 +70,12 @@ Related notes: [metric spaces](metric_spaces.html)
 
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
-16. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
+17. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
 
     Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
 
 
-17. One important notion for topological spaces is **bases**. One way to think about these is as generalizations of the open balls of a metric space, which are used to generate the metric space topology. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. Specifically, the open sets are defined to be exactly the unions of basis sets (including the empty union).
+18. One important notion for topological spaces is **bases**. One way to think about these is as generalizations of the open balls of a metric space, which are used to generate the metric space topology. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. Specifically, the open sets are defined to be exactly the unions of basis sets (including the empty union).
 
     Not just any collection of subsets of a topological space will work as a basis. We need to verify that the topology axioms all hold. Let $\mathcal{B}$ be some collection of subsets of $X$ and let $\mathcal{T} := \{ \bigcup \mathcal{S} : \mathcal{S} \subseteq \mathcal{B} \}$. By definition, $\emptyset \in \mathcal{T}$. Also by definition, if $\mathcal{X} \subseteq \mathcal{T}$, then $\bigcup \mathcal{X}$ is a union of unions of basis elements, hence still a union a basis elements, hence in $\mathcal{T}$. So the collections $\mathcal{B}$ that work as bases are exactly those that ensure
 
@@ -87,7 +91,7 @@ Related notes: [metric spaces](metric_spaces.html)
     - $\bigcup \mathcal{B} = X$
     - for all $B, C \in \mathcal{B}$, for all $x \in B \cap C$, there is a $D \in \mathcal{B}$ with $x \in D \subseteq B \cap C$
 
-18. A space is **second-countable** if it has a countable (finite or countably infinite) basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
+19. A space is **second-countable** if it has a countable (finite or countably infinite) basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
 
      - $\mathbb{Q}$ is dense in $\mathbb{R}$ by basic properties of the reals
      - $\mathbb{Q}^n$ is countable since it is a finite cartesian product of countable sets
@@ -95,8 +99,8 @@ Related notes: [metric spaces](metric_spaces.html)
      - the sup-norm on $\mathbb{R}^n$ is topologically equivalent to the Euclidean norm, and every open box under the sup-norm contains a point with rational coordinates (using density of $\mathbb{Q}$ in $\mathbb{R}$) so $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ 
      - from this we get that the collection of open balls centered at rational coordinates with rational radii covers the whole space. Intersections of such balls are clearly open, so the collection is a countable basis for $\mathbb{R}^n$
 
-19. A **cover** for a subset $S$ of some topological space $X$ is any collection of subsets of $X$ whose union is a superset of $S$. An **open cover** is a cover consisting of open sets. A **subcover** is a subcollection of cover elements that still acts as a cover for the set.
+20. A **cover** for a subset $S$ of some topological space $X$ is any collection of subsets of $X$ whose union is a superset of $S$. An **open cover** is a cover consisting of open sets. A **subcover** is a subcollection of cover elements that still acts as a cover for the set.
 
-20. A space is said to be a **Lindelöf space** if every open cover of the space has a countable subcover. A useful fact (I'm foggy on how useful, exactly) is that every second-countable space is Lindelöf.
+21. A space is said to be a **Lindelöf space** if every open cover of the space has a countable subcover. A useful fact (I'm foggy on how useful, exactly) is that every second-countable space is Lindelöf.
 
     Proof: There is some countable basis for the space, so (WLOG) assume $\mathcal{U}$ is an open cover containing $\emptyset$. For every basis element $B$, we define $U_B$ to be either one of the cover elements that contains that basis element if one such cover element exists, or $U_B = \emptyset$ otherwise. If the collection of $U_B$'s is not a subcover, then for some point $x$, every basis element containing $x$ is not contained in any cover element of $\mathcal{U}$, which contradicts that $x$ is in at least one cover element $U$ and that therefore there is some basis element that is a neighborhood of $x$ and is contained in $U$. So the $U_B$'s are a subcover, and they are countable since we are working with a countable basis.
