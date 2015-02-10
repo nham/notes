@@ -1,5 +1,5 @@
 ---
-title: Topology: bases and countability
+title: "Topology: bases and countability"
 ---
 Related notes: [basic topology](basic_topology.html)
 
@@ -12,7 +12,7 @@ Related notes: [basic topology](basic_topology.html)
 
     The necessary and sufficient condition for the first is that $\bigcup \mathcal{B} = X$. If we want the second to be true, then we must at least have that the intersection of basis elements is in $\mathcal{T}$. Equivalently, for any basis elements $B_1, B_2$, we have for all $x \in B_1 \cap B_2$, there is some basis element $D$ such that $x \in D \subseteq B_1 \cap B_2$. Conversely, if the intersection of basis elements is in $\mathcal{T}$, then for any $A, B \in \mathcal{T}$, $A = \bigcup \mathcal{S}_1$ and $B = \bigcup \mathcal{S}_2$ for some $\mathcal{S}_1, \mathcal{S}_2$, so
 
-    $$A \cap B = (\bigcup \mathcal{S}_1) \cap B = \bigcup_{S_1 \in \mathcal{S}_1} S_1 \cap B = \bigcup_{S_1 \in \mathcal{S}_1, S_2 \in \mathcal{S}_2} S_1 \cap S_2$$
+    $$A \cap B = (\bigcup \mathcal{S}_1) \cap B = \bigcup_{U \in \mathcal{S}_1} U \cap B = \bigcup_{U \in \mathcal{S}_1, V \in \mathcal{S}_2} U \cap V$$
 
     So $A \cap B$ is a union of intersections of basis elements, each of which is a union of basis elements by hypothesis, yadda yadda. Essentially the two conditions below are exactly the conditions that ensure the set induced by $\mathcal{B}$ is a topology
 
