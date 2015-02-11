@@ -17,6 +17,10 @@
      - $f(U)$ open in $Y$
      - the two-sided restriction of $f$, $F: U \to f(U)$, is a homeomorphism
 
+4. We can also characterize continuous maps locally: if $f: X \to Y$ and for every $x \in X$, there is a neighborhood $U_x$ of $x$ such that $f|U_x$ is continuous, then for every $V$ open in $Y$, $f^{pre}(V) \cap U_x$ is open in $U_x$, so $f^{pre}(V) \cap U_x \cap V_x$ is open in $X$ for some $V_x$ open in $X$. If we union these up for all $x$ we get $f^{pre}(V)$ being open.
+
+    The converse is obviously true as well.
+
 
 4. Above we've proved that the inclusion of a subspace into its superspace is continuous. It's also clearly injective, and what's more if we restrict the codomain to the image we just get the identity map on $A$. So the inclusion defined on a subspace is actually a topological embedding.
 
@@ -24,4 +28,31 @@
 
 6. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
 
-7. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
+
+7. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
+
+    - the intersection of two open/closed sets is again open/closed
+    - the subspace's open/closed sets are intersections of open/closed sets in $X$ with $A$
+
+8. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
+
+     - $B_1, \ldots, B_n$ is a finite closed (w.r.t. $X$) cover of $X$
+     - $\{B_i\} is an open (w.r.t. $X$) cover of $X$
+
+    And for each cover element $B_i$ we have a map $f_i: B_i \to Y$ that is continuous, such that for each $i$ and $j$, $f_i$ and $f_j$ are the same on the restriction to $B_i \cap B_j$, then there's a unique continuous map $f: X \to Y$ such that $f|B_i = f_i$ for all $i$.
+
+    *Proof:* In either case, for all $x \in X$, pick an $i$ such that $x \in B_i$. Then define $f(x) = f_i(x)$. This is not only well-defined since $f_i(x) = f_j(x)$ when $x \in B_i \cap B_j$, but $f$ is the only such way to have $f|B_i = f_i$ for all $i$.
+
+    In the case of a finite closed cover we have
+
+    $$f^{pre}(C) = \bigcup_{i=1}^n f_i^{pre}(C)$$
+
+    which, in the case of closed $C$, is a finite union of closed sets (since each $f_i$ is continuous), hence closed in $X$.
+
+    In the case of an open cover we have
+
+    $$f^{pre}(U) = \bigcup_i f_i^{pre}(U)$$
+
+    which, in the case of open $U$, is a union of open sets, hence open in $X$.
+
+9. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
