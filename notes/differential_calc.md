@@ -1,6 +1,7 @@
 ---
 title: Differential calculus
 ---
+The contents of the [topology notes](basic_topology.html), the [metric space notes](metric_spaces.html), and the [linear algebra notes](linear_algebra.html) are assumed freely. Calculus is hard.
 
 1. If $f: D \to \mathbb{R}^k$ where $D \subseteq \mathbb{R}^n$, then a **derivative** of $f$ at $a$ for any interior point $a$ of $D$ is defined to be any map $L: \mathbb{R}^n \to \mathbb{R}^k$ such that
 
@@ -8,11 +9,18 @@ title: Differential calculus
 
     Equivalently, the function $\boldsymbol \epsilon (h) := f(a+h) - f(a) - L(h)$ has $\frac{\boldsymbol \epsilon(h)}{|h|} \to 0$ as $h \to 0$.
 
-2. The derivative is always unique. This is proved via a lemma: if $T: \mathbb{R}^n \to \mathbb{R}^k$ is linear and such that $\frac{T(h)}{|h|} \to 0$ as $h \to 0$, then $T$ is the zero map. After this, if we have any two derivatives $L$ and $M$ of $f$ at $a$, then it can be proved that $L - M$ has the above property and so must be the zero map, establishing $L = M$. We notate this unique map by $Df(a)$, called **the differential of $f$ at $a$**.
+2. The derivative is always unique (which justifies calling it "the" derivative). This is proved via:
+
+     - if $T: \mathbb{R}^n \to \mathbb{R}^k$ is linear and such that $\frac{T(h)}{|h|} \to 0$ as $h \to 0$, then $T$ is the zero map.
+     - Now if we have any two derivatives $L$ and $M$ of $f$ at $a$, then it can be proved that $L - M$ has the above property and so must be the zero map, establishing $L = M$.
+
+    We denote this unique map by $Df(a)$, called **the differential of $f$ at $a$**.
 
 3. Note that if $f$ is real-valued, the derivative of $f$ at any $a$ is a covector (element of the dual space) of $\mathbb{R}^n$.
 
-4. The **directional derivative** in direction $u$ of some $f$ at $a \in \text{int} \text{ dom} f$, where $|u| = 1$, is defined to be
+4. Also note there is a bit of a conflict here. The above definition says that the derivative of a function $f: \mathbb{R} \to \mathbb{R}$ at a point is a linear map $\mathbb{R} \to \mathbb{R}$, but the standard is to say that the derivative is a *real number* which represents the slope of the tangent line to the graph at the point. This is not really a conflict since every linear function $\mathbb{R} \to \mathbb{R}$ has the form $x \mapsto cx$ for some $c \in \mathbb{R}$. In other words, there's a one-to-one correspondence between real scalars and linear functions on $\mathbb{R}$.
+
+5. The **directional derivative** in direction $u$ of some $f$ at $a \in \text{int} \text{ dom} f$, where $|u| = 1$, is defined to be
 
     $$D_u f(a) := lim_{t \to 0} \frac{(f(a+tu) - f(a)}{t}$$
 
@@ -22,9 +30,9 @@ title: Differential calculus
 
     In particular, the directional derivatives for $e_1, \ldots, e_n$, the standard basis vectors of $\mathbb{R}^n$, are denoted $D_1 f, \ldots, D_n f$, each one $D_i$ being called **the $i$-th partial derivative**.
 
-5. Consider the case of real-valued $f$. We can view the graph of $f$ as a subset of $\mathbb{R}^{n+1}$, an $n$-dimensional differentiable manifold of some sort. Then the derivative can be thought of, geometrically, as the **tangent hyperplane** to the surface at $a$. This is why some books occasionally talk about "affine approximation" in conjunction with derivatives: you are locally approximating some $n$-dimensional surface with a certain affine subspace (an affine hyperplane, specifically).
+6. Consider the case of real-valued $f$. We can view the graph of $f$ as a subset of $\mathbb{R}^{n+1}$, an $n$-dimensional differentiable manifold of some sort. Then the derivative can be thought of, geometrically, as the **tangent hyperplane** to the surface at $a$. This is why some books occasionally talk about "affine approximation" in conjunction with derivatives: you are locally approximating some $n$-dimensional surface with a certain affine subspace (an affine hyperplane, specifically).
 
-6. $D_u f(a) = Df(a)[u]$ for any direction $u$. We can see this by noting that since
+7. $D_u f(a) = Df(a)[u]$ for any direction $u$. We can see this by noting that since
 
     $$\boldsymbol \epsilon(h) = f(a+h) - f(a) - Df(a)[h]$$
 
