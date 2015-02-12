@@ -44,3 +44,15 @@
     You can prove that any orthogonal collection of vectors is linearly independent.
 
 7. Two norms are said to be **equivalent** if there are positive reals $C, D$, with $C \leq D$, such that $C \|v\|_1 \leq \|v\|_2 \leq D \|v\|_1$ for all $v$. This relation between norms on a given vector space is clearly reflexive and symmetric, and fairly easy to see that it's transitive. Equivalent norms induce the same topology since this condition implies that the induced metrics have nesting open balls (see metric space notes).
+
+8. If $V$ and $W$ are normed vector spaces, a linear map $T: V \to W$ is **bounded** when there is a $C > 0$ such that $|Tx|_W \leq C |x|_V$ for all $x \in V$.
+
+    Relatedly, the **operator norm** of a linear map $T$ is defined to be
+
+    $$\inf \{ C > 0 : \forall x |Tx| \leq C |x|\}$$
+
+    So when a linear operator is bounded, it has finite operator norm. If a linear operator is not bounded, then the set is empty, and the infimum of an empty set is customarily defined (using the extended reals) as $\infty$. That is, a linear operator's norm is finite iff it is bounded.
+
+9. An interesting fact about linear operators between normed vector spaces is that they are bounded iff continuous. If $T: V \to W$ is a linear map between normed vector spaces, supposing $T$ is bounded we have for any $x \in V$, $|Tx - Ta| = |T(x - a)| \leq C |x - a|$. So whenever $a$ is within $C \epsilon$ of $x$, $Ta$ will be within $\epsilon of $Tx$, which proves continuity. Conversely, if $T$ is continuous it's certainly continuous at $0$. So we can find some $\delta > 0$ such that $|Tx| < 1$ for all $|x| < \delta$. We use this fact as a stepping stone to the final proof: if $v \neq 0$, we can define $z_v := \frac{\delta v}{2 |v|}$. Then $|z_v| = \delta/2$, so $|T z_v| < 1$. But this implies $|Tv| < \frac{2}{\delta} |v|$.
+
+10. A corollary of (9) is that if norm $\phi$ is equivalent to norm $\psi$, then $\phi$ is bounded (hence continuous) w.r.t. $\psi$, and vice versa.
