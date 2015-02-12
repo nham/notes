@@ -32,3 +32,5 @@
      - Each path-component is a *maximal* connected component
      - No path-connected subset crosses path-components.
      - The union of path-connected subsets with a point in common is a path-connected subset.
+
+6. Every path-connected space is connected. If $X$ is path-connected but not connected, it has a disconnection $A, B$. Let $a \in A, b \in B$. There must be a path $p$ from $a$ to $b$, but the image of $p$ in $X$ must be connected since $p$ is continuous. However, $A \cap img p$ and $B \cap img p$ are open, disjoint and cover $img p$, so $img p$ is disconnected, which is a contradiction.
