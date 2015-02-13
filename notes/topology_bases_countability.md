@@ -53,3 +53,5 @@ Related notes: [basic topology](basic_topology.html)
     For every $x_i \in B_i \cap C_i$, there's a basis set $D_i$ with $x_i \in D_i \subseteq B_i \cap C_i$, so clearly $x \in \prod_1^n D_i \subseteq \prod_1^n (B_i \cap C_i)$.
 
     To prove that it really induces the product topology, we first note that the product basis is a collection of open sets (a collection of elements of the standard product topology basis, actually!). So if every $\prod_1^n U_i$ is such that every $x \in prod_1^n U_i$ has a product of basis elements $\prod_1^n B_i$ such that $x \in \prod_1^n B_i \subseteq \prod_1^n U_i$, then it follows that the product basis generates the product topology. But this is certainly true, since if $x_i \in U_i$, there is a basis element containing $x_i$ and contained in $U_i$.
+
+10. The product of second countable spaces is second countable since countable bases for $X_1, \ldots, X_n$ induce, through the product basis, a basis which is the finite product of countable sets.

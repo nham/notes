@@ -97,3 +97,5 @@
     $$f^{pre}(\prod_1^n U_i) = \prod_1^n f_i^{pre}(U_i)$$
 
     which is open since each $f_i$ is continuous. We denote this map by $\prod_1^n f_i$.
+
+9. The finite product of Hausdorff spaces $X_i$ is also Hausdorff because for any two distinct points $x = (x_i : 1 \leq i \leq n), y = (y_i : 1 \leq i \leq n) \in \prod_1^n X_i$, then for some $i$ we have $x_i \neq y_i$, so we can find disjoint neighborhoods $U_i, V_i$ for $x_i$ and $y_i$, respectively, in $X_i$ (due to Hausdorffness). Pick any open sets $U_j, V_j$ in $X_j$ for $j \neq i$, each of which contains $x_j$ and $y_j$, respectively. Then $\prod_1^n U_i$ and $\prod_1^n V_i$ are disjoint.
