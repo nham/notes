@@ -1,4 +1,4 @@
-1. Preimages perserve arbitrary union and arbitrary intersection. Intersection is used in the proof of the characteristic property holding for the product topology. I forgot where I used the union version, but I'm confident I used it somewhere.
+1. Preimages perserve arbitrary union and arbitrary intersection. Intersection is used in the proof of the characteristic property holding for the product topology. The union fact is used in proving that it suffices to show inverse images of basis elements are open to establish that a map is continuous.
 
 2. $f(f^{pre}(A))$ is the image of $f^{pre}(A)$ under $f$, which has
 
