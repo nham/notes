@@ -14,3 +14,8 @@
 3. The product of arbitrary intersections w.r.t. some common index set is the intersection of products. This fact is needed to prove that the collection of products of open sets is a basis. The same is *not* true for unions though. Consider the case of singletons, $(a \times b) \cup (c \times d) = \{(a, b), (c, d)\} \neq (a \cup b) \times (c \cup d)$. The latter contains $(b, c)$, for example. The best we can do here is (probably?):
 
     $$(\bigcup_i (S_i \times T) = (\bigcup_i S_i) \times T$$
+
+4. Some facts about countability stated without proof (for now):
+
+     - the finite product of countable sets is countable
+     - countable union of countable sets is countable
