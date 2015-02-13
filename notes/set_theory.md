@@ -9,3 +9,8 @@
     $f^{pre}(f(A))$ is all the points that $f$ maps to $f(A)$, which in general is a superset of $A$ (there may be points outside of $A$ that get mapped into $f(A)$)
 
     Surjectivity implies equality in the first case, and injectivity implies it in the second.
+
+
+3. The product of arbitrary intersections w.r.t. some common index set is the intersection of products. This fact is needed to prove that the collection of products of open sets is a basis. The same is *not* true for unions though. Consider the case of singletons, $(a \times b) \cup (c \times d) = \{(a, b), (c, d)\} \neq (a \cup b) \times (c \cup d)$. The latter contains $(b, c)$, for example. The best we can do here is (probably?):
+
+    $$(\bigcup_i (S_i \times T) = (\bigcup_i S_i) \times T$$

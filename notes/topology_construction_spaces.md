@@ -87,3 +87,13 @@
     To show that no other topologies on $\prod_1^n X_i$ obey the property,let $\mathcal{S}$ be some topology on $\prod_1^n X_i$ that has it. Then defining $\phi$ to be the identity on $\prod_1^n X_i$, each $\pi_i \circ \phi = \pi_i$. But considering $\prod_1^n X_i$ to have topology $\mathcal{S}$, we have that $\phi$ is continuous (being an identity map), so each $\pi_i$ is also continuous, meaning that $\mathcal{S}$ must be finer than the subspace topology by (11).
 
     Conversely, let $\phi$ again be the identity on $\prod_1^n X_i$, but now consider the domain to have the product topology and the codomain to have topology $\mathcal{S}$. Each $\pi_i \circ \phi$ is just the $i$-th projection on the product topology, which is continuous. But by the characteristic property holding for $\mathcal{S}$, we have that $\phi$ must be continuous, which implies that $\mathcal{S}$ must be coarser than the product topology. In other words, $\mathcal{S}$ *is* the product topology.
+
+13. One thing product spaces affords us is taking the product of continuous maps. If $f_i: X_i \to Y_i$ are continuous maps for $1 \leq i \leq n$, the map $f: \prod_1^n X_i \to \prod_1^n Y_i$ defined by
+
+    $$f(x) = ((f_i \circ \pi_i)(x) : 1 \leq i \leq n)$$
+
+    is called the **product map** of $f_1, \ldots, f_n$. You're probably expecting that we'll prove that $f$ is continuous. You're darned tootin'. Since it suffices to consider basis elements, we have for any $\prod_1^n U_i \subseteq \prod_1^n Y_i$ that $f(x_i : 1 \leq i \leq n) \in \prod_1^n U_i$ iff $f_i(x_i) \in U_i$ for all $i$ iff $x_i \in f_i^{pre}(U_i)$ for all $i$. So 
+
+    $$f^{pre}(\prod_1^n U_i) = \prod_1^n f_i^{pre}(U_i)$$
+
+    which is open since each $f_i$ is continuous. We denote this map by $\prod_1^n f_i$.
