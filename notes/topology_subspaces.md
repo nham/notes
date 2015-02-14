@@ -32,13 +32,23 @@ title: "Topology: subspaces"
 
 6. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
 
-
 7. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
 
     - the intersection of two open/closed sets is again open/closed
     - the subspace's open/closed sets are intersections of open/closed sets in $X$ with $A$
 
-8. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
+
+8. A question arises: If $X$ is some space, and $A \subseteq B$ are two subsets of $X$, then is the subspace topology on $A$ relative to (the subspace topology on) $B$ the same as the subspace topology on $A$ relative to $X$?
+
+    The subspace topology relative to $X$ is all open sets of $X$ intersected with $A$. The subspace topology relative to $B$ is all open sets of $B$ intersected with $A$. But the open sets of $B$ are open sets of $X$ intersected with $B$. So they're the same since
+
+    $$U \cap A = U \cap B \cap A$$
+
+    owing to the fact that $B \cap A = A$.
+
+    This means that if $B$ is any subspace of $X$, any subspace of $B$ is also a subspace of $X$.
+
+9. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
 
      - $B_1, \ldots, B_n$ is a finite closed (w.r.t. $X$) cover of $X$
      - $\{B_i\} is an open (w.r.t. $X$) cover of $X$
@@ -59,6 +69,6 @@ title: "Topology: subspaces"
 
     which, in the case of open $U$, is a union of open sets, hence open in $X$.
 
-9. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
+10. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
 
 
