@@ -1,5 +1,11 @@
 1. Preimages perserve arbitrary union and arbitrary intersection. Intersection is used in the proof of the characteristic property holding for the product topology. The union fact is used in proving that it suffices to show inverse images of basis elements are open to establish that a map is continuous.
 
+    There is an asymmetry when considering the case of images. The image of a union is the union of images, but not so for intersections. Consider
+
+    $$f: \{0, 1} \to \{1\}$$
+
+    (which is constant by necessity) and let $A = \{0\}$, $B = \{1\}$. Then $A \cap B = \emptyset$ and $f(A \cap B) = \emptyset$, but $f(A) \cap f(B) = \{1\}$.
+
 2. $f(f^{pre}(A))$ is the image of $f^{pre}(A)$ under $f$, which has
 
     $$f(f^{pre}(A) \subseteq A$$
