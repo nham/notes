@@ -10,3 +10,30 @@ Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower 
     But $A$ and $B$ are open, and so do not contain boundary points. But they also cover $I$, so one of them must contain $c$. This is a contradiction.
 
 3. Conversely, any connected subset $S$ of $\mathbb{R}$ must be an interval. We again neglect the case of $S$ with less than two points. If $S$ is connected and contains $a, b$ with $a < b$ and is missing some $x$ with $a < x < b$, then $(- \infty, x) \cap I$ and $(x, \infty) \cap I$ are together a disconnection of $I$.
+
+
+4. The monotone convergence theorem says that every monotonically non-decreasing (non-increasing) sequence that is bounded above (below) converges to the least upper bound (greatest lower bound) of the set of terms. If we start out axiomatizing $\mathbb{R}$ with the least upper bound property, this can be proved as follows: the least upper bound $C$ of the term set exists, so we can find terms arbitrarily close to $C$. But the sequence is monotone, so once we find any term within an $\epsilon$, all other terms are as well. So it converges. The same proof works for non-increasing sequences bounded below.
+
+
+5. A **geometric series** is something of the form $$\sum_0^{\infty} x^k$$ for $0 \leq x < 1$. (Actually it probably works for $-1 < x < 0$ as well, but I don't need them for defining $e$). Each series of this form converges. Clearly this is true for $x = 0$. For $x \neq 0$, the sequence of partial sums 
+
+    $$s_n := \sum_0^n x^k = \frac{1 - x^{n+1}}{1-x}$$
+
+    is true using that one weird trick. The sequence converges since, letting $C := \frac{1}{1-x}$, we have $C - s_n = \frac{x^{n+1}}{1-x} > 0$ for all $n$, meaning $(s_n)$ is monotone increasing and bounded above by $C$. $C$ is also the limit since $(C - s_n) \to 0$ as $n \to \infty$ (owing to $x^{n+1} < x^n$ for all $n$)
+
+
+6. The **extended real numbers** are the system of numbers you get by adding $\infty, -\infty$ to $\mathbb{R}$. We can extend the ordering on $\mathbb{R}$ so that
+
+    $$-\infty < x < \infty$$
+
+    for all finite $x$. You can also define addition and multiplication and stuff, but I currently don't see the point.
+
+
+7. The extended reals allow you to do a few things. To start, you can define the least upper bound for non-empty unbounded sets by letting it be $\infty$ (you can see how it works for greatest lower bounds, I'm sure). What's more, you can say that a real sequence **converges to $\infty$** if it grows unboundedly as $n \to \infty$ (similarly for converging to $-\infty$).  This also allows us to formulate the **extended monotone convergence theorem**, which says that *any* monotone sequence converges to a limit, the LUB in the case of monotone nondecreasing and the GLB in the case of monotone nonincreasing.
+
+    We can go one step further on limits and consider sequences of *extended real numbers*, meaning $\infty$ and $-\infty$ are possibly terms of the sequence. Convergence is defined exactly like you expect.
+
+
+8. The **order limit theorem** for sequences of extended reals says that if $(a_n)$ and $(b_n)$ are sequences of extended reals and $a_n \leq b_n$ for all $n \geq N$ for some $N$, if the sequences converge then $\lim_{n \to \infty} a_n \leq \lim_{n \to \infty} b_n$.
+
+    The proof is simple: if not, the limit $A$ of $(a_n)$ is strictly greater than $B := \lim_{n \to \infty} b_n$, which means we can find a point $k$ after which all terms of $(a_n)$ are strictly greater than terms of $(b_n)$, which is contrary to assumption.
