@@ -35,5 +35,15 @@
 
 6. Every path-connected space is connected. If $X$ is path-connected but not connected, it has a disconnection $A, B$. Let $a \in A, b \in B$. There must be a path $p$ from $a$ to $b$, but the image of $p$ in $X$ must be connected since $p$ is continuous. However, $A \cap img p$ and $B \cap img p$ are open, disjoint and cover $img p$, so $img p$ is disconnected, which is a contradiction.
 
+7. A space is **locally path-connected** if it has a basis for which each basis element is path connected.
+
+8. All the components of a locally path-connected space are open. Suppose that $C$ is one of the components, and suppose it contains a boundary point $b$. Then there is some basis element containing $b$. That basis element $B$ is path-connected, hence connected. So $C \cup B$ is a union of non-disjoint connected subsets, hence connected. But C \cup B$ is a strict superset of $C$ since every neighborhood of $b$ intersects both $C$ and $X - C$, which contradicts that $C$ is a maximal connected subset.
+
+    It's actually somewhat easier to prove that path components are open? If $P$ is a path component of a locally path-connected space and it contains a boundary point $B$, we can find a neighborhood $V$ of $b$ that is path-connected. So $P \cup V$ is a union of non-disjoint path-connected subsets, hence path-connected, and it is strictly larger than $P$, which contradicts that $P$ is a maximal path-connected subset.
+
+9. If $X$ is locally path-connected, then its path-components are the same as the components. The proof goes a little something like this: Note that since path-components are all connected, every path component lies in a component. 
+
+    Now suppose $C$ is any component and let $x \in C$. Let $P$ be $x$'s  path component. $C$ is actually partitioned by path components by what was just said. If there's more than one path component, it's a disconnection of $C$ due to path components being open. So not only does this prove that every component is a path component, but every path component is a component as well.
 
 
+10. In a locally path-connected space, a subset is connected iff it is path connected. One direction (path-connected implies connected) was proven above for all topological spaces, but if $A$ is any connected subset, it lies in a path-component (since components and path-components coincide, as shown in (9)) and hence is path-connected.
