@@ -22,7 +22,9 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 6. Another characterization of closure and interior: interior of any set $S$ is the union of all open sets contained in $S$, while the closure of $S$ is the intersection of all closed sets that contain $S$. By these definitions, the interior is *the largest open set contained in $S$*, and the closure is *the smallest closed set containing $S$*.
 
-7. A **boundary point** of a set is a point that is neither in the interior of the set, nor in the interior of the complement of the set. Equivalently, every neighborhood of a boundary point intersects both $S$ and $X - S$. The **boundary** of a set $S$ is the collection of all boundary points of $S$.
+7. A **boundary point** of a set is a point that is neither in the interior of the set, nor in the interior of the complement of the set. Equivalently, every neighborhood of a boundary point intersects both $S$ and $X - S$. The **boundary** of a set $S$ is the collection of all boundary points of $S$, sometimes denoted $\partial S$.
+
+    The boundary of any set is closed. The proof idea is that any closure point of the $\partial A$ must also be a boundary point of $A$. Let $b$ be such a point (a closure point of $\partial A$). Then every open neighborhood $U$ around $b$ intersects $\partial A$, so there's a point $x \in \partial A$. $x$ has some neighborhood $V$ contained in $U$ since $U$ is open, so $U$ intersects $A$ and $X - A$ since $V$ does. Since $U$ was arbitrary, we must have $b \in \partial A$.
 
 8. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It can be proved that this is always identical to $X - \text{clo}(S)$.
 
