@@ -24,27 +24,45 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 7. A **boundary point** of a set is a point that is neither in the interior of the set, nor in the interior of the complement of the set. Equivalently, every neighborhood of a boundary point intersects both $S$ and $X - S$. The **boundary** of a set $S$ is the collection of all boundary points of $S$, sometimes denoted $\partial S$.
 
-    The boundary of any set is closed. The proof idea is that any closure point of the $\partial A$ must also be a boundary point of $A$. Let $b$ be such a point (a closure point of $\partial A$). Then every open neighborhood $U$ around $b$ intersects $\partial A$, so there's a point $x \in \partial A$. $x$ has some neighborhood $V$ contained in $U$ since $U$ is open, so $U$ intersects $A$ and $X - A$ since $V$ does. Since $U$ was arbitrary, we must have $b \in \partial A$.
+    By definition, boundary points are closure points, so closed sets contain all their boundary points. In fact, any closure point that isn't a boundary point is necessarily an interior point. In other words, the closure is the disjoint union of the interior and the boundary.
 
-8. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It can be proved that this is always identical to $X - \text{clo}(S)$.
+8. The boundary of any set is closed. The proof idea is that any closure point of the $\partial A$ must also be a boundary point of $A$. Let $b$ be such a point (a closure point of $\partial A$). Then every open neighborhood $U$ around $b$ intersects $\partial A$, so there's a point $x \in \partial A$. $x$ has some neighborhood $V$ contained in $U$ since $U$ is open, so $U$ intersects $A$ and $X - A$ since $V$ does. Since $U$ was arbitrary, we must have $b \in \partial A$.
 
-9. Given any set $S \subseteq X$, $X$ can always be partitioned into three disjoint sets:
+9. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It can be proved that this is always identical to $X - \text{clo}(S)$.
+
+    From this we have: given any set $S \subseteq X$, $X$ can always be partitioned into three disjoint sets:
 
      - the interior of $S$
      - the boundary of $S$
      - the exterior of $S$
     
-    The union of the first two is the closure of $S$.
 
-10. An **accumulation point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $X - x$. This definition is designed to exclude the **isolated points** of $X$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$. Each isolated point of $S$ is a closure point of $S$, but no isolated point is an accumulation point. So the closure is actually the disjoint union of isolated points and accumulation points.
+10. An **accumulation point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $S - x$. This definition is designed to exclude the **isolated points** of $X$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$. 
 
-11. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior is empty. Equivalently, $S$ is dense if every non-empty open subset of $X$ contains an element of $S$, and nowhere dense if every non-empty open subset of $X$ contains an element of $X - S$.
+    More precisely, any set $S$ can be partitioned into two disjoint sets:
 
-12. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
+     - the accumulation points of $S$ contained in $S$
+     - the isolated points
+
+    Isolated points are always boundary points, so open sets consist entirely of accumulation points.
+
+    There may be accumulation points outside of the set, however. For example, any boundary point of $S$ not in $S$ is necessarily an accumulation point.
+
+    Both isolated points and accumulation points are closure points, and the converse is true as well. So the closure is actually the disjoint union of isolated points and accumulation points.
+
+11. One corollary from (10) is that a set without accumulation points must contain every boundary point (uncontained boundary points are accumulation points), and so is closed. Furthermore, the set consists solely of isolated points, hence has empty enterior (consists entirely of boundary points).
+
+
+12. For any space $X$, every subset $A$ with no accumulation points must be closed, for if $A$ failed to contain one of its boundary points $B$ then $b$ would be an accumulation point of $A$.
+
+
+13. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior is empty. Equivalently, $S$ is dense if every non-empty open subset of $X$ contains an element of $S$, and nowhere dense if every non-empty open subset of $X$ contains an element of $X - S$.
+
+14. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
 
     If $f$ is bijective, continuous, with continuous inverse, it is called a **homeomorphism**. This is the notion of isomorphism for topological spaces.
 
-13. There's a bunch of equivalent definitions for continuous maps. Here are three. Let $f: X \to Y$ be a map between topological spaces. Then $f$ is continuous exactly when either of these hold:
+15. There's a bunch of equivalent definitions for continuous maps. Here are three. Let $f: X \to Y$ be a map between topological spaces. Then $f$ is continuous exactly when either of these hold:
 
     1. For every $x \in X$ and any neighborhood $V$ of $f(x)$ in $Y$, there is a neighborhood $U$ of $x$ such that $f(U) \subseteq V$.
     2. $f^{pre}(C)$ is closed for every $C$ closed in $Y$
@@ -56,15 +74,15 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     For (3), if $f$ is continuous and $A \subseteq X$, $\bar{f(A)}$ is closed in $Y$, so $f^{pre}(\bar{f(A)})$ is closed too (by what was just proved). Clearly $A \subseteq f^{pre}(\bar{f(A)})$, and since every closure point of a subset is a closure point of the whole set, $\bar{A} \subseteq f^{pre}(\bar{f(A)})$ (since the latter set is closed). So we have $f(\bar{A}) \subseteq \bar{f(A)}$, proving (3). Conversely, if (3) holds and $C$ is closed in $Y$, every closure point of $f^{pre}(C)$ gets mapped into a closure point of $f(f^{pre}(C)) = C$. $C$ being closed, this proves that $f^{pre}(C)$ contains its closure, so is closed.
 
-14. It's actually improper to say that $f: X \to Y$ is a continuous map, since we have to specify topologies for $X$ and $Y$ as well. It's more accurate to say that $(f: X \to Y, \mathcal{T}, \mathcal{U})$ is a continuous map. Indeed, a given function $f: X \to Y$ can be continuous when $X$ is considered to have one topology, but not continuous when it has another. One way to see this has applications to coarseness of topologies:
+16. It's actually improper to say that $f: X \to Y$ is a continuous map, since we have to specify topologies for $X$ and $Y$ as well. It's more accurate to say that $(f: X \to Y, \mathcal{T}, \mathcal{U})$ is a continuous map. Indeed, a given function $f: X \to Y$ can be continuous when $X$ is considered to have one topology, but not continuous when it has another. One way to see this has applications to coarseness of topologies:
 
     If $\mathcal{S}, \mathcal{T}$ are two topologies on $X$, then $\mathcal{S}$ is finer than $\mathcal{T}$ iff the identity on $X$ is continuous when the domain has topology $\mathcal{S}$ and the codomain has topology $\mathcal{T}$. (This follows immediately from the definition of continuity). Intuitively, if the codomain topology is finer, then the domain topology lacks the necessary "precision" needed for the output to be kept within any neighborhood in the codomain.
 
 
-15. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+17. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
 
 
-16. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
+18. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
 
     ![three point topological space with non-unique limits](non_unique_limits.png)
 
@@ -72,6 +90,6 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
-17. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
+19. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
 
     Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
