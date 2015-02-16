@@ -35,3 +35,29 @@ title: "Topology: compact spaces"
     Since $x$ was arbitrary, $X - A$ is open and therefore $A$ is closed.
 
 6. Compact subsets of metric spaces are bounded. This one's pretty easy: suppose $X$ is a metric space and $A$ is a compact subset. Assuming $A$ is non-empty, let $x \in A$ and consider the open cover of all open balls centered at $x$. There's a finite subcover, that means there's one subcover element containing all the others (i.e. there's a *singleton* subcover). So $A$ is bounded.
+
+    By (5), compact subsets of metric spaces are also closed, since metric spaces are Hausdorff.
+
+7. Note that compact subsets are defined as being those subsets that are compact as subspaces. This means to prove something is compact we need to work with an open cover *with respect to the subspace topology*. Sometimes it's convenient to work with an open cover with respect to the original space, however. 
+
+    Luckily we can prove that a subset $A$ of some space $X$ is compact iff for every $X$-open cover of $A$, there is a finite subcover. If $X$ is compact, any $X$-open cover can be restricted to an $A$-open cover which has a finite subcover by compactness and can be expanded to a subcover of the $X$-open cover. Conversely, if every $X$-open cover of $A$ has a finite subcover, then any $A$-open cover has an associated $X$-open cover, and its finite subcover is associated with a finite subcover of the $A$-open cover.
+
+    Essentially, the nature of the subspace topology allows us to pass easily between $X$-open covers and $A$-open covers.
+
+8. A space is **sequentially compact** if every infinite sequence has a convergent subsequence. If $M$ is either a second-countable Hausdorff space or a metric space, then the following 3 conditions are equivalent:
+
+    1. $M$ is compact
+    2. every infinite subset of $M$ has an accumulation point in $M$
+    3. $M$ is sequentially compact
+
+    *Proof for metric spaces:* If $M$ is compact and some infinite subset $S \subseteq M$ has no accumulation point in $M$, $S$ is necessarily closed and hence compact. It also consists entirely of isolated points, so for each point we can find a neighborhood disjoint from the other points. This is an open cover of the space, so there's a finite subcover, which is straight-up nonsense since there are infinitely many points and each cover element contains only one point.
+
+    We now prove (2) implies (3). If (2) holds and $M$ is not sequentially compact, some sequence $(x_n)$ has no convergent subsequence. There must be infinitely different values in the sequence, for if there were not you could extract an eventually constant (hence convergent) subsequence. By assumption the term set has an accumulation point $c$. Since this is a metric space, every open ball around the accumulation point contains infinitely many elements of the term set, so we construct a sequence inductively: $B(c; 1)$ contains some $x_{n_1}$, $B(c; 1/2)$ contains some $x_{n_2}$ with $n_2 > n_1$, and if $x_{n_k}$ is chosen, $x_{n_{k+1}}$ is some point in $B(c; 1/k)$ with $n_{k+1} > n_k$. This is a subsequence converging to $c$.
+
+    To complete the proof we assume (3) and prove (1). We need two dumb things first:
+
+    **Proposition:** Sequentially compact metric spaces are totally bounded. *Proof:* If not there's some $r > 0$ such that $X$ is not covered by any finite number of balls of radius $r$. So we can pick $x_1 \in X$ arbitrarily, $x_2 \notin B(x_1; r)$, $x_3 \notin B(x_1; r) \cup B(x_2; r)$, and so on, indefinitely. If this sequence had a convergent subsequence with limit $c$ you'd be able to find two terms (infinitely many actually, but at least two) that are within $r/4$ of $c$, implying that terms are within $r/2$ of one another. This is baloney according to how the sequence was constructed.
+
+    **Proposition:** If $X$ is a sequentially compact metric space, any open cover $\mathcal{U}$ has some $r > 0$ such that for each $x \in X$, $B(x; r)$ is contained in a cover element. *Proof:* Assume the contrary, so that $\forall r$ there is some $x_r$ with $B(x_r; r)$ not contained in any single cover element. By sequential compactness there's some subsequence converging to a limit $c$. But $c$ is in some cover element, so there's a ball $B(c; \epsilon)$ contained in that cover element, so by convergence some tail sequence starting at $n_j$ is contained in $B(c; \epsilon/2)$. At some point the subsequence's terms $n_k$ are such that both a) $1/n_k$ is smaller than $\epsilon/2$ and b) $n_k > n_j$, so that $B(n_k; 1/n_k)$ is contained in $B(c; \epsilon)$ and hence in a cover element, contrary to our construction of the terms of $(x_n)$.
+
+    Now for the main event: If $X$ is sequentially compact and $\mathcal{U}$ any open cover for it, by the second proposition we can find an $r > 0$ with every $D_x := B(x; r)$ contained in some cover element. But by totally boundedness, finitely many $D_{x_1}, \ldots, D_{x_n}$ cover the space. So a finite number of cover elements contain these balls, and hence cover the space. This is a finite subcover and yayyyyy it's over.
