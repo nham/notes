@@ -35,9 +35,9 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
      - the interior of $S$
      - the boundary of $S$
      - the exterior of $S$
-    
 
-10. An **accumulation point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $S - x$. This definition is designed to exclude the **isolated points** of $S$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$. 
+
+10. An **accumulation point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $S - x$. This definition is designed to exclude the **isolated points** of $S$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$.
 
 11. Isolated points are by definition closure points, but they may either be interior points or boundary points depending on the set and the topology.
 
@@ -58,7 +58,11 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
     This implies that the closure is the disjoint union of the isolated points and the accumulation points.
 
 
-15. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior is empty. Equivalently, $S$ is dense if every non-empty open subset of $X$ contains an element of $S$, and nowhere dense if every non-empty open subset of $X$ contains an element of $X - S$.
+15. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior of its closure is empty.
+
+    Equivalently, $S$ is dense iff every non-empty open subset of $X$ contains an element of $S$: $S$ being dense is the same as every point of $X$ being a closure point, which is the same as every non-empty open set being the neighborhood of some closure point.
+
+    Also equivalently, $S$ is nowhere dense iff $X - clo(S)$ is empty: $S$ is nowhere dense iff $clo(S)$ has no interior iff $clo(S)$ is all boundary points of $clo(S)$ iff every open neighborhood around a point in $clo(S)$ intersects $X - clo(S)$ iff $X - clo(S)$ is dense in $X$ (by what was just proved).
 
 16. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
 
