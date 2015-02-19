@@ -25,3 +25,6 @@
 
      - the finite product of countable sets is countable
      - countable union of countable sets is countable
+
+
+5. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
