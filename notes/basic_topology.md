@@ -18,9 +18,13 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 4. It is straightforward to prove that open subsets are precisely the sets that are equal to their interiors. Analogously to this, we can *define* **closed subsets** to be those sets that are equal to their closures.
 
-5. It turns out that when you use the above definition, you can prove that a set is closed iff its complement is open. One can then prove, via DeMorgan's laws, that the collection of all closed sets is closed under arbitrary intersection, finite union, and contains both $\emptyset$ and $X$ (yes, $\emptyset$ and $X$ are simultaneously closed and open, a condition often called **clopen**).
+5. It turns out that when you use the above definition, you can prove that a set is closed iff its complement is open: a set $S$ is not closed iff it fails to contain a closure point iff $X - S$ contains a closure point of $S$ iff $X - S$ contains a non-interior point iff $X - S$ is not open
 
-6. Another characterization of closure and interior: interior of any set $S$ is the union of all open sets contained in $S$, while the closure of $S$ is the intersection of all closed sets that contain $S$. By these definitions, the interior is *the largest open set contained in $S$*, and the closure is *the smallest closed set containing $S$*.
+    One can then prove, via DeMorgan's laws, that the collection of all closed sets is closed under arbitrary intersection, finite union, and contains both $\emptyset$ and $X$ (yes, $\emptyset$ and $X$ are simultaneously closed and open, a condition often called **clopen**).
+
+6. Another characterization of closure and interior: interior of any set $S$ is the union of all open sets contained in $S$, while the closure of $S$ is the intersection of all closed sets that contain $S$. The former is immediate, the latter is proved by noting that any closure point of  $S$ is contained in a closed set $Z$ that contains $S$ (they are closure points of subsets of $Z$, hence of $Z$), and conversely that the closure of $S$ is a closed set containing $S$.
+
+    By these definitions, the interior is *the largest open set contained in $S$*, and the closure is *the smallest closed set containing $S$*.
 
 7. A **boundary point** of a set is a point that is neither in the interior of the set, nor in the interior of the complement of the set. Equivalently, every neighborhood of a boundary point intersects both $S$ and $X - S$. The **boundary** of a set $S$ is the collection of all boundary points of $S$, sometimes denoted $\partial S$.
 
