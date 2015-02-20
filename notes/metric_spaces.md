@@ -46,11 +46,9 @@ Related notes: [basic topology](basic_topology.html)
 
     These are all rational, so this is a sequence in $\mathbb{Q}$. This is certainly a Cauchy sequence. However, it does not converge in $\mathbb{Q}$ because $\sqrt{2}$ is not rational.
 
-6. Every Cauchy sequence with a convergent subsequence itself converges. To see this, let $(x_{n_k})$ be the convergent subsequence (with limit $a$) and let $\epsilon > 0$.
+6. Every Cauchy sequence with a convergent subsequence itself converges.
 
-     1. $(x_n)$ is Cauchy, so some tail sequence starting at, say, $N$, has all terms within $\epsilon/2$ of one another. 
-     2. It would suffice to find a term that is a) within the $\epsilon/2$ ball around $a$, and b) in the tail sequence of $(x_n)$ starting at $N$. Any such term would (by the triangle inequality) prove that all terms of $(x_n)$ starting at $N$ are within $\epsilon$ of $a$.
-     3. But there are infinitely many terms in the subsequence that are within $\epsilon/2$ of $a$, so surely there is one that comes after $N$.
+    To see this, note that if there's a convergent subsequence, then for every $\epsilon > 0$ there are infinitely many terms of the sequence that are within $\epsilon/2$ of some point $a$. But by Cauchy-ness there's always a point in the sequence after which all terms are within an $\epsilon/2$ of one another. So we can find some term $x_m$ such that a) $d(x_m, a) < \epsilon/2$, and b) d(x_m, x_n) < \epsilon/2$ for all terms $x_n$ in some tail sequence. By the triangle inequality, all terms of this tail sequence are within an $\epsilon$ of $a$.
 
 7. A metric space is **complete** if every Cauchy sequence converges. So in complete metric spaces, a sequence converges iff it is Cauchy. The standard example of a complete metric space is $\mathbb{R}$, which is complete pretty much by construction (in fact, one way of building the reals from the rationals is as equivalence classes of Cauchy sequences of rational numbers. This can be thought of as adding in all the missing limits for rational Cauchy sequences).
 
