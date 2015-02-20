@@ -44,13 +44,17 @@ title: "Topology: compact spaces"
 
     Essentially, the nature of the subspace topology allows us to pass easily between $X$-open covers and $A$-open covers.
 
-8. A space is **sequentially compact** if every infinite sequence has a convergent subsequence. If $M$ is either a second-countable Hausdorff space or a metric space, then the following 3 conditions are equivalent:
+8. A space is **sequentially compact** if every infinite sequence has a convergent subsequence. A space is **limit point compact** if every infinite subset of the space has a limit point in the space.
+
+9. Every compact space is limit point compact. Suppose $X$ is compact and $S$ is an infinite subset with no limit points in $X$. Then necessarily $S$ is closed (see basic topology notes), and so is a compact subset of $X$. Due to lack of limit points it consists entirely of isolated points, so each point in the set has a neighborhood disjoint from the other points. These collectively form an open cover of $S$, so by compactness there is a finite subcover. But each cover element contains only one point of $S$ and there are infinitely many points, a contradiction.
+
+9. If $M$ is either a second-countable Hausdorff space or a metric space, then the following 3 conditions are equivalent:
 
     1. $M$ is compact
-    2. every infinite subset of $M$ has an accumulation point in $M$
+    2. $M$ is limit point compact
     3. $M$ is sequentially compact
 
-    *Proof for metric spaces:* If $M$ is compact and some infinite subset $S \subseteq M$ has no accumulation point in $M$, $S$ is necessarily closed and hence compact. It also consists entirely of isolated points, so for each point we can find a neighborhood disjoint from the other points. This is an open cover of the space, so there's a finite subcover, which is straight-up nonsense since there are infinitely many points and each cover element contains only one point.
+    *Proof for metric spaces:* By the previous proposition (1) implies (2)
 
     We now prove (2) implies (3). If (2) holds and $M$ is not sequentially compact, some sequence $(x_n)$ has no convergent subsequence. There must be infinitely different values in the sequence, for if there were not you could extract an eventually constant (hence convergent) subsequence. By assumption the term set has an accumulation point $c$. Since this is a metric space, every open ball around the accumulation point contains infinitely many elements of the term set, so we construct a sequence inductively: $B(c; 1)$ contains some $x_{n_1}$, $B(c; 1/2)$ contains some $x_{n_2}$ with $n_2 > n_1$, and if $x_{n_k}$ is chosen, $x_{n_{k+1}}$ is some point in $B(c; 1/k)$ with $n_{k+1} > n_k$. This is a subsequence converging to $c$.
 
@@ -63,4 +67,4 @@ title: "Topology: compact spaces"
     Now for the main event: If $X$ is sequentially compact and $\mathcal{U}$ any open cover for it, by the second proposition we can find an $r > 0$ with every $D_x := B(x; r)$ contained in some cover element. But by totally boundedness, finitely many $D_{x_1}, \ldots, D_{x_n}$ cover the space. So a finite number of cover elements contain these balls, and hence cover the space. This is a finite subcover and yayyyyy it's over.
 
 
-9. Any compact metric space is complete. This is actually real easy to do using (8): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
+10. Any compact metric space is complete. This is actually real easy to do using (8): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.

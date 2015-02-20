@@ -41,7 +41,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
      - the exterior of $S$
 
 
-10. An **accumulation point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $S - x$. This definition is designed to exclude the **isolated points** of $S$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$.
+10. A **limit point** of a set $S$ is some point $x \in X$ such that every neighborhood of $x$ intersects $S - x$. This definition is designed to exclude the **isolated points** of $S$, which are points $x$ in $S$ such that some neighborhood $U$ of $x$ contains no other point of $S$ other than $x$.
 
 11. Isolated points are by definition closure points, but they may either be interior points or boundary points depending on the set and the topology.
 
@@ -51,15 +51,15 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     TODO: can we find a single topology where one set has an isolated boundary point, and another set has an isolated interior point? What about a single set that has isolated boundary and isolated interior points?
 
-12. Accumulation points are similarly closure points, but they may again either be interior points or boundary points.
+12. Limit points are similarly closure points, but they may again either be interior points or boundary points.
 
-    Take the example of $\mathbb{R}$ with the standard topology. Then the set $(-1, 1)$ has $1$ as an accumulation point that is a boundary point, and $0$ as an accumulation point that is an interior point.
+    Take the example of $\mathbb{R}$ with the standard topology. Then the set $(-1, 1)$ has $1$ as an limit point that is a boundary point, and $0$ as an limit point that is an interior point.
 
-13. (12) shows that accumulation points are not necessarily in the set, unlike isolated points. More generally, any boundary point of a set $A$ that is not contained in $A$ is necessarily an accumulation point. This means that a set without accumulation points must contain every boundary point, and so is closed.
+13. (12) shows that limit points are not necessarily in the set, unlike isolated points. More generally, any boundary point of a set $A$ that is not contained in $A$ is necessarily an limit point. This means that a set without limit points must contain every boundary point, and so is closed.
 
-14. Every closure point is either an isolated point or an accumulation point. If it's not in the set, it must be a boundary point and hence an accumulation point. If it's in the set, then it is either an accumulation point or an isolated point.
+14. Every closure point is either an isolated point or an limit point. If it's not in the set, it must be a boundary point and hence an limit point. If it's in the set, then it is either an limit point or an isolated point.
 
-    This implies that the closure is the disjoint union of the isolated points and the accumulation points.
+    This implies that the closure is the disjoint union of the isolated points and the limit points.
 
 
 15. A subset $S$ of a topological space $X$ is **dense** in $X$ if its closure is $X$, and **nowhere dense** in $X$ if its interior of its closure is empty.
