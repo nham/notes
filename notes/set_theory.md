@@ -28,3 +28,8 @@
 
 
 5. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
+
+
+6. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
+
+    But this allows you to **generate** an equivalence relation from any binary relation $R$ on a set. The generated eqrel is the smallest eqrel containing $R$.
