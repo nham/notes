@@ -19,7 +19,7 @@ Related notes: [basic topology](basic_topology.html)
     - $\bigcup \mathcal{B} = X$
     - for all $B, C \in \mathcal{B}$, for all $x \in B \cap C$, there is a $D \in \mathcal{B}$ with $x \in D \subseteq B \cap C$
 
-    By the way, the set $\mathcal{T}$ defined above is called the **induced topology**.
+    By the way, the set $\mathcal{T}$ defined above is called the **topology induced by the basis $\mathcal{B}$**.
 
 2. Here's one sufficient condition for when a collection of sets is a basis for some topology: if $(X, \mathcal{T})$ is a topological space and $\mathcal{C}$ is any collection of open subsets of $X$, then if for all $U \in \mathcal{T}$ and all $x \in U$ we have some $C \in \mathcal{C} with $x \in C \subseteq U$, then $\mathcal{C}$ is a basis that induces $\mathcal{T}$.
 
