@@ -30,7 +30,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     By definition, boundary points are closure points, so closed sets contain all their boundary points. In fact, any closure point that isn't a boundary point is necessarily an interior point. In other words, the closure is the disjoint union of the interior and the boundary.
 
-8. The boundary of any set is closed. The proof idea is that any closure point of the $\partial A$ must also be a boundary point of $A$. Let $b$ be such a point (a closure point of $\partial A$). Then every open neighborhood $U$ around $b$ intersects $\partial A$, so there's a point $x \in \partial A$. $x$ has some neighborhood $V$ contained in $U$ since $U$ is open, so $U$ intersects $A$ and $X - A$ since $V$ does. Since $U$ was arbitrary, we must have $b \in \partial A$.
+8. The boundary of any set is closed. *Proof:* every neighborhood $U$ of a closure point $c$ of $\partial A$ contains a boundary point $b$ of $A$, and so $U$ contains a neighborhood of $b$, which intersects $A$ and $X - A$, proving $U$ does as well.
 
 9. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It can be proved that this is always identical to $X - \text{clo}(S)$.
 
