@@ -16,20 +16,28 @@
 
     Surjectivity implies equality in the first case, and injectivity implies it in the second.
 
+3. If $f: X \to Y$ is a bijection then $f(U) = (f^{-1})^{pre}(U)$. Since by (2) we have that $f^{pre}(f(U)) = U$ and $f(f^{pre}(V)) = V$ for all $U \subseteq X$ and $V \subseteq Y$, we have that
 
-3. The product of arbitrary intersections w.r.t. some common index set is the intersection of products. This fact is needed to prove that the collection of products of open sets is a basis. The same is *not* true for unions though. Consider the case of singletons, $(a \times b) \cup (c \times d) = \{(a, b), (c, d)\} \neq (a \cup b) \times (c \cup d)$. The latter contains $(b, c)$, for example. The best we can do here is (probably?):
+    $$f^{pre}(f(U)) = f^{-1}((f^{-1})^{pre}(U)$$
+
+    for all $U \subseteq X$ whenver $f$ is bijective.
+
+    This comes up in the proof that $f: X \to Y$ is a homeomorphism iff $f$ is bijective and $U$ is open in $Y$ iff $f^{pre}(U)$ open in $X$ for all $U \subseteq Y$.
+
+
+4. The product of arbitrary intersections w.r.t. some common index set is the intersection of products. This fact is needed to prove that the collection of products of open sets is a basis. The same is *not* true for unions though. Consider the case of singletons, $(a \times b) \cup (c \times d) = \{(a, b), (c, d)\} \neq (a \cup b) \times (c \cup d)$. The latter contains $(b, c)$, for example. The best we can do here is (probably?):
 
     $$(\bigcup_i (S_i \times T) = (\bigcup_i S_i) \times T$$
 
-4. Some facts about countability stated without proof (for now):
+5. Some facts about countability stated without proof (for now):
 
      - the finite product of countable sets is countable
      - countable union of countable sets is countable
 
 
-5. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
+6. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
 
 
-6. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
+7. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
 
     But this allows you to **generate** an equivalence relation from any binary relation $R$ on a set. The generated eqrel is the smallest eqrel containing $R$.

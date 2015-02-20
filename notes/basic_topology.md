@@ -95,10 +95,18 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
     If $\mathcal{S}, \mathcal{T}$ are two topologies on $X$, then $\mathcal{S}$ is finer than $\mathcal{T}$ iff the identity on $X$ is continuous when the domain has topology $\mathcal{S}$ and the codomain has topology $\mathcal{T}$. (This follows immediately from the definition of continuity). Intuitively, if the codomain topology is finer, then the domain topology lacks the necessary "precision" needed for the output to be kept within any neighborhood in the codomain.
 
 
-20. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$. A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+20. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$.
+
+    A few simple examples of continuous maps are the **identity map** on any topological space, and any constant map (the pre-image of any set under a constant map is either the whole space or the empty set).
+
+21. A map $f: X \to Y$ is a homeomorphism iff $f$ is bijective and $U$ is open in $Y$ iff $f^{pre}(U)$ is open in $X$ for all $U$.
+
+    If $f$ is a homeomorphism, then $f^{pre}(U) open in $X$ implies that $g^{pre}(f^{pre}(U) = U$, where $g := f^{-1}$, since $g^{pre}(S) = f(S)$ for all $S \subseteq X$ (and since $f(f^{pre}(S)) = S$ due to bijectivity).
+
+    Conversely, assuming the latter condition we need to prove that $g := f^{-1}$ is continuous. Similar manipulations prove it.
 
 
-21. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
+22. We can define the **convergence** of sequences in a topological space as follows: $(x_n)$ converges to $a \in  X$ when every neighborhood of $a$ contains all but finitely many terms of the sequence. This definition is not generally useful since limits are not unique in general topological spaces. For example, in the three-point space depicted by
 
     ![three point topological space with non-unique limits](non_unique_limits.png)
 
@@ -106,6 +114,6 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
-22. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
+23. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
 
     Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
