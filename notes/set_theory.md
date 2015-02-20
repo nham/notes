@@ -41,3 +41,8 @@
 7. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
 
     But this allows you to **generate** an equivalence relation from any binary relation $R$ on a set. The generated eqrel is the smallest eqrel containing $R$.
+
+
+8. For any function $f: X \to Y$, $U \subseteq X$ is said to be **saturated with respect to $f$** if $U = f^{pre}(f(U)$. This means that the only points that $f$ maps into $f(U)$ are points in $U$.
+
+    A set $U$ is saturated w.r.t. $f$ iff $U$ is a union of fibers. *Proof:* $U$ being saturated clearly implies that it's a union of the fibers of points in $f(U)$. Conversely, if $U$ is not saturated, there's at least one point $x \notin U$ such that $f(x) \in f(U)$, so the fiber of $f(x)$ is not contained in $U$, proving $U$ is not a union of fibers.
