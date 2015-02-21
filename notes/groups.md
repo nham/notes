@@ -54,3 +54,9 @@
     where $\phi^{pre}(\phi(g))$ is the fiber of $\phi(g)$. We have $\phi(gx) = \phi(g)$ for all $x \in ker \phi$, and if $\phi(a) = \phi(g)$, then $g^{-1} a$ is in the kernel too, so $a \in g ker \phi$. The same proof holds for the other coset, so $ker \phi$ is normal.
 
 12. The fundamental group homomorphism theorem (what we've been working towards this whole time) is that any group homomorphism $\phi: G \to H$ gives an isomorphism between the image of $\phi$ and the quotient group $G / ker \phi$. This is actually proved from the last proposition, where we proved that the cosets of the kernel were exactly the fibers of the homomorphism.
+
+13. The **symmetric group** on a set $X$ is the collection of all bijections $X \to X$. We denote this $Sym X$.
+
+14. A **group action** of a group $G$ on some set $X$ is a homomorphism $G \to Sym X$.
+
+15. If $G$ is a group and $\phi$ a group action on $X$, the **stabilizer subgroup** or **isotropy subgroup** of $x \in X$ is the collection of group elements whose maps fix $x$. It's a subgroup because if $g, h$'s maps fix $x$, their composition, which is $gh$'s map, does too, and also $g^{-1}$'s map, which is the inverse of $g$'s map, also fixes $x$.
