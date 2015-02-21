@@ -82,3 +82,8 @@ Related notes: [basic topology](basic_topology.html)
 14. Excuse me while I shove this in here. A subset $A$ of a metric space is **totally bounded** if for every $\epsilon > 0$ a finite number of open balls of radius $\epsilon$ cover $A$. Every totally bounded set is bounded since there are points $x_1, \ldots, x_n$ that are the centers of balls of radius $1$ that cover the space, so every point is within $max \{1, d(x_1, x_2) + 1, \ldots, d(x_1, x_n) + 1\}$ of $x_1$ by the triangle inequality.
 
     For an example of a bounded set that is not totally bounded, consider any infinite subset of a metric space under the discrete metric. The set is contained in any ball of radius $2$, but every ball of radius $1/2$ contains only a single point, and so no finite collection of them cover the set.
+
+
+15. Here's a sequential characterization of closed subsets that are useful: a subset $S$ of a metric space is closed iff every sequence in $S$ that converges in $X$ has its limit in $S$.
+
+    The proof: If $S$ is closed, the limit of any sequence in $S$ is a closure point of the term set, so the limit must be contained in $S$. Conversely, if $S$ is not closed, it lacks a closure point $a$. We can build a sequence in $S$ that converges to $a$ by picking points in $S$ that are in $B(a; 1)$, $B(a; 1/2)$, $B(a; 1/3)$, $\ldots$, which all must exist because $a$ is a closure point.

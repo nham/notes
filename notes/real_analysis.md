@@ -52,3 +52,13 @@ Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower 
     $$|\frac{f(x)}{g(x)}| \leq C$$
 
     for all $x$ in some neighborhood. So the ratio of the functions' output is bounded by some constant. It's not that it *is* constant, it's that it's *no more than constant*.
+
+11. The "peak point lemma" says that any sequence in $\mathbb{R}$ has a monotone subsequence. For any sequence $(x_n)$ let us say that $x_m$ is a "peak term" if it acts as an upper bound for the terms that follow ($x_m \geq x_n$ for all $n > m$). Then any sequence has either infinitely many or finitely many peak terms.
+
+    If there are infinitely many, we can form a subsequence out of them that must be monotone non-increasing. If there are finitely many of them. every term after the last peak term is strictly dominated by some term that comes later (since they all must fail to be peak terms), so we can find a monotone increasing subsequence.
+
+12. When $(x_n)$ is bounded, the peak point lemma has an interesting consequence: we have a bounded, monotone subsequence, hence convergent subsequence by the monotone convergence theorem. In other words, we have just proved the **Bolzano-Weieirstrass** theorem for $\mathbb{R}$: every bounded sequence has a convergent subsequence.
+
+13. What's the point of Bolzano-Weierstrass? Seems like a weird thing to care about on the surface, but this has to do with sequential compactness. For every closed, bounded subset $A$ of $\mathbb{R}$, every sequence in $A$ has a convergent subsequence. But $A$ must also contain the limit of the convergent subsequence since it is closed. In other words, $A$, as a subspace of $\mathbb{R}$, is sequentially compact.
+
+14. In the topology notes we proved sequential compactness iff compactness, and we proved that a) compact subsets of Hausdorff spaces are closed and b) compact subsets of metric spaces are bounded. So what we really have is that subset of $\mathbb{R}$ are compact iff they are closed and bounded.
