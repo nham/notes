@@ -57,8 +57,14 @@ Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower 
 
     If there are infinitely many, we can form a subsequence out of them that must be monotone non-increasing. If there are finitely many of them. every term after the last peak term is strictly dominated by some term that comes later (since they all must fail to be peak terms), so we can find a monotone increasing subsequence.
 
-12. When $(x_n)$ is bounded, the peak point lemma has an interesting consequence: we have a bounded, monotone subsequence, hence convergent subsequence by the monotone convergence theorem. In other words, we have just proved the **Bolzano-Weieirstrass** theorem for $\mathbb{R}$: every bounded sequence has a convergent subsequence.
+12. When $(x_n)$ is bounded, the peak point lemma has an interesting consequence: we have a bounded, monotone subsequence, hence convergent subsequence by the monotone convergence theorem. In other words, we have just proved the **Bolzano-Weierstrass** theorem for $\mathbb{R}$: every bounded sequence has a convergent subsequence.
 
 13. What's the point of Bolzano-Weierstrass? Seems like a weird thing to care about on the surface, but this has to do with sequential compactness. For every closed, bounded subset $A$ of $\mathbb{R}$, every sequence in $A$ has a convergent subsequence. But $A$ must also contain the limit of the convergent subsequence since it is closed. In other words, $A$, as a subspace of $\mathbb{R}$, is sequentially compact.
 
 14. In the topology notes we proved sequential compactness iff compactness, and we proved that a) compact subsets of Hausdorff spaces are closed and b) compact subsets of metric spaces are bounded. So what we really have is that subset of $\mathbb{R}$ are compact iff they are closed and bounded.
+
+15. Can we extend the Bolzano-Weierstrass theorem to $\mathbb{R}^n$? If so we would have that subsets of $\mathbb{R}^n$ are compact iff they are closed and bounded (all the logic we used above was true for all metric spaces/topological spaces and not specific to $\mathbb{R}$).
+
+    It turns out that we can! See the real inner product space notes and metric space notes for full details, but we have that $(x_n) \to c$ \in $\mathbb{R}^n$ iff each $(x_n^i) \to c_i$ in \mathbb{R}$.
+
+    So if $(x_n)$ is bounded in $\mathbb{R}^n$, then it is contained in some open box in $\mathbb{R}^n$ (by topological equivalence of Euclidean and sup norms), so the sequence $(x_n^1)$ is bounded in $\mathbb{R}$ and hence has some convergent subsequence. If we take this subsequence of the original $(x_n)$, we now have a subsequence of $(x_n)$ whose first component-sequence converges to some $c_1$. Repeat the procedure with each of the other components. The result is a subsequence for which each component sequence converges in $\mathbb{R}$, so the whole sequence converges in $\mathbb{R}^n$.
