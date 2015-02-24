@@ -71,7 +71,16 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     Equivalently, $S$ is dense iff every non-empty open subset of $X$ contains an element of $S$: $S$ being dense is the same as every point of $X$ being a closure point, which is the same as every non-empty open set being the neighborhood of some closure point.
 
-    Also equivalently, $S$ is nowhere dense iff $X - clo(S)$ is empty: $S$ is nowhere dense iff $clo(S)$ has no interior iff $clo(S)$ is all boundary points of $clo(S)$ iff every open neighborhood around a point in $clo(S)$ intersects $X - clo(S)$ iff $X - clo(S)$ is dense in $X$ (by what was just proved).
+    Also equivalently, $S$ is nowhere dense in $X$ iff $X - clo(S)$ is dense in $X$: $S$ is nowhere dense iff $clo(S)$ has no interior iff $clo(S)$ is all boundary points of $clo(S)$. Clearly
+
+    $$X = clo S \sqcup X - clo S$$
+
+    and also
+
+    $$clo(X - clo S) = \partial(X - clo S) \sqcup int(X - clo S) = \partial clo S \sqcup X - clo S$$
+
+    since the boundary of a set and its complement are equal and since the interior of a complement is the complement of the closure (and since $clo(clo S) = clo S$). So $clo(X - clo S) = X$ iff $clo S = \partial clo S$.
+
 
 18. Why isn't "nowhere dense" defined to be sets with empty interior? Consider $\mathbb{R}$ with the standard topology. The rationals have empty interior, so the set
 
