@@ -8,7 +8,7 @@
 
     That is, we have a disconnection of $X$, contrary to assumption.
 
-3. We can define an equivalence relation on points of $X$ by $x \sim y$ iff there is a connected subset of $X$ containing both $x$ and $y$. It is obviously reflexive (singletons are connected) and symmetric. If $x \sim y$ and $y \sim z$, there is a $U$ containing $x, y$ and a $V$ containing $y, z$, both connected subsets of $X$. Then $W := U \cup V$ is also connected: if not, it has a disconnection $A, B$. If $A$ and $B$ both have non-empty intersections with $U$, then $A \cap U, B \cap U$ is a disconnection of $U$, which is impossible. The same goes for $V$. So we must have (WLOG) $A = U$, $B = V$, which contradicts that $U$ and $V$ share the point $y$.
+3. We can define an equivalence relation on points of $X$ by $x \sim y$ iff there is a connected subset of $X$ containing both $x$ and $y$. It is obviously reflexive (singletons are connected) and symmetric. If $x \sim y$ and $y \sim z$, there is a $U$ containing $x, y$ and a $V$ containing $y, z$, both connected subsets of $X$. Then $U \cup V$ is also connected: if not, it has a disconnection $A, B$. If $A$ and $B$ both have non-empty intersections with $U$, then $A \cap U, B \cap U$ is a disconnection of $U$, which is impossible. The same goes for $V$. So we must have (WLOG) $A = U$, $B = V$, which contradicts that $U$ and $V$ share the point $y$.
 
     So $\sim$ is an equivalence relation, and the equivalence classes are called the **connected components** of $X$. Properties of the components include:
 
