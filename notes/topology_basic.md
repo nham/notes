@@ -86,7 +86,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     $$A := \{x \in \mathbb{Q} : -1 < x < 1\}$$
 
-    also has empty interior (considered as a subset of $\mathbb{R}$). But $clo(A) = (-1, 1)$, so clearly $X - clo(A) = (-\infty, 1) \cup (1, \infty)$ is not dense in $\mathbb{R}$
+    also has empty interior (considered as a subset of $\mathbb{R}$). But $clo(A) = [-1, 1]$, so clearly $X - clo(A) = (-\infty, 1) \cup (1, \infty)$ is not dense in $\mathbb{R}$
 
 
 19. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
