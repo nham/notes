@@ -4,6 +4,7 @@
 
      - $f^{pre}(U) = f^{pre}(A)$ and $f^{pre}(V) = f^{pre}(B)$ are both open by continuity
      - they must be disjoint since $A$ and $B$ are.
+     - they are non-empty since $A$ and $B$ are, again
      - they cover $X$ since $A$ and $B$ cover the image.
 
     That is, we have a disconnection of $X$, contrary to assumption.
