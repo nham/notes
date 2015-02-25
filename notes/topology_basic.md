@@ -18,7 +18,9 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 5. It is straightforward to prove that open subsets are precisely the sets that are equal to their interiors. Analogously to this, we can *define* **closed subsets** to be those sets that are equal to their closures.
 
-6. It turns out that when you use the above definition, you can prove that a set is closed iff its complement is open: a set $S$ is not closed iff it fails to contain a closure point iff $X - S$ contains a closure point of $S$ iff $X - S$ contains a non-interior point iff $X - S$ is not open
+6. It turns out that when you use the above definition, you can prove that a set is closed iff its complement is open: a set $S$ is not closed iff it fails to contain a closure point iff $X - S$ contains a closure point of $S$ iff $X - S$ contains a non-interior point iff $X - S$ is not open.
+
+    (Another proof is the closure-interior-complement theorem: $X - clo(S) = int(X - S)$, so $S = clo(S)$ implies $X - S = int(X -S)$, while $X - S = int(X - S)$ implies $X - clo(S) = X - S$)
 
     One can then prove, via DeMorgan's laws, that the collection of all closed sets is closed under arbitrary intersection, finite union, and contains both $\emptyset$ and $X$ (yes, $\emptyset$ and $X$ are simultaneously closed and open, a condition often called **clopen**).
 
@@ -37,7 +39,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 10. The boundary of any set is closed. *Proof:* every neighborhood $U$ of a closure point $c$ of $\partial A$ contains a boundary point $b$ of $A$, and so $U$ contains a neighborhood of $b$, which intersects $A$ and $X - A$, proving $U$ does as well.
 
-11. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It can be proved that this is always identical to $X - \text{clo}(S)$.
+11. The **exterior** of a set $S$ is defined to be $\text{int}(X - S)$. It is easy to see that the exterior of $S$ is identically the complement of the closure of $S$: the points that fail to be a closure point of $S$ are exactly the points with neighborhoods contained in $X - S$, i.e. the exterior of $S$.
 
     From this we have: given any set $S \subseteq X$, $X$ can always be partitioned into three disjoint sets:
 
