@@ -1,7 +1,7 @@
 ---
 title: Metric spaces
 ---
-Related notes: [basic topology](basic_topology.html)
+Related notes: All the topology notes.
 
 1. A metric space is a pair $(X, d)$ where $d: X^2 \to \mathbb{R}$ is a function (called a **metric**) that obeys
 
@@ -90,3 +90,36 @@ Related notes: [basic topology](basic_topology.html)
 16. Here's a sequential characterization of closed subsets that are useful: a subset $S$ of a metric space is closed iff every sequence in $S$ that converges in $X$ has its limit in $S$.
 
     The proof: If $S$ is closed, the limit of any sequence in $S$ is a closure point of the term set, so the limit must be contained in $S$. Conversely, if $S$ is not closed, it lacks a closure point $a$. We can build a sequence in $S$ that converges to $a$ by picking points in $S$ that are in $B(a; 1)$, $B(a; 1/2)$, $B(a; 1/3)$, $\ldots$, which all must exist because $a$ is a closure point.
+
+17. A function $f: X \to Y$ between metric spaces is **uniformly continuous** if for every $\epsilon > 0$, there's a $\delta > 0$ such that for *all* $x \in X$, $f(B(x; \delta)) \subseteq B(f(x); \epsilon)$. The difference from mere continuity is that the same $\delta$ works for *every $x$* in uniform continuity, whereas $\delta$ is dependent on $x$ under continuity.
+
+18. A function $f: X \to Y$ between metric spaces is **Lipschitz continuous** with **Lipschitz constant $K \geq 0$** when $d_Y(f(a), f(b)) \leq K d_X(a, b)$ for all $a, b \in X$.
+
+19. Every Lipschitz continuous map is uniformly continuous, since for any $\epsilon$ and any $x \in X$, if $d_X(a, x) < \epsilon/K$ then $d_Y(f(a), f(x)) < \epsilon$.
+
+20. A **contraction map** is any Lipschitz continuous map where the domain and the codomain are equal and the Lipschitz constant $K$ has $0 \leq K < 1$.
+
+21. If $X, Y$ are metric spaces, $X$ compact and $f: X \to Y$ continuous, then $f$ must additionally be uniformly continuous. *Proof:* Since $f$ is continuous, for every $\epsilon$ and $x \in X$ there's a $\delta_x$ such that
+
+    $$f[B(x; \delta_x)] \subseteq B(f(x); \epsilon / 2)$$
+
+    If we now consider the collection of balls $B(x; \delta_x / 2)$, this is an open cover of $X$, so by compactness a finite number of them $B(x_i; \delta_{x_i} / 2)$ cover $X$. Consider defining
+
+    $$\delta := \min\{ \delta_{x_i} : 1 \leq i \leq n\}$$
+
+    Now for any $a \in X$, $a$ is in some $B(x_i; \delta_{x_i} / 2)$ so $d(a, x_i) < \delta_{x_i} / 2$ \leq \delta_{x_i} - \delta$, which proves (see (23)) $B(a; \delta)$ is contained in $B(x_i; \delta_{x_i})$.
+
+    This establishes that for all $y \in B(a; \delta)$, we have $d(f(a), f(x) < \epsilon / 2$ and $d(f(y), f(x)) < \epsilon / 2$, so by the triangle inequality $d(f(y), f(x)) < \epsilon$. This proves uniform continuity.
+
+
+22. Two open balls $B(x; r)$ and $B(y; s)$ are disjoint when $r+s \leq d(x,y)$. This is because
+
+    $$d(x,y) \leq d(x, a) + d(a, y)$$
+
+    for any $a$, so if there were some $a$ in both balls we'd have $d(x, y) < r + s$.
+
+23. One open ball $B(x; r)$ is contained in another $B(y; s)$ when $d(x,y) \leq s - r$. We reason again by the triangle inequality: for all $a \in B(x; r)$, we have
+
+    $$d(y,a) < r + d(x,y)$$
+
+    So the condition just stated suffices.
