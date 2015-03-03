@@ -8,7 +8,7 @@ title: "Topology: subspaces"
 
 2. The subspace topology on $A \subseteq X$ obeys what Lee calls the "characteristic property" of the subspace, which is that any map $f: Y \to A$ (where $Y$ is some topological space) is continuous iff $\iota_A \circ f$ is continuous. If $f$ is continuous, $\iota_A \circ f$ certainly must be as well since composition of continuous functions is continuous. Conversely, if $\iota_A \circ f$ is continuous, then for any $U$ open in $A$, $U = A \cap V$ for some $V$ open in $X$, so $(\iota_A \circ f)^{pre}(V) = f^{pre}(U)$ is also open in $Y$, proving $f$ is continuous.
 
-    Presumably Lee calls it the "characteristic topology" because the subspace topology is the *unique* topology on $A$ that has this property. If $A$ equipped with some topology $\mathcal{S}$ has the property that for any $Y$, $f: Y \to A$ is continuous iff $\iota_A \circ f$, by letting $f$ be the identity on $A$ (with same topology $\mathcal{S}$), we can see that $\iota_A$ is continuous, so $\mathcal{S}$ is finer than the subspace topology by (1). 
+    Presumably Lee calls it the "characteristic property" because the subspace topology is the *unique* topology on $A$ that has this property. If $A$ equipped with some topology $\mathcal{S}$ has the property that for any $Y$, $f: Y \to A$ is continuous iff $\iota_A \circ f$, by letting $f$ be the identity on $A$ (with same topology $\mathcal{S}$), we can see that $\iota_A$ is continuous, so $\mathcal{S}$ is finer than the subspace topology by (1).
 
     Conversely, consider $\phi: A \to A_S$, where $A_S$ is denoting $A$ with the topology $\mathcal{S}$ (this is technically an abuse of notation/nonsense, but it is suggestive!) and $A$ just denotes $A$ with the subspace topology. Then $\iota_A \circ \phi = \iota_A$, which is certainly continuous because $A$ is a subspace. By the characteristic property of $(A, \mathcal{S})$, this means $\phi$ is continuous, which implies (see basic topology notes) that the subspace topology is finer than $\mathcal{S}$. In other words, $\mathcal{S}$ *is* the subspace topology.
 
@@ -26,19 +26,19 @@ title: "Topology: subspaces"
     The converse is obviously true as well.
 
 
-4. Above we've proved that the inclusion of a subspace into its superspace is continuous. It's also clearly injective, and what's more if we restrict the codomain to the image we just get the identity map on $A$. So the inclusion defined on a subspace is actually a topological embedding.
+5. Above we've proved that the inclusion of a subspace into its superspace is continuous. It's also clearly injective, and what's more if we restrict the codomain to the image we just get the identity map on $A$. So the inclusion defined on a subspace is actually a topological embedding.
 
-5. The restriction $f|S: S \to Y$ of any continuous map $f: X \to Y$ to a subset $S \subseteq X$ is still continuous due $(f|S)^{pre}(V) = f^{pre}(V) \cap S$, which is open by definition of the subspace.
+6. The restriction $f|S: S \to Y$ of any continuous map $f: X \to Y$ to a subset $S \subseteq X$ is still continuous due $(f|S)^{pre}(V) = f^{pre}(V) \cap S$, which is open by definition of the subspace.
 
-6. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
+7. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
 
-7. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
+8. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
 
     - the intersection of two open/closed sets is again open/closed
     - the subspace's open/closed sets are intersections of open/closed sets in $X$ with $A$
 
 
-8. A question arises: If $X$ is some space, and $A \subseteq B$ are two subsets of $X$, then is the subspace topology on $A$ relative to (the subspace topology on) $B$ the same as the subspace topology on $A$ relative to $X$?
+9. A question arises: If $X$ is some space, and $A \subseteq B$ are two subsets of $X$, then is the subspace topology on $A$ relative to (the subspace topology on) $B$ the same as the subspace topology on $A$ relative to $X$?
 
     The subspace topology relative to $X$ is all open sets of $X$ intersected with $A$. The subspace topology relative to $B$ is all open sets of $B$ intersected with $A$. But the open sets of $B$ are open sets of $X$ intersected with $B$. So they're the same since
 
@@ -48,7 +48,7 @@ title: "Topology: subspaces"
 
     This means that if $B$ is any subspace of $X$, any subspace of $B$ is also a subspace of $X$.
 
-9. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
+10. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
 
      - $B_1, \ldots, B_n$ is a finite closed (w.r.t. $X$) cover of $X$
      - $\{B_i\} is an open (w.r.t. $X$) cover of $X$
@@ -69,6 +69,4 @@ title: "Topology: subspaces"
 
     which, in the case of open $U$, is a union of open sets, hence open in $X$.
 
-10. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
-
-
+11. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
