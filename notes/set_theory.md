@@ -45,24 +45,26 @@
 
 9. A set $X$ is **countable** if it is bijective with a subset of $\mathbb{N}$. You might also say countable = finite or countably infinite.
 
-10. Equivalent characterizations:
+10. The **axiom of countable choice** states that for any $X$ and any surjective $f: X \to \mathbb{N}$, there is a $g: \mathbb{N} \to X$ such that $f \circ g$ is the identity. (In other words, $g$ is a section for $f$. In other other words, $g$ is a function that assigns to each $n$ some element of its fiber under $f$).
+
+11. Equivalent characterizations:
 
     - a set $X$ is countable
     - there's an injective map $X \to \mathbb{N}$.
     - there's a surjective map $\mathbb{N} \to X$.
 
-    $X$ countable clearly implies both. If $f: X \to \mathbb{N}$ is injective, just restrict $f$ (on the codomain side) to it's image to obtain a bijection with a subset of $\mathbb{N}$. If $g: \mathbb{N} \to X$ is surjective, pick one element from each fiber of $g$ (this requires axiom of countable choice?), collect them all in a set $S \subseteq \mathbb{N}$, and now we have a bijection by restricting $g$ to $S$.
+    $X$ countable clearly implies both. If $f: X \to \mathbb{N}$ is injective, just restrict $f$ (on the codomain side) to it's image to obtain a bijection with a subset of $\mathbb{N}$. If $g: \mathbb{N} \to X$ is surjective, pick one element from each fiber of $g$ (axiom of countable choice), collect them all in a set $S \subseteq \mathbb{N}$, and now we have a bijection by restricting $g$ to $S$.
 
-11. The integers $\mathbb{Z}$ are countable: the function $f: \mathbb{Z} \to \mathbb{N}$ defined by $f(0) = 0$, $f(n) = 2n - 1$ for positive $n$ and $f(m) = -2m$ for negative $m$ is a bijection (the image of the positive integers is the odd naturals, the image of the negative integers is the positive even naturals).
+12. The integers $\mathbb{Z}$ are countable: the function $f: \mathbb{Z} \to \mathbb{N}$ defined by $f(0) = 0$, $f(n) = 2n - 1$ for positive $n$ and $f(m) = -2m$ for negative $m$ is a bijection (the image of the positive integers is the odd naturals, the image of the negative integers is the positive even naturals).
 
-12. The rationals $\mathbb{Q}$ are countable. Without getting too bogged down with technicalities: we know $\mathbb{Z}$ is countable, so there's an injective $f: \mathbb{Z} \to \mathbb{N}$. So we can prove $\mathbb{Z} \times \mathbb{Z}$ is countable by definition of the function $g(i, j) := 2^{f(i)} 3^{f(j)}. This is injective by basic number theory: integers have unique prime factorizations, so if $g(i, j) = g(a, b)$, then $f(i) = f(a)$ and $f(j) = f(b)$, which means $(i, j) = (a, b)$ by injectivity of $f$.
+13. The rationals $\mathbb{Q}$ are countable. Without getting too bogged down with technicalities: we know $\mathbb{Z}$ is countable, so there's an injective $f: \mathbb{Z} \to \mathbb{N}$. So we can prove $\mathbb{Z} \times \mathbb{Z}$ is countable by definition of the function $g(i, j) := 2^{f(i)} 3^{f(j)}. This is injective by basic number theory: integers have unique prime factorizations, so if $g(i, j) = g(a, b)$, then $f(i) = f(a)$ and $f(j) = f(b)$, which means $(i, j) = (a, b)$ by injectivity of $f$.
 
     Now we just show there's an injective map $\mathbb{Q} \to \mathbb{Z}^2$. For any rational $q$, just pick one of the pairs of integers $(m, n)$ such that $m/n = q$. This is injective by definition. Now compose this with the above map to get an injective map $\mathbb{Q} \to \mathbb{N}$.
 
     We just need an injection $\mathbb{Q} \to \mathbb{N}$. First label the rational $0$ with integer $0$. Now label rationals formed by pairs of positive integers odd naturals, so $1/1, 1/2, 2/1, 1/3, 2/2, 3/1, \ldots$ with odds $1, 3, 5, 7, 9, 11, \ldots$, and similarly label $-1/1, -1/2, -2/1, -1/3, -2/2, -3/1, \ldots$ with $2, 4, 6, 8, 10, 12, \ldots$. The injective map can be constructed by, for all $q \in \mathbb{Q}$, reduce $q$ to lowest terms and map it to the corresponding label.
 
 
-13. Some facts about countability stated without proof (for now):
+14. Some facts about countability stated without proof (for now):
 
      - the finite product of countable sets is countable
      - countable union of countable sets is countable
