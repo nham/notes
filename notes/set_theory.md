@@ -31,20 +31,38 @@
 
     $$(\bigcup_i (S_i \times T) = (\bigcup_i S_i) \times T$$
 
-6. Some facts about countability stated without proof (for now):
-
-     - the finite product of countable sets is countable
-     - countable union of countable sets is countable
+6. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
 
 
-7. $(A - B) \cap C = A \cap C - B \cap C$, because the left side says "in $A$, not in $B$, and in $C$" and the right side says "in $A and $C$, but not in $B$ and $C$", are the same.
-
-
-8. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
+7. I managed to study math for years without realizing the following: given any binary relation $R$ on $X$, the intersection of all equivalence relations containing $R$ is an equivalence relation. It's actually trivial to verify, so the proof is omitted here. Think about it.
 
     But this allows you to **generate** an equivalence relation from any binary relation $R$ on a set. The generated eqrel is the smallest eqrel containing $R$.
 
 
-9. For any function $f: X \to Y$, $U \subseteq X$ is said to be **saturated with respect to $f$** if $U = f^{pre}(f(U)$. This means that the only points that $f$ maps into $f(U)$ are points in $U$.
+8. For any function $f: X \to Y$, $U \subseteq X$ is said to be **saturated with respect to $f$** if $U = f^{pre}(f(U)$. This means that the only points that $f$ maps into $f(U)$ are points in $U$.
 
     A set $U$ is saturated w.r.t. $f$ iff $U$ is a union of fibers. *Proof:* $U$ being saturated clearly implies that it's a union of the fibers of points in $f(U)$. Conversely, if $U$ is not saturated, there's at least one point $x \notin U$ such that $f(x) \in f(U)$, so the fiber of $f(x)$ is not contained in $U$, proving $U$ is not a union of fibers.
+
+9. A set $X$ is **countable** if it is bijective with a subset of $\mathbb{N}$. You might also say countable = finite or countably infinite.
+
+10. Equivalent characterizations:
+
+    - a set $X$ is countable
+    - there's an injective map $X \to \mathbb{N}$.
+    - there's a surjective map $\mathbb{N} \to X$.
+
+    $X$ countable clearly implies both. If $f: X \to \mathbb{N}$ is injective, just restrict $f$ (on the codomain side) to it's image to obtain a bijection with a subset of $\mathbb{N}$. If $g: \mathbb{N} \to X$ is surjective, pick one element from each fiber of $g$ (this requires axiom of countable choice?), collect them all in a set $S \subseteq \mathbb{N}$, and now we have a bijection by restricting $g$ to $S$.
+
+11. The integers $\mathbb{Z}$ are countable: the function $f: \mathbb{Z} \to \mathbb{N}$ defined by $f(0) = 0$, $f(n) = 2n - 1$ for positive $n$ and $f(m) = -2m$ for negative $m$ is a bijection (the image of the positive integers is the odd naturals, the image of the negative integers is the positive even naturals).
+
+12. The rationals $\mathbb{Q}$ are countable. Without getting too bogged down with technicalities: we know $\mathbb{Z}$ is countable, so there's an injective $f: \mathbb{Z} \to \mathbb{N}$. So we can prove $\mathbb{Z} \times \mathbb{Z}$ is countable by definition of the function $g(i, j) := 2^{f(i)} 3^{f(j)}. This is injective by basic number theory: integers have unique prime factorizations, so if $g(i, j) = g(a, b)$, then $f(i) = f(a)$ and $f(j) = f(b)$, which means $(i, j) = (a, b)$ by injectivity of $f$.
+
+    Now we just show there's an injective map $\mathbb{Q} \to \mathbb{Z}^2$. For any rational $q$, just pick one of the pairs of integers $(m, n)$ such that $m/n = q$. This is injective by definition. Now compose this with the above map to get an injective map $\mathbb{Q} \to \mathbb{N}$.
+
+    We just need an injection $\mathbb{Q} \to \mathbb{N}$. First label the rational $0$ with integer $0$. Now label rationals formed by pairs of positive integers odd naturals, so $1/1, 1/2, 2/1, 1/3, 2/2, 3/1, \ldots$ with odds $1, 3, 5, 7, 9, 11, \ldots$, and similarly label $-1/1, -1/2, -2/1, -1/3, -2/2, -3/1, \ldots$ with $2, 4, 6, 8, 10, 12, \ldots$. The injective map can be constructed by, for all $q \in \mathbb{Q}$, reduce $q$ to lowest terms and map it to the corresponding label.
+
+
+13. Some facts about countability stated without proof (for now):
+
+     - the finite product of countable sets is countable
+     - countable union of countable sets is countable
