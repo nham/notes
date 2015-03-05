@@ -36,6 +36,8 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
 10. We have defined closed subsets to be those that are equal to their closures. But the closure is the disjoint union of the interior and the boundary, and sets always contain their interiors. So a subset is closed iff it contains its boundary.
 
+    Similarly, open subsets are those equal to their interiors, and boundary points are by definition not interior points. So open sets contain no boundary points, and a set containing no boundary points contains only interior points.
+
 11. We are now in a position to not only prove, but intuitively *see* that a set $S$ is closed in a top. space $X$ iff $X - S$ is open. $S$ and $X - S$ share their boundary, so $S$ contains the boundary iff $X - S$ contains none of it.
 
 12. Now we can prove, using DeMorgan's laws, that the collection of all closed subsets of a space $X$ is
@@ -94,7 +96,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     $$clo(X - clo S) = \partial(X - clo S) \sqcup int(X - clo S) = \partial clo S \sqcup X - clo S$$
 
-    since the boundary of a set and its complement are equal and since the interior of a complement is the complement of the closure (and since $clo(clo S) = clo S$). So $clo(X - clo S) = X$ iff $clo S = \partial clo S$.
+    since the boundary of a set and its complement are equal and since $X - clo S$ is open. So $clo(X - clo S) = X$ iff $clo S = \partial clo S$.
 
 
 22. Why isn't "nowhere dense" defined to be sets with empty interior? Consider $\mathbb{R}$ with the standard topology. The rationals have empty interior, so the set
@@ -116,7 +118,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     If (1) is true, for any open $V$ in $Y$, either there is some $x \in X$ such that $f(x) \in V$, or $f^{pre}(V) = \emptyset$ and is hence open. In the former case by hypothesis there is some neighborhood of $x$ contained in $f^{pre}(V)$, so this set is open, proving $f$ is continuous. The converse is proved by noting that for every $x \in X$ and neighborhood $V$ of $f(x)$, $f^{pre}(V)$ is an open neighborhood of $x$ that works.
 
-    For (2), note that $f^{pre}(Y - S) = X - f^{pre}(S)$ for any $S \subseteq Y$, because $f(x) \notin S$ iff $x \notin f^{pre}(S)$. So if preimages of open sets are all open, then so are preimages of closed sets, and vice versa.
+    For (2), note that $f^{pre}(Y - S) = X - f^{pre}(S)$ for any $S \subseteq Y$. So if preimages of open sets are all open, then so are preimages of closed sets, and vice versa.
 
     For (3), if $f$ is continuous and $A \subseteq X$, if $z$ is a closure point of $A$ such that $f(z)$ isn't a closure point of $f(A)$, then $f(z)$ has a neighborhood $V$ that is disjoint from $f(A)$. So $f^{pre}(V)$ is a neighborhood of $z$ by continuity, and it must not intersect $A$, since if it contained some $a \in A$, $f(a)$ would be in $V \cap f(A)$. But we assumed $z$ was a closure point, so it must intersect $A$. Conversely, if (3) holds and $C$ is closed in $Y$, every closure point of $f^{pre}(C)$ gets mapped into a closure point of $f(f^{pre}(C)) \subseteq C$, hence a closure point of $C$. $C$ being closed, this proves that $f^{pre}(C)$ contains its closure, so is closed.
 
