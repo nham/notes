@@ -12,9 +12,13 @@ Related notes: [basic topology](topology_basic.html)
 
     $$\mathcal{T} := \{ \bigcup \mathcal{S} : \mathcal{S} \subseteq \mathcal{B} \}$$
 
-    Clearly $\emptyset \in \mathcal{T}$ since $\bigcup \emptyset = \emptyset$. Also $X \in \mathcal{T}$. If $\{U_i\}$ is any collection of sets in $\mathcal{T}$, then each $U_i$ is a union of basis elements, so $\bigcup_i U_i$ is a union of basis elements and hence in $\mathcal{T}$. Finally, by induction and the second basis property we have finite intersections of sets in $\mathcal{T}$ are also in $\mathcal{T}$.
+    Clearly $\emptyset \in \mathcal{T}$ since $\bigcup \emptyset = \emptyset$. Also $X \in \mathcal{T}$. If $\{U_i\}$ is any collection of sets in $\mathcal{T}$, then each $U_i$ is a union of basis elements, so $\bigcup_i U_i$ is a union of basis elements and hence in $\mathcal{T}$. Finally, for any $A, B \in \mathcal{T}$, $A = \bigcup_i A_i$ and $B = \bigcup_j B_j$ for some basis elements $A_i, B_j$. By distributivity
 
-2. The converse is true too: If $\mathcal{B$ is any collection of subsets of $X$ and $\mathcal{T}$ defined as in (1), then $\mathcal{T}$ contains $\emptyset$ and is closed under arbitrary unions automatically. If $\mathcal{T}$ is to be a topology, we must have $X \in \mathcal{T}$, or that $X = \bigcup \mathcal{S}$ for some $\mathcal{S} \subseteq \mathcal{B}$, which implies that $X = \bigcup \mathcal{B}$. We also must have $\mathcal{T}$ closed under the intersection of any two sets in $\mathcal{T}$, which is again exactly the second basis property.
+    $$(\bigcup_i A_i) \cap (\bigcup_j B_j) = \bigcup_i \bigcup_j A_i \cap B_j$$
+
+    So that $A \cap B$ is the union of intersections of basis elements. Since each intersection of basis elements is a union of basis elements, the whole union is as well.
+
+2. The converse is true too: If $\mathcal{B$ is any collection of subsets of $X$ and $\mathcal{T}$ defined as in (1), then $\mathcal{T}$ contains $\emptyset$ and is closed under arbitrary unions automatically. If $\mathcal{T}$ is to be a topology, we must have $X \in \mathcal{T}$, or that $X = \bigcup \mathcal{S}$ for some $\mathcal{S} \subseteq \mathcal{B}$, which implies that $X = \bigcup \mathcal{B}$. For any $A, B \in \mathcal{B}$, they are in $\mathcal{T}$ by definition, and since $\mathcal{T}$ is a topology by assumption, $A \cap B$ must be a union of sets in $\mathcal{B}$, which is exactly the second basis property.
 
 3. Here's one sufficient condition for when a collection of sets is a basis for some topology: if $(X, \mathcal{T})$ is a topological space and $\mathcal{C}$ is any collection of open subsets of $X$, then if for all $U \in \mathcal{T}$ and all $x \in U$ we have some $C \in \mathcal{C} with $x \in C \subseteq U$, then $\mathcal{C}$ is a basis that induces $\mathcal{T}$.
 
