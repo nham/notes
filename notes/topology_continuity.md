@@ -30,36 +30,39 @@ These notes depend on [basic topology](topology_basic.html) notes, the [subspace
 
 5. The restriction $f|S: S \to Y$ of any continuous map $f: X \to Y$ to a subset $S \subseteq X$ is still continuous due $(f|S)^{pre}(V) = f^{pre}(V) \cap S$, which is open by definition of the subspace.
 
+6. If $f: X \to Y$ is a map and $Y$ has some basis, then $f$ is continuous iff the inverse image of basis elements in $Y$ is open. This follows from the pre-image of a union being a union of pre-images.
 
-6. A map $f: X \to Y$ is a homeomorphism iff $f$ is bijective and $U$ is open in $Y$ iff $f^{pre}(U)$ is open in $X$ for all $U$.
+
+
+7. A map $f: X \to Y$ is a homeomorphism iff $f$ is bijective and $U$ is open in $Y$ iff $f^{pre}(U)$ is open in $X$ for all $U$.
 
     If $f$ is a homeomorphism, then $f^{pre}(U) open in $X$ implies that $g^{pre}(f^{pre}(U) = U$, where $g := f^{-1}$, since $g^{pre}(S) = f(S)$ for all $S \subseteq X$ (and since $f(f^{pre}(S)) = S$ due to bijectivity).
 
     Conversely, assuming the latter condition we need to prove that $g := f^{-1}$ is continuous. Similar manipulations prove it.
 
 
-7. There are a couple notions of continuous maps that we can define with the notion of subspaces. 
+8. There are a couple notions of continuous maps that we can define with the notion of subspaces.
 
      A **topological embedding** is an injective continuous map $f: X \to Y$ such that the codomain restriction $X \to f(X)$ is a homeomorphism (where $f(X)$ is a subspace of $Y$).
 
-     A **local homeomorphism** is a function $f: X \to Y$ such that for every $x \in X$ there is a neighborhood $U$ of $x$ with 
+     A **local homeomorphism** is a function $f: X \to Y$ such that for every $x \in X$ there is a neighborhood $U$ of $x$ with
 
      - $f(U)$ open in $Y$
      - the two-sided restriction of $f$, $F: U \to f(U)$, is a homeomorphism
 
-8. The two-sided restriction of any homeomorphism $f: X \to Y$ to $A \to f(A)$ is also a homeomorphism. *Proof:* The restriction $g$ is still bijective, for any $U$ open in $f(A)$, $U = V \cap f(A)$ for some $V$ open in $Y$, so $g^{pre}(U) = f^{pre}(U) \cap A = f^{pre}(V) \cap A$ since $U \subseteq A$ and since no element of $a$ can be mapped to any point in $V$ that is outside of $U$, and since $f^{pre}(V)$ is open in $X$ by continuity, $g^{pre}(U)$ is open in $A$.
+9. The two-sided restriction of any homeomorphism $f: X \to Y$ to $A \to f(A)$ is also a homeomorphism. *Proof:* The restriction $g$ is still bijective, for any $U$ open in $f(A)$, $U = V \cap f(A)$ for some $V$ open in $Y$, so $g^{pre}(U) = f^{pre}(U) \cap A = f^{pre}(V) \cap A$ since $U \subseteq A$ and since no element of $a$ can be mapped to any point in $V$ that is outside of $U$, and since $f^{pre}(V)$ is open in $X$ by continuity, $g^{pre}(U)$ is open in $A$.
 
     The inverse of $g$ is just the restriction of $f^{-1}$, so by the same argument $g^{-1}$ is continuous. This proves that $g$ is a homeomorphism.
 
 
-9. Every homeomorphism $f: X \to Y$ is also a local homeomorphism (i.e. one can think of vanilla homeomorphisms as *global homeomorphisms*). This is immediate from the definitions, since for every $a \in X$ we can use $X$ itself as the neighborhood.
+10. Every homeomorphism $f: X \to Y$ is also a local homeomorphism (i.e. one can think of vanilla homeomorphisms as *global homeomorphisms*). This is immediate from the definitions, since for every $a \in X$ we can use $X$ itself as the neighborhood.
 
-10. We can also characterize continuous maps locally: if $f: X \to Y$ and for every $x \in X$, there is a neighborhood $U_x$ of $x$ such that $f|U_x$ is continuous, then for every $V$ open in $Y$, $f^{pre}(V) \cap U_x$ is open in $U_x$, so $f^{pre}(V) \cap U_x \cap V_x$ is open in $X$ for some $V_x$ open in $X$. If we union these up for all $x$ we get $f^{pre}(V)$ being open.
+11. We can also characterize continuous maps locally: if $f: X \to Y$ and for every $x \in X$, there is a neighborhood $U_x$ of $x$ such that $f|U_x$ is continuous, then for every $V$ open in $Y$, $f^{pre}(V) \cap U_x$ is open in $U_x$, so $f^{pre}(V) \cap U_x \cap V_x$ is open in $X$ for some $V_x$ open in $X$. If we union these up for all $x$ we get $f^{pre}(V)$ being open.
 
     The converse is obviously true as well.
 
 
-11. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
+12. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
 
      - $B_1, \ldots, B_n$ is a finite closed (w.r.t. $X$) cover of $X$
      - $\{B_i\} is an open (w.r.t. $X$) cover of $X$
