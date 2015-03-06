@@ -53,9 +53,7 @@ Related notes: [basic topology](topology_basic.html)
 
 9. The **subspace basis** for a subspace $A$ of some space $X$ w.r.t. a basis $\mathcal{B}$ is just all the basis element intersected with $A$. This construction is easily seen to be a basis (it obviously covers $A$, and if $U_1 = A \cap V_1, U_2 = A \cap V_2$ for $V_1, V_2 \in \mathcal{B}$, for any $x \in U_1 \cap U_2$ there is a $D \in \mathcal{B}$ such that $x \in D \subseteq V_1 \cap V_2$, so $x \in D \cap A \subseteq U_1 \cap U_2$.) It generates the subspace the topology because of distributivity: the union of subspace basis elements is actually the intersection of $A$ with a union of basis elements in $\mathcal{B}$, (so every open set in the topology induced by the subspace basis is open in the subspace topology, but also if it's open in the subspace topology, it must be a union of (original) basis elements intersected with $A$, so is open in the subspace basis induced topology).
 
-10. (7) implies that any subspace of a second countable space is also second countable, because a countable basis for $X$ induces a countable basis for the subspace topology on any subset.
-
-11. The **product basis** given bases $\mathcal{B}_i$ for spaces $X_i$, $1 \leq i \leq n$ is (predictably) the collection of all products of basis sets. This is indeed a basis, since for every $x = (x_i : 1 \leq i \leq n) \in \prod_1^n X_i$, we can bind basis elements $B_i$ such that $x_i \in B_i$, so $x \in \prod_1^n B_i$. Also, we have:
+10. The **product basis** given bases $\mathcal{B}_i$ for spaces $X_i$, $1 \leq i \leq n$ is (predictably) the collection of all products of basis sets. This is indeed a basis, since for every $x = (x_i : 1 \leq i \leq n) \in \prod_1^n X_i$, we can bind basis elements $B_i$ such that $x_i \in B_i$, so $x \in \prod_1^n B_i$. Also, we have:
 
     $$\prod_1^n B_i \cap \prod_1^n C_i = \prod_1^n (B_i \cap C_i)$$
 
@@ -63,4 +61,4 @@ Related notes: [basic topology](topology_basic.html)
 
     To prove that it really induces the product topology, we first note that the product basis is a collection of open sets (a collection of elements of the standard product topology basis, actually!). So if every $\prod_1^n U_i$ is such that every $x \in prod_1^n U_i$ has a product of basis elements $\prod_1^n B_i$ such that $x \in \prod_1^n B_i \subseteq \prod_1^n U_i$, then it follows that the product basis generates the product topology. But this is certainly true, since if $x_i \in U_i$, there is a basis element containing $x_i$ and contained in $U_i$.
 
-12. The product of second countable spaces is second countable since countable bases for $X_1, \ldots, X_n$ induce, through the product basis, a basis which is the finite product of countable sets.
+11. The product of second countable spaces is second countable since countable bases for $X_1, \ldots, X_n$ induce, through the product basis, a basis which is the finite product of countable sets.

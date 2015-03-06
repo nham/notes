@@ -33,3 +33,5 @@ title: "Topology: subspaces"
     This means that if $B$ is any subspace of $X$, any subspace of $B$ is also a subspace of $X$.
 
 7. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
+
+8. The definition of the subspace basis implies that any subspace of a second countable space is also second countable, because a countable basis for $X$ induces a countable basis for the subspace topology on any subset.
