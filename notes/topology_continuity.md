@@ -1,7 +1,7 @@
 ---
 title: "Topology: continuity"
 ---
-These notes depend on [basic topology](topology_basic.html) notes and the [subspace](topology_subspaces.html) notes.
+These notes depend on [basic topology](topology_basic.html) notes, the [subspace](topology_subspaces.html) notes, and the [bases and countability](topoloby_bases_countability.html) notes.
 
 1. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
 

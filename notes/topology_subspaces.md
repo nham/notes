@@ -2,6 +2,8 @@
 title: "Topology: subspaces"
 ---
 
+These notes depend on the [basic topology](topology_basic.html) notes and the [continuity](topology_continuity.html) notes.
+
 1. For any topological space $(X, \mathcal{T})$ and any $A \subseteq X$, consider the set $\iota^{\ast} \mathcal{T} := \{\iota_A^{pre}(U) : U \in \mathcal{T} \}$, where $\iota_A: A \to X$ is the inclusion map. Then $\iota_^{\ast} \mathcal{T}$ is a topology for $A$: it clearly includes $\emptyset$ and $A$, the preimage of an arbitrary union is the union of preimages for any function (so it's closed under unions), and for any $B, C \in \mathcal{T}$, $x \in \iota_A^{pre}(B) \cap \iota_A^{pre}(C)$ iff $x \in A \cap B \cap C = \iota_A^{pre}(B \cap C)$, so it's closed under finite intersections. This topology is called the **subspace topology** on $A$, and it's not hard to see that it is exactly the collection of open sets in $\mathcal{T}$ intersected with $A$.
 
     We can say more than this though. If $\mathcal{S}$ is any topology on $A$ such that the inclusion $\iota_A$ is continuous, then it must be finer than the subspace topology. In other words, the subspace topology is the *coarsest* topology that makes the inclusion continuous. The proof is quite trivial: if the inclusion is continuous, the pre-image of any open set $U$ in $X$ is open in $\mathcal{S}$. But the preimage is just $U \cap A$.
