@@ -77,7 +77,7 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     Take the example of $\mathbb{R}$ with the standard topology. Then the set $(-1, 1)$ has $1$ as an limit point that is a boundary point, and $0$ as an limit point that is an interior point.
 
-19. (12) shows that limit points are not necessarily in the set, unlike isolated points. More generally, any boundary point of a set $A$ that is not contained in $A$ is necessarily an limit point. This means that a set without limit points must contain every boundary point, and so is closed.
+19. The previous note shows that limit points are not necessarily in the set, unlike isolated points. More generally, any boundary point of a set $A$ that is not contained in $A$ is necessarily an limit point. This means that a set without limit points must contain every boundary point, and so is closed.
 
 20. Every closure point is either an isolated point or an limit point. If it's not in the set, it must be a boundary point and hence an limit point. If it's in the set, then it is either an limit point or an isolated point.
 
