@@ -12,40 +12,17 @@ title: "Topology: subspaces"
 
     Conversely, consider $\phi: A \to A_S$, where $A_S$ is denoting $A$ with the topology $\mathcal{S}$ (this is technically an abuse of notation/nonsense, but it is suggestive!) and $A$ just denotes $A$ with the subspace topology. Then $\iota_A \circ \phi = \iota_A$, which is certainly continuous because $A$ is a subspace. By the characteristic property of $(A, \mathcal{S})$, this means $\phi$ is continuous, which implies (see basic topology notes) that the subspace topology is finer than $\mathcal{S}$. In other words, $\mathcal{S}$ *is* the subspace topology.
 
-3. There are a couple notions of continuous maps that we can now define with subspaces. 
+3. Above we've proved that the inclusion of a subspace into its superspace is continuous. It's also clearly injective, and what's more if we restrict the codomain to the image we just get the identity map on $A$. So the inclusion defined on a subspace is actually a topological embedding.
 
-     A **topological embedding** is an injective continuous map $f: X \to Y$ such that the codomain restriction $X \to f(X)$ is a homeomorphism (where $f(X)$ is a subspace of $Y$).
+4. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
 
-     A **local homeomorphism** is a function $f: X \to Y$ such that for every $x \in X$ there is a neighborhood $U$ of $x$ with 
-
-     - $f(U)$ open in $Y$
-     - the two-sided restriction of $f$, $F: U \to f(U)$, is a homeomorphism
-
-4. The two-sided restriction of any homeomorphism $f: X \to Y$ to $A \to f(A)$ is also a homeomorphism. *Proof:* The restriction $g$ is still bijective, for any $U$ open in $f(A)$, $U = V \cap f(A)$ for some $V$ open in $Y$, so $g^{pre}(U) = f^{pre}(U) \cap A = f^{pre}(V) \cap A$ since $U \subseteq A$ and since no element of $a$ can be mapped to any point in $V$ that is outside of $U$, and since $f^{pre}(V)$ is open in $X$ by continuity, $g^{pre}(U)$ is open in $A$.
-
-    The inverse of $g$ is just the restriction of $f^{-1}$, so by the same argument $g^{-1}$ is continuous. This proves that $g$ is a homeomorphism.
-
-
-5. Every homeomorphism $f: X \to Y$ is also a local homeomorphism (i.e. one can think of vanilla homeomorphisms as *global homeomorphisms*). This is immediate from the definitions, since for every $a \in X$ we can use $X$ itself as the neighborhood.
-
-6. We can also characterize continuous maps locally: if $f: X \to Y$ and for every $x \in X$, there is a neighborhood $U_x$ of $x$ such that $f|U_x$ is continuous, then for every $V$ open in $Y$, $f^{pre}(V) \cap U_x$ is open in $U_x$, so $f^{pre}(V) \cap U_x \cap V_x$ is open in $X$ for some $V_x$ open in $X$. If we union these up for all $x$ we get $f^{pre}(V)$ being open.
-
-    The converse is obviously true as well.
-
-
-7. Above we've proved that the inclusion of a subspace into its superspace is continuous. It's also clearly injective, and what's more if we restrict the codomain to the image we just get the identity map on $A$. So the inclusion defined on a subspace is actually a topological embedding.
-
-8. The restriction $f|S: S \to Y$ of any continuous map $f: X \to Y$ to a subset $S \subseteq X$ is still continuous due $(f|S)^{pre}(V) = f^{pre}(V) \cap S$, which is open by definition of the subspace.
-
-9. The closed subsets in a subspace topology on $A \subseteq X$ are exactly the closed subsets of $X$ intersected with $A$. Proof: $C$ is closed in $A$ iff $A - C$ is open iff $A - C = V \cap A$ for some $V$ open in $X$ iff $C = (X - V) \cap A$.
-
-10. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
+5. We can talk about transitivity of open and closed sets w.r.t. subspaces: if $U$ is open/closed w.r.t. a subspace $A$ that is open/closed in some space $X$, then $U$ is open/closed in $X$. This is because
 
     - the intersection of two open/closed sets is again open/closed
     - the subspace's open/closed sets are intersections of open/closed sets in $X$ with $A$
 
 
-11. A question arises: If $X$ is some space, and $A \subseteq B$ are two subsets of $X$, then is the subspace topology on $A$ relative to (the subspace topology on) $B$ the same as the subspace topology on $A$ relative to $X$?
+6. A question arises: If $X$ is some space, and $A \subseteq B$ are two subsets of $X$, then is the subspace topology on $A$ relative to (the subspace topology on) $B$ the same as the subspace topology on $A$ relative to $X$?
 
     The subspace topology relative to $X$ is all open sets of $X$ intersected with $A$. The subspace topology relative to $B$ is all open sets of $B$ intersected with $A$. But the open sets of $B$ are open sets of $X$ intersected with $B$. So they're the same since
 
@@ -55,25 +32,4 @@ title: "Topology: subspaces"
 
     This means that if $B$ is any subspace of $X$, any subspace of $B$ is also a subspace of $X$.
 
-12. Here it is, that moment you've been waiting for: the gluing lemma(s?). If we have either:
-
-     - $B_1, \ldots, B_n$ is a finite closed (w.r.t. $X$) cover of $X$
-     - $\{B_i\} is an open (w.r.t. $X$) cover of $X$
-
-    And for each cover element $B_i$ we have a map $f_i: B_i \to Y$ that is continuous, such that for each $i$ and $j$, $f_i$ and $f_j$ are the same on the restriction to $B_i \cap B_j$, then there's a unique continuous map $f: X \to Y$ such that $f|B_i = f_i$ for all $i$.
-
-    *Proof:* In either case, for all $x \in X$, pick an $i$ such that $x \in B_i$. Then define $f(x) = f_i(x)$. This is not only well-defined since $f_i(x) = f_j(x)$ when $x \in B_i \cap B_j$, but $f$ is the only such way to have $f|B_i = f_i$ for all $i$.
-
-    In the case of a finite closed cover we have
-
-    $$f^{pre}(C) = \bigcup_{i=1}^n f_i^{pre}(C)$$
-
-    which, in the case of closed $C$, is a finite union of closed sets (since each $f_i$ is continuous), hence closed in $X$.
-
-    In the case of an open cover we have
-
-    $$f^{pre}(U) = \bigcup_i f_i^{pre}(U)$$
-
-    which, in the case of open $U$, is a union of open sets, hence open in $X$.
-
-13. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
+7. The subspace $A$ of any Hausdorff space $X$ is also Hausdorff because for any two points in $A$ and any disjoint neighborhoods $U, V$ for the points in $X$, when you intersect $U$ and $V$ with $A$ they're still disjoint (and still neighborhoods, obv.)
