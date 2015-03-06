@@ -22,7 +22,9 @@ Related notes: [basic topology](topology_basic.html)
 
 3. Here's one sufficient condition for when a collection of sets is a basis for some topology: if $(X, \mathcal{T})$ is a topological space and $\mathcal{C}$ is any collection of open subsets of $X$, then if for all $U \in \mathcal{T}$ and all $x \in U$ we have some $C \in \mathcal{C} with $x \in C \subseteq U$, then $\mathcal{C}$ is a basis that induces $\mathcal{T}$.
 
-    *Proof:* Clearly $\mathcal{C}$ covers the space. But any intersection of sets in $\mathcal{C}$ is open, so every point in the intersection has a $\mathcal{C}$-set contained in the intersection.
+    *Proof:* Clearly $\mathcal{C}$ covers the space. But any intersection of two sets in $\mathcal{C}$ is open, so every point in the intersection has a $\mathcal{C}$-set contained in the intersection.
+
+    Note this is just saying "if $\mathcal{C}$ is a collection of open subsets and every open $U$ is a union of sets in $\mathcal{C}$, then $\mathcal{C}$ is a basis for the topology."
 
 4. If $\mathcal{B}$ and $\mathcal{C}$ are bases for a set $X$, let $\mathcal{S}$ and $\mathcal{T}$ be the respective induced topologies.
 
