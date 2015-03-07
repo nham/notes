@@ -69,4 +69,6 @@ title: "Topology: compact spaces"
     Now for the main event: If $X$ is sequentially compact and $\mathcal{U}$ any open cover for it, by the second proposition we can find an $r > 0$ with every $D_x := B(x; r)$ contained in some cover element. But by totally boundedness, finitely many $D_{x_1}, \ldots, D_{x_n}$ cover the space. So a finite number of cover elements contain these balls, and hence cover the space. This is a finite subcover and yayyyyy it's over.
 
 
-12. Any compact metric space is complete. This is actually real easy to do using (8): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
+12. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
+
+13. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
