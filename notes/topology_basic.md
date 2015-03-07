@@ -119,3 +119,11 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
     Another property of Hausdorff spaces is that all finite subsets are closed. To prove it, note that a singleton set $\{x\}$ must be closed because if there was a closure point $y \neq x$, then every neighborhood of $y$ would contain $x$, implying that the space is not Hausdorff. (Alternate proof: every point $y \neq x$ certainly has a neighborhood $U_y$ not containing $x$, so the union of them all is open and is $X - x$.) Since singletons are closed, finite unions of singletons are closed, so all finite subsets are closed.
 
 25. TODO: An example of a non-Hausdorff space where limits are unique.
+
+26. The **order topology** on any totally ordered set $X$ is the one induced by the basis consisting of
+
+     - all open intervals $(a, b)$ for $a, b \in X$
+     - if there is a minimal element $z$, all half-open intervals $[z, x)$
+     - if there is a maximal element $z$, all half-open intervals $(x, z]$
+
+    This is a basis: it covers $X$ since if there's no maximal or minimal element, every $x \in X$ is contained in one open interval. If there's a minimal or a maximal element, it will be contained in one of the half-open intervals. Also, the intersection of two open intervals is either empty or another open interval, the intersection of an open interval and a half-closed interval is again either empty or open, and the intersection of two half-open intervals is either empty, another half-open interval, or an open interval. In all of these cases, the collection of all sets defined above is actually closed under non-disjoint intersection, so is a basis.
