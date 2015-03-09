@@ -43,3 +43,5 @@ Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower 
 
 
 10. $\bar{\mathbb{R}}$ is homeomorphic with $[-1, 1]$: using the $f$ and $g$ as above for homeomorphisms between $(-1, 1)$ and $\mathbb{R}$, we extend it by mapping $-1 \leftrightarrow -\infty$ and $1 \leftrightarrow \infty$. Then the basis sets of $\bar{\mathbb{R}}$ involving $\infty$ or $-\infty$ have preimages of $(a, 1]$ or $[-1, a)$ for some $a \in (0, 1)$, which are clearly open in $[-1, 1]$. Similarly the preimages of open intervals in $[-1, 1]$ involving $-1$ or $1$ will be the half-open intervals involving $-\infty$ or $\infty$. So this is a homeomorphism.
+
+11. A corollary is that the extended reals are compact (since closed intervals in $\mathbb{R}$ are). So the extended reals are a compactification of $\mathbb{R}$.
