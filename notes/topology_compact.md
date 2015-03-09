@@ -52,25 +52,31 @@ title: "Topology: compact spaces"
 
 11. Every compact space is limit point compact. Suppose $X$ is compact and $S$ is an infinite subset with no limit points in $X$. Then necessarily $S$ is closed (see basic topology notes), and so is a compact subset of $X$. Due to lack of limit points it consists entirely of isolated points, so each point in the set has a neighborhood disjoint from the other points. These collectively form an open cover of $S$, so by compactness there is a finite subcover. But each cover element contains only one point of $S$ and there are infinitely many points, a contradiction.
 
-12. If $M$ is either a second-countable Hausdorff space or a metric space, then the following 3 conditions are equivalent:
+12. Sequentially compact metric spaces are totally bounded. *Proof:* If not there's some $r > 0$ such that $X$ is not covered by any finite number of balls of radius $r$. So we can pick $x_1 \in X$ arbitrarily, $x_2 \notin B(x_1; r)$, $x_3 \notin B(x_1; r) \cup B(x_2; r)$, and so on, indefinitely. If this sequence had a convergent subsequence with limit $c$ you'd be able to find two terms (infinitely many actually, but at least two) that are within $r/2$ of $c$, implying that terms are within $r$ of one another. This is baloney according to how the sequence was constructed.
 
-    1. $M$ is compact
-    2. $M$ is limit point compact
-    3. $M$ is sequentially compact
+13. Any sequentially compact metric space is second-countable. Suppose $X$ is a sequentially compact metric space. It suffices to prove that $X$ is separable (since they are equivalent for metric spaces). We know $X$ is totally bounded (by the previous proposition) so for every $n \in \mathbb{N}$, there are a finite collection of points $x^n = \{ x_1^n, \ldots, x_{m_n}^n\}$ for which the open balls of radius $1/n$ centered at the points cover the space. Then the set $C := \bigcup_n x^n$ is countable, and for any $a \in X$ and any open ball $B(a; \epsilon)$, just find an $n$ such that $1/n < \epsilon$ and choose one element $x_k^n$ such that $a \in B(x_k^n; 1/n)$. This element will be in $B(a; \epsilon)$, so $C$ is dense in $X$.
 
-    *Proof for metric spaces:* By the previous proposition (1) implies (2)
+14. Any second countable, sequentially compact space is compact. First, second countable spaces are Lindelöf, so any open cover of $X$ has a countable subcover $\{U_n : n \in \mathbb{N}\}$. If there's no finite subcover, then make a sequence by picking arbitrary $x_1$, $x_2 \notin U_1$, \ldots, $x_{k+1} \notin \bigcup_1^k U_i$ for all $k$. If this sequence has a convergent subsequence converging to $a$. There is some $U_k$ that is a neighborhood of $a$, so we can find infinitely many sequence terms in $U_k$, which contradicts that at most finitely many are.
+
+15. For any second-countable space or metric space, sequential compactness implies compactness. This is just combining the previous three propositions, since sequentially compact metric spaces are second-countable.
+
+16. TODO: We have compactness => limit point compactness for all spaces and sequential compactness => compactness for second countable or metric spaces. We'd like to prove that for second-countable Hausdorff spaces or metric spaces, the following 3 conditions are equivalent:
+
+     1. $M$ is compact
+     2. $M$ is limit point compact
+     3. $M$ is sequentially compact
+
+    Here's some fragments of proofs left from my previous attempt at this for metric spaces:
 
     We now prove (2) implies (3). If (2) holds and $M$ is not sequentially compact, some sequence $(x_n)$ has no convergent subsequence. There must be infinitely different values in the sequence, for if there were not you could extract an eventually constant (hence convergent) subsequence. By assumption the term set has an accumulation point $c$. Since this is a metric space, every open ball around the accumulation point contains infinitely many elements of the term set, so we construct a sequence inductively: $B(c; 1)$ contains some $x_{n_1}$, $B(c; 1/2)$ contains some $x_{n_2}$ with $n_2 > n_1$, and if $x_{n_k}$ is chosen, $x_{n_{k+1}}$ is some point in $B(c; 1/k)$ with $n_{k+1} > n_k$. This is a subsequence converging to $c$.
 
-    To complete the proof we assume (3) and prove (1). We need two dumb things first:
-
-    **Proposition:** Sequentially compact metric spaces are totally bounded. *Proof:* If not there's some $r > 0$ such that $X$ is not covered by any finite number of balls of radius $r$. So we can pick $x_1 \in X$ arbitrarily, $x_2 \notin B(x_1; r)$, $x_3 \notin B(x_1; r) \cup B(x_2; r)$, and so on, indefinitely. If this sequence had a convergent subsequence with limit $c$ you'd be able to find two terms (infinitely many actually, but at least two) that are within $r/4$ of $c$, implying that terms are within $r/2$ of one another. This is baloney according to how the sequence was constructed.
+    To complete the proof we assume (3) and prove (1). Need this proposition first:
 
     **Proposition:** If $X$ is a sequentially compact metric space, any open cover $\mathcal{U}$ has some $r > 0$ such that for each $x \in X$, $B(x; r)$ is contained in a cover element. *Proof:* Assume the contrary, so that $\forall r$ there is some $x_r$ with $B(x_r; r)$ not contained in any single cover element. By sequential compactness there's some subsequence converging to a limit $c$. But $c$ is in some cover element, so there's a ball $B(c; \epsilon)$ contained in that cover element, so by convergence some tail sequence starting at $n_j$ is contained in $B(c; \epsilon/2)$. At some point the subsequence's terms $n_k$ are such that both a) $1/n_k$ is smaller than $\epsilon/2$ and b) $n_k > n_j$, so that $B(n_k; 1/n_k)$ is contained in $B(c; \epsilon)$ and hence in a cover element, contrary to our construction of the terms of $(x_n)$.
 
     Now for the main event: If $X$ is sequentially compact and $\mathcal{U}$ any open cover for it, by the second proposition we can find an $r > 0$ with every $D_x := B(x; r)$ contained in some cover element. But by totally boundedness, finitely many $D_{x_1}, \ldots, D_{x_n}$ cover the space. So a finite number of cover elements contain these balls, and hence cover the space. This is a finite subcover and yayyyyy it's over.
 
 
-13. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
+17. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
 
-14. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
+18. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
