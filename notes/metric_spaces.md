@@ -128,3 +128,5 @@ Related notes: All the topology notes.
 
 
 25. A separable metric space is second countable. To see this, supposing $X$ is separable with countable subset $D$, the collection $\mathcal{R}$ of all open balls centered at points in $D$ with rational radii is countable because it is a countable union of countable sets ($\mathbb{Q}$ is countable). To prove this collection is a basis, let $B(x; \epsilon)$ be any open ball in $X$. If we halve the radius, $B(x; \epsilon/2)$, being open and non-empty, must contain some $a \in D$. Pick some rational $q$ such that $d(a, x) < q < \epsilon / 2$, which is possible by density of $\mathbb{Q}$ in $\mathbb{R}$. Then $B(a; q)$ contains $x and is contained in $B(x; \epsilon)$, and is furthermore an open ball of rational radii centered at a point in $D$. This establishes that any open ball centered at some point $x$ contains an element of $\mathcal{R}$ that contains $x$, which proves that any open subset of $X$ is a union of sets in $\mathcal{R}$. Therefore $\mathcal{R}$ is a countable basis for $X$.
+
+26. Metric spaces are first countable. Each point's countable neighborhood basis is the open balls of rational radii.
