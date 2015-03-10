@@ -6,11 +6,11 @@ title: "Topology: compact spaces"
 
 2. The continuous image of any compact set is compact. Let $f: X \to Y$ be continuous and $X$ compact. If $\mathcal{U}$ is an open cover of $f(X)$, then
 
-    $$\bigcup_{U \in \mathcal{U}} U \superseteq f(X)$$
+    $$\bigcup_{U \in \mathcal{U}} U \supseteq f(X)$$
 
     implies
 
-    $$\bigcup_{U \in \mathcal{U}} f^{pre}(U) \superseteq f^{pre}(f(X)) \superseteq X$$
+    $$\bigcup_{U \in \mathcal{U}} f^{pre}(U) \supseteq f^{pre}(f(X)) \supseteq X$$
 
     That is, the collection of pre-images of sets in $\mathcal{U}$ is an open cover of $X$. So there's a finite collection of sets $U_1, \ldots, U_n$ such that the $f^{pre}(U_i)$'s cover $X$ by the compactness of $X$.
 
@@ -28,7 +28,7 @@ title: "Topology: compact spaces"
 
     Pick an $x \in X - A$. Then for every $a \in A$, we can find neighborhoods in $X$ of $V_a$ of $x$ and $U_a$ of $a$ that are disjoint. The $U_a$'s are an open cover of $A$, so there's some finite subcover $U_{a_i}$ for $1 \leq i \leq n$. Since
 
-    $$\bigcup_1^n U_{a_i} \superseteq A$$
+    $$\bigcup_1^n U_{a_i} \supseteq A$$
 
     we have
 
@@ -62,7 +62,7 @@ title: "Topology: compact spaces"
 
 16. For first-countable $T_1$ spaces, limit point compactness implies sequential compactness. *Proof:* If $(x_n)$ is any sequence, we assume it has infinitely many distinct terms (otherwise it is eventually constant and therefore converges). The set of terms is therefore infinite, and so by limit point compactness has a limit point $a$. We can furthermore suppose that $a$ is at most finitely many different terms of the sequence, otherwise it is once again eventually constant. Then chop off the finite terms to obtain a subsequence, call it $(y_n)$, of $(x_n)$ for which no term is equal to $a$.
 
-    By first-countability, there is a countable neighborhood basis $\{U_n : n \in \mathbb{N}\}$ for $a$. Now we make a nested sequence of neighborhoods of $a$ by defining $V_n := \bigcup_1^n U_i$ for all $n$, so $V_k \superseteq V_{k+1}$ for all $k$. Note that the $V_i$'s are still a neighborhood basis for $a$ since they are each subsets of neighborhood basis elements.
+    By first-countability, there is a countable neighborhood basis $\{U_n : n \in \mathbb{N}\}$ for $a$. Now we make a nested sequence of neighborhoods of $a$ by defining $V_n := \bigcup_1^n U_i$ for all $n$, so $V_k \supseteq V_{k+1}$ for all $k$. Note that the $V_i$'s are still a neighborhood basis for $a$ since they are each subsets of neighborhood basis elements.
 
     Note that if we have any subsequence $(y_{n_k})$ such that each $y_{n_k} \in V_k$, for any neighborhood $A$ of $a$, there is some $V_j$ contained in $A$, and all subsequent terms of the subsequence are also contained in $V_j$ by nestedness. So any such subsequence $(y_{n_k})$ is convergent.
 
