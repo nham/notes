@@ -11,13 +11,17 @@
 
 5. Even if you don't see the fuss about compactness of closed, bounded subsets of $\mathbb{R}$, here's one important corollary: $\mathb{R}$ is complete. The proof is as follows: Cauchy sequences are bounded, so they have a convergent subsequence, and Cauchy sequences with convergent subsequences are themselves convergent. So every Cauchy sequence converges. Magic.
 
-6. Can we extend the Bolzano-Weierstrass theorem to $\mathbb{R}^n$? If so we would have that subsets of $\mathbb{R}^n$ are compact iff they are closed and bounded (all the logic we used above was true for all metric spaces/topological spaces and not specific to $\mathbb{R}$).
-
-    It turns out that we can! See the real inner product space notes and metric space notes for full details, but we have that $(x_n) \to c$ \in $\mathbb{R}^n$ iff each $(x_n^i) \to c_i$ in \mathbb{R}$.
+6. Can we extend the Bolzano-Weierstrass theorem to $\mathbb{R}^n$? The answer turns out to be yes! See the real inner product space notes and metric space notes for full details, but we have that $(x_n) \to c$ \in $\mathbb{R}^n$ iff each $(x_n^i) \to c_i$ in \mathbb{R}$.
 
     So if $(x_n)$ is bounded in $\mathbb{R}^n$, then it is contained in some open box in $\mathbb{R}^n$ (by topological equivalence of Euclidean and sup norms), so the sequence $(x_n^1)$ is bounded in $\mathbb{R}$ and hence has some convergent subsequence. If we take this subsequence of the original $(x_n)$, we now have a subsequence of $(x_n)$ whose first component-sequence converges to some $c_1$. Repeat the procedure with each of the other components. The result is a subsequence for which each component sequence converges in $\mathbb{R}$, so the whole sequence converges in $\mathbb{R}^n$.
 
+7. Sequence convergence in the extended reals is just like in the reals, except now $\pm \infty$ may appear in sequences, and they may also be a limit of sequences.
 
+8. The **extended monotone convergence theorem** is that every monotone nondecreasing/nonincreasing sequence of extended reals is bounded above/below, and so converges, either to the supremum/infimum for a finite bound, or to $\pm \infty$.
+
+9. The **order limit theorem** for sequences of extended reals says that if $(a_n)$ and $(b_n)$ are sequences of extended reals and $a_n \leq b_n$ for all $n \geq N$ for some $N$, if the sequences converge then $\lim_{n \to \infty} a_n \leq \lim_{n \to \infty} b_n$.
+
+    The proof is simple: if not, the limit $A$ of $(a_n)$ is strictly greater than $B := \lim_{n \to \infty} b_n$, which means we can find a point $k$ after which all terms of $(a_n)$ are strictly greater than terms of $(b_n)$, which is contrary to assumption.
 
 ----
 TODO: these things need to be reorganized
@@ -28,16 +32,6 @@ TODO: these things need to be reorganized
 
     is true using that one weird trick. The sequence converges since, letting $C := \frac{1}{1-x}$, we have $C - s_n = \frac{x^{n+1}}{1-x} > 0$ for all $n$, meaning $(s_n)$ is monotone increasing and bounded above by $C$. $C$ is also the limit since $(C - s_n) \to 0$ as $n \to \infty$ (owing to $x^{n+1} < x^n$ for all $n$)
 
-
-
-3. The extended reals allow you to do a few things. To start, you can define the least upper bound for non-empty unbounded sets by letting it be $\infty$ (you can see how it works for greatest lower bounds, I'm sure). What's more, you can say that a real sequence **converges to $\infty$** if it grows unboundedly as $n \to \infty$ (similarly for converging to $-\infty$).  This also allows us to formulate the **extended monotone convergence theorem**, which says that *any* monotone sequence converges to a limit, the LUB in the case of monotone nondecreasing and the GLB in the case of monotone nonincreasing.
-
-    We can go one step further on limits and consider sequences of *extended real numbers*, meaning $\infty$ and $-\infty$ are possibly terms of the sequence. Convergence is defined exactly like you expect.
-
-
-4. The **order limit theorem** for sequences of extended reals says that if $(a_n)$ and $(b_n)$ are sequences of extended reals and $a_n \leq b_n$ for all $n \geq N$ for some $N$, if the sequences converge then $\lim_{n \to \infty} a_n \leq \lim_{n \to \infty} b_n$.
-
-    The proof is simple: if not, the limit $A$ of $(a_n)$ is strictly greater than $B := \lim_{n \to \infty} b_n$, which means we can find a point $k$ after which all terms of $(a_n)$ are strictly greater than terms of $(b_n)$, which is contrary to assumption.
 
 
 5. Big O notation: if $f$ and $g$ are functions, we say $f \sim O(g)$ at $a \in dom f$ (pronounced "$f$ is Big O of $g$ near $a$") if there is a neighborhood $N$ of $a$ and a positive $C$ such that
