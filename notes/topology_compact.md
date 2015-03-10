@@ -60,23 +60,26 @@ title: "Topology: compact spaces"
 
 15. For any second-countable space or metric space, sequential compactness implies compactness. This is just combining the previous three propositions, since sequentially compact metric spaces are second-countable.
 
-16. TODO: We have compactness => limit point compactness for all spaces and sequential compactness => compactness for second countable or metric spaces. We'd like to prove that for second-countable Hausdorff spaces or metric spaces, the following 3 conditions are equivalent:
+16. For first-countable $T_1$ spaces, limit point compactness implies sequential compactness. *Proof:* If $(x_n)$ is any sequence, we assume it has infinitely many distinct terms (otherwise it is eventually constant and therefore converges). The set of terms is therefore infinite, and so by limit point compactness has a limit point $a$. We can furthermore suppose that $a$ is at most finitely many different terms of the sequence, otherwise it is once again eventually constant. Then chop off the finite terms to obtain a subsequence, call it $(y_n)$, of $(x_n)$ for which no term is equal to $a$.
+
+    By first-countability, there is a countable neighborhood basis $\{U_n : n \in \mathbb{N}\}$ for $a$. Now we make a nested sequence of neighborhoods of $a$ by defining $V_n := \bigcup_1^n U_i$ for all $n$, so $V_k \superseteq V_{k+1}$ for all $k$. Note that the $V_i$'s are still a neighborhood basis for $a$ since they are each subsets of neighborhood basis elements.
+
+    Note that if we have any subsequence $(y_{n_k})$ such that each $y_{n_k} \in V_k$, for any neighborhood $A$ of $a$, there is some $V_j$ contained in $A$, and all subsequent terms of the subsequence are also contained in $V_j$ by nestedness. So any such subsequence $(y_{n_k})$ is convergent.
+
+    Now we pick $n_1$ such that $y_{n_1} \in V_1$. Suppose by induction that we have $n_1, \ldots, n_k$ with $n_i < n_{i+1}$ for $1 \leq i < k$, such that $y_{n_i} \in V_i$. The neighborhood $V_{k+1}$ intersects the term set in infinitely many points distinct from $a$ (because the space is $T_1$), so we can find a $n_{k+1} > n_k$ such that $y_{n_{k+1}} \in V_{k+1}$. Thus we have a convergent subsequence, which establishes sequential compactness.
+
+
+17. We have proved that for second-countable Hausdorff spaces or metric spaces, the following 3 conditions are equivalent:
 
      1. $M$ is compact
      2. $M$ is limit point compact
      3. $M$ is sequentially compact
 
-    Here's some fragments of proofs left from my previous attempt at this for metric spaces:
+    where (2) => (3) holds because because metric spaces and second-countable Hausdorff spaces are both first-countable $T_1$ spaces.
 
-    We now prove (2) implies (3). If (2) holds and $M$ is not sequentially compact, some sequence $(x_n)$ has no convergent subsequence. There must be infinitely different values in the sequence, for if there were not you could extract an eventually constant (hence convergent) subsequence. By assumption the term set has an accumulation point $c$. Since this is a metric space, every open ball around the accumulation point contains infinitely many elements of the term set, so we construct a sequence inductively: $B(c; 1)$ contains some $x_{n_1}$, $B(c; 1/2)$ contains some $x_{n_2}$ with $n_2 > n_1$, and if $x_{n_k}$ is chosen, $x_{n_{k+1}}$ is some point in $B(c; 1/k)$ with $n_{k+1} > n_k$. This is a subsequence converging to $c$.
-
-    To complete the proof we assume (3) and prove (1). Need this proposition first:
-
-    **Proposition:** If $X$ is a sequentially compact metric space, any open cover $\mathcal{U}$ has some $r > 0$ such that for each $x \in X$, $B(x; r)$ is contained in a cover element. *Proof:* Assume the contrary, so that $\forall r$ there is some $x_r$ with $B(x_r; r)$ not contained in any single cover element. By sequential compactness there's some subsequence converging to a limit $c$. But $c$ is in some cover element, so there's a ball $B(c; \epsilon)$ contained in that cover element, so by convergence some tail sequence starting at $n_j$ is contained in $B(c; \epsilon/2)$. At some point the subsequence's terms $n_k$ are such that both a) $1/n_k$ is smaller than $\epsilon/2$ and b) $n_k > n_j$, so that $B(n_k; 1/n_k)$ is contained in $B(c; \epsilon)$ and hence in a cover element, contrary to our construction of the terms of $(x_n)$.
-
-    Now for the main event: If $X$ is sequentially compact and $\mathcal{U}$ any open cover for it, by the second proposition we can find an $r > 0$ with every $D_x := B(x; r)$ contained in some cover element. But by totally boundedness, finitely many $D_{x_1}, \ldots, D_{x_n}$ cover the space. So a finite number of cover elements contain these balls, and hence cover the space. This is a finite subcover and yayyyyy it's over.
+    Great job.
 
 
-17. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
+18. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
 
-18. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
+19. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
