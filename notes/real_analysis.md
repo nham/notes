@@ -27,9 +27,9 @@
 
     $$\lim_{n \to \infty} \sum_1^n x_k$$
 
-    exists. In this case the series is said to **converge** and the limit of the series is denoted $\sum_0^{\infty} x_k$. The sequence $(S_n)$ for $S_n := \sum_1^n x_k$ is the **sequence of partial sums** for the series.
+    exists. In this case the series is said to **converge** and the limit of the series is denoted $\sum_1^{\infty} x_k$. The sequence $(S_n)$ for $S_n := \sum_1^n x_k$ is the **sequence of partial sums** for the series.
 
-11. The **Cauchy criterion** for infinite series says that an infinite series $\sum_0^{\infty} x_k$ converges iff for every $\epsilon$ there's an $N$ such that for all $m \geq n \geq N$ we have
+11. The **Cauchy criterion** for infinite series says that an infinite series $\sum_1^{\infty} x_k$ converges iff for every $\epsilon$ there's an $N$ such that for all $m \geq n \geq N$ we have
 
     $$| \sum_n^m x_k | < \epsilon$.
 
@@ -41,7 +41,7 @@
 
     $$lim_{n \to \infty} x_n = 0$$
 
-    is a necessary condition for $\sum_0^{\infty} x_n$ to converge.
+    is a necessary condition for $\sum_1^{\infty} x_n$ to converge.
 
 13. It is not sufficient, however. The famous example we use here is that of the harmonic series, $\sum_1^{\infty} \frac{1}{n}$. This series diverges despite $\lim_{n \to \infty} \frac{1}{n} = 0$.
 
@@ -60,13 +60,22 @@
     But if $S_n$ is the $n$-partial sum, this means that $S_4 > S_2 + \frac{1}{2}$, $S_8 > S_4 + \frac{1}{2}$, and so on, so the sequence of partial sums could not be Cauchy (the difference between a a power-of-two term and the next biggest power-of-two term will always exceed $1/2$).
 
 
-14. A convergent series $\sum_0^{\infty} x_k$ is **absolutely convergent** if $\sum_0^{\infty} |x_k|$ converges, and **conditionally convergent** otherwise.
+14. A convergent series $\sum_1^{\infty} x_k$ is **absolutely convergent** if $\sum_1^{\infty} |x_k|$ converges, and **conditionally convergent** otherwise.
 
 15. The significance of absolutely convergent series, it seems to me, is that they are the proper notion of "infinite addition" of numbers. For finite addition, due to associativity and commutativity, any rearrangement of the numbers results in the same sum. So for some construction to be an infinite addition, one would (perhaps naively) expect that any rearrangement of the terms would result in the same sum.
 
     By the Riemann rearrangement theorem, however, it is not true for convergent infinite series in general: conditionally convergent series can be arranged to converge to any finite or infinite limit, or to diverge. The proof of that theorem is omitted here for now (TODO), but we will prove...
 
-16. Any rearrangement of an absolutely convergent series converges to the same limit.  TODO
+16. Any rearrangement of an absolutely convergent series converges to the same limit. (To be clear, we say $\sum_1^{\infty} b_k$ is a rearrangement of $\sum_1^{\infty} a_k$ when there's a bijection $f: \mathbb{N} \to \mathbb{N}$ such that $b_{f(k)} = a_k$ for all $k$.) Let $\sum_1^{\infty} a_n$ be a series converging to $A$, and let $\sum_1^{\infty} b_n$ be a rearrangement, with bijection $f$ such that $b_{f(k)} = a_k$ for all $k$.
+
+    Also, let $A_n$ and $B_n$ be the $n$-partial sum of $(a_n)$ and $(b_n)$, respectively. The idea is, for every $\epsilon$, to find an $M$ such that for all $m \geq M$, $|B_m - A| < \epsilon$. We will (as usual) use the triangle inequality. We can clearly make $|A_n - A|$ as small as we like. Specifically, we can find an $N_1$ such that for all $n \geq N_1$, $|A_n - A| < \epsilon/2$. Can we find certain $m$ and $n$ such that $|B_m - A_n|$ gets arbitrarily small as well?
+
+    By hypothesis, $\sum_1^{\infty} a_k$ is absolutely convergent, so there's an $N_2$ such that for all $m \geq n \geq N_2$, $\sum_n^m |a_k| < \epsilon/2$.
+
+    Consider defining $N := \max{N_1, N_2}$. One idea here is to define $M := \max(f(i) : 1 \leq i \leq N)$, so that $B_M$ contains every term of $A_N$, and that for all $m \geq M$, $|B_m - A_N|$ is less than or equal to (by the triangle inequality) some finite sum of absolute values of terms of $(a_n)$. This means it is less than or equal to some contiguous some of absolute values of terms of $(a_n)$, where the "lower index" comes after $N+1$. But due to how we defined $N$, this sum is strictly less than $\epsilon/2$.
+
+    We have just proven that for any $m \geq M$ $|B_m - A| < \epsilon$. So the rearrangement $\sum_1^{\infty} b_n$ converges to $A$ as well.
+
 
 ----
 TODO: these things need to be reorganized
