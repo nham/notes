@@ -23,6 +23,51 @@
 
     The proof is simple: if not, the limit $A$ of $(a_n)$ is strictly greater than $B := \lim_{n \to \infty} b_n$, which means we can find a point $k$ after which all terms of $(a_n)$ are strictly greater than terms of $(b_n)$, which is contrary to assumption.
 
+10. An **infinite series** is when for some real sequence $(x_n)$, the limit
+
+    $$\lim_{n \to \infty} \sum_1^n x_k$$
+
+    exists. In this case the series is said to **converge** and the limit of the series is denoted $\sum_0^{\infty} x_k$. The sequence $(S_n)$ for $S_n := \sum_1^n x_k$ is the **sequence of partial sums** for the series.
+
+11. The **Cauchy criterion** for infinite series says that an infinite series $\sum_0^{\infty} x_k$ converges iff for every $\epsilon$ there's an $N$ such that for all $m \geq n \geq N$ we have
+
+    $$| \sum_n^m x_k | < \epsilon$.
+
+    This is just an application of the fact that a sequence in $\mathbb{R}$ converges iff it is Cauchy to the sequences of partial sums.
+
+    A way of re-phrasing this: an infinite series converges iff for every $\epsilon$ there's a tail sequence such that by starting partial sums at any point in the tail, the absolute value of any partial sum is strictly bounded above by $\epsilon$.
+
+12. One corollary of the Cauchy criterion for series is that if an infinite series converges, we must have for all $\epsilon > 0$, some $N$ such that $|a_n| < \epsilon$ for all $n \geq N$. Equivalently,
+
+    $$lim_{n \to \infty} x_n = 0$$
+
+    is a necessary condition for $\sum_0^{\infty} x_n$ to converge.
+
+13. It is not sufficient, however. The famous example we use here is that of the harmonic series, $\sum_1^{\infty} \frac{1}{n}$. This series diverges despite $\lim_{n \to \infty} \frac{1}{n} = 0$.
+
+    To see this, note that
+
+    $$\frac{1}{3} + \frac{1}{4} > 2 * \frac{1}{4} = \frac{1}{2}$$
+
+    Similarly,
+
+    $$\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} > 4 * \frac{1}{8} = \frac{1}{2}$$
+
+    In general,
+
+    $$\sum_{j = 2^{k-1} + 1}^{2^k} \frac{1}{j} > 2^{k-1} * \frac{1}{2^k} = \frac{1}{2}$$
+
+    But if $S_n$ is the $n$-partial sum, this means that $S_4 > S_2 + \frac{1}{2}$, $S_8 > S_4 + \frac{1}{2}$, and so on, so the sequence of partial sums could not be Cauchy (the difference between a a power-of-two term and the next biggest power-of-two term will always exceed $1/2$).
+
+
+14. A convergent series $\sum_0^{\infty} x_k$ is **absolutely convergent** if $\sum_0^{\infty} |x_k|$ converges, and **conditionally convergent** otherwise.
+
+15. The significance of absolutely convergent series, it seems to me, is that they are the proper notion of "infinite addition" of numbers. For finite addition, due to associativity and commutativity, any rearrangement of the numbers results in the same sum. So for some construction to be an infinite addition, one would (perhaps naively) expect that any rearrangement of the terms would result in the same sum.
+
+    By the Riemann rearrangement theorem, however, it is not true for convergent infinite series in general: conditionally convergent series can be arranged to converge to any finite or infinite limit, or to diverge. The proof of that theorem is omitted here for now (TODO), but we will prove...
+
+16. Any rearrangement of an absolutely convergent series converges to the same limit.  TODO
+
 ----
 TODO: these things need to be reorganized
 
