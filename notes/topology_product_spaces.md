@@ -42,4 +42,12 @@ title: "Topology: finite product spaces"
 
     which is open since each $f_i$ is continuous. We denote this map by $\prod_1^n f_i$.
 
-5. The finite product of Hausdorff spaces $X_i$ is also Hausdorff because for any two distinct points $x = (x_i : 1 \leq i \leq n), y = (y_i : 1 \leq i \leq n) \in \prod_1^n X_i$, then for some $i$ we have $x_i \neq y_i$, so we can find disjoint neighborhoods $U_i, V_i$ for $x_i$ and $y_i$, respectively, in $X_i$ (due to Hausdorffness). Pick any open sets $U_j, V_j$ in $X_j$ for $j \neq i$, each of which contains $x_j$ and $y_j$, respectively. Then $\prod_1^n U_i$ and $\prod_1^n V_i$ are disjoint.
+5. The product map of injective maps is injective: if $f(a) = f(b)$, then $f_i(a_i) = f_i(b_i)$ for all $i$, which implies that $a_i = b_i$ for all $i$ by injectivity. Similarly the product map of surjective maps is surjective: for any $y$ in the codomain of $f$, for all $i$ there is an $x_i$ such that $f_i(x_i) = y_i$ by surjectivity, so $f(x) = y$.
+
+6. To prove that the product map of homeomorphisms is a homeomorphism between product spaces, it suffices to prove that the inverse of a product map is the product map of inverses. This can be seen through straightforward calculation. To illustrate one direction: if $g: \prod_1^n Y_i \to \prod_1^n X_i$ is defined by
+
+    $$g(x) := (f_i^{-1}(x_i) : 1 \leq i \leq n)$$
+
+    Then $g(f(x)) = (f_i^{-1}(f_i(x_i)) : 1 \leq i \leq n) = x$. The other direction is similar.
+
+7. The finite product of Hausdorff spaces $X_i$ is also Hausdorff because for any two distinct points $x = (x_i : 1 \leq i \leq n), y = (y_i : 1 \leq i \leq n) \in \prod_1^n X_i$, then for some $i$ we have $x_i \neq y_i$, so we can find disjoint neighborhoods $U_i, V_i$ for $x_i$ and $y_i$, respectively, in $X_i$ (due to Hausdorffness). Pick any open sets $U_j, V_j$ in $X_j$ for $j \neq i$, each of which contains $x_j$ and $y_j$, respectively. Then $\prod_1^n U_i$ and $\prod_1^n V_i$ are disjoint.

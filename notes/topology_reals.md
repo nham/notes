@@ -31,19 +31,28 @@ Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower 
 
     So $f$ is bijective. Finally, $g$ must be strictly monotone as well, and the subspace basis for $(-1, 1)$ is just the open intervals contained in $(-1, 1)$, so by monotonicity again the preimage of any open interval is another open interval, blah blah $g$ is continuous.
 
-8. The **extended real numbers** are the system of numbers you get by adding $\infty, -\infty$ to $\mathbb{R}$. Let's denote the set by $\bar{\mathbb{R}}$. We can extend the ordering on $\mathbb{R}$ so that
+8. Stretching $\mathbb{R}$ is a homeomorphism: the map $f: \mathbb{R} \to \mathbb{R}$ defined by $x \mapsto cx$ for $c \neq 0$ is a homeomorphism on $\mathbb{R}$. *Proof:* It suffices to prove that $f$ is continuous, since each such $f$ is bijective and its inverse is also a stretching map. When $c > 0$, $f$ is a strictly monotone function ($a < b$ implies $ca < cb$), so $f^{pre}((a, b)) = (a/c, b/c)$. When $c < 0$, $f$ is strictly anti-monotone or whatever you'd call that, so again the preimage of any open interval is another open interval.
+
+9. Translation of $\mathbb{R}$ is a homeomorphism, for basically the same reason that stretching was: the inverse image of any open interval $(a, b)$ under translation by $z$ is the open interval $(a - z, b - z)$.
+
+10. From the previous two notes we have that stretching/translating $\mathbb{R}^n$ is a homeomorphism since they can both be thought of as a product map of the single-variable streches/translations.
+
+11. Any two open balls in $\mathbb{R}^n$ are homeomorphic. To prove this, it suffices to prove that $B(a; \epsilon)$ and $B(0; 1)$ are homeomorphic for any $a$ and $\epsilon$. But this is easy to see: $B(a; \epsilon)$ and $B(0; \epsilon)$ are homeomorphic via a restriction of a translation map on $\mathbb{R}$, and $B(0; \epsilon)$ and $B(0; 1)$ are homeomorphic via a restriction of the stretching map. Since the composition of homeomorphisms is a homeomorphism, we are done.
+
+
+12. The **extended real numbers** are the system of numbers you get by adding $\infty, -\infty$ to $\mathbb{R}$. Let's denote the set by $\bar{\mathbb{R}}$. We can extend the ordering on $\mathbb{R}$ so that
 
     $$-\infty < x < \infty$$
 
     for all finite $x$, making $\bar{\mathbb{R}}$ totally ordered.
 
-9. Of course, the extended real line being totally ordered means it has a topology on it, courtesy of the order topology.
+13. Of course, the extended real line being totally ordered means it has a topology on it, courtesy of the order topology.
 
-10. $\mathbb{R}$ is dense in $\bar{\mathbb{R}}$ because every every non-empty open subset of $\bar\{\mathbb{R}}$ contains some basis set, and each basis set contains a finite real.
+14. $\mathbb{R}$ is dense in $\bar{\mathbb{R}}$ because every every non-empty open subset of $\bar\{\mathbb{R}}$ contains some basis set, and each basis set contains a finite real.
 
     Not only that, but the subspace topology on $\mathbb{R}$ relative to $\bar{\mathbb{R}}$ is just the standard topology on $\mathbb{R}$ because the subspace basis of $\mathbb{R}$ consists of all open intervals $(a, b)$ with $a$ and $b$ finite and all intervals $(a, \infty)$, and $(-\infty, a)$ for finite $a$. These are all open in the standard topology on $\mathbb{R}$, and this is a superset of the standard metric basis, so subspace basis induces the standard topology.
 
 
-11. $\bar{\mathbb{R}}$ is homeomorphic with $[-1, 1]$: using the $f$ and $g$ as above for homeomorphisms between $(-1, 1)$ and $\mathbb{R}$, we extend it by mapping $-1 \leftrightarrow -\infty$ and $1 \leftrightarrow \infty$. Then the basis sets of $\bar{\mathbb{R}}$ involving $\infty$ or $-\infty$ have preimages of $(a, 1]$ or $[-1, a)$ for some $a \in (0, 1)$, which are clearly open in $[-1, 1]$. Similarly the preimages of open intervals in $[-1, 1]$ involving $-1$ or $1$ will be the half-open intervals involving $-\infty$ or $\infty$. So this is a homeomorphism.
+15. $\bar{\mathbb{R}}$ is homeomorphic with $[-1, 1]$: using the $f$ and $g$ as above for homeomorphisms between $(-1, 1)$ and $\mathbb{R}$, we extend it by mapping $-1 \leftrightarrow -\infty$ and $1 \leftrightarrow \infty$. Then the basis sets of $\bar{\mathbb{R}}$ involving $\infty$ or $-\infty$ have preimages of $(a, 1]$ or $[-1, a)$ for some $a \in (0, 1)$, which are clearly open in $[-1, 1]$. Similarly the preimages of open intervals in $[-1, 1]$ involving $-1$ or $1$ will be the half-open intervals involving $-\infty$ or $\infty$. So this is a homeomorphism.
 
-12. A corollary is that the extended reals are compact (since closed intervals in $\mathbb{R}$ are). So the extended reals are a compactification of $\mathbb{R}$.
+16. A corollary is that the extended reals are compact (since closed intervals in $\mathbb{R}$ are). So the extended reals are a compactification of $\mathbb{R}$.
