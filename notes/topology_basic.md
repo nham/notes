@@ -114,21 +114,10 @@ Related notes: [metric spaces](metric_spaces.html), [topology: bases and countab
 
     Even weirder, under the trivial topology every sequence converges to every point. So there are topological spaces where the concept of convergent sequences is nonsensical. (There are two notions for discussing convergence in general topological spaces: nets and filters. I haven't had a reason to care about them yet, so I don't know anything about them)
 
-24. A sufficient (but not necessary) condition for ensuring uniqueness of limits is the **Hausdorff** property, which says that any two distinct points in a topological space have disjoint neighborhoods. Any space with this property is called a **Hausdorff space**. This ensures uniqueness of limits since two tail sequences of one sequence could not be contained in two disjoint sets (the smaller of the tail sequences would have to be contained in two disjoint sets, which is crazy talk).
-
-25. TODO: An example of a non-Hausdorff space where limits are unique.
-
-26. The **order topology** on any totally ordered set $X$ is the one induced by the basis consisting of
+24. The **order topology** on any totally ordered set $X$ is the one induced by the basis consisting of
 
      - all open intervals $(a, b)$ for $a, b \in X$
      - if there is a minimal element $z$, all half-open intervals $[z, x)$
      - if there is a maximal element $z$, all half-open intervals $(x, z]$
 
     This is a basis: it covers $X$ since if there's no maximal or minimal element, every $x \in X$ is contained in one open interval. If there's a minimal or a maximal element, it will be contained in one of the half-open intervals. Also, the intersection of two open intervals is either empty or another open interval, the intersection of an open interval and a half-closed interval is again either empty or open, and the intersection of two half-open intervals is either empty, another half-open interval, or an open interval. In all of these cases, the collection of all sets defined above is actually closed under non-disjoint intersection, so is a basis.
-
-27. Another separation axiom that has come up: A space is $T_1$ if for any pair of distinct points $a$ and $b$, there are neighborhoods $U$ and $V$ of $a$ and $b$, respectively, such that $U$ doesn't contain $b$ and $V$ doesn't contain $a$. Clearly Hausdorff spaces are $T_1$, since they actually impose a stronger condition: that the neighborhoods are *disjoint*.
-
-28. A space $X$ is $T_1$ iff singleton sets are closed. If $T_1$, for any $x$ and any $y \neq x$, there is a neighborhood $U_y$ of $y$ that does not contain $x$ by the $T_1$ property, so the union of them all is $X - x$ and is open since it is a union of open sets. (Alternate proof: if $\{x\}$ is not closed, there is some $a \neq x$ and every neighborhood of $a$ contains $x$, contradicting $T_1$). Conversely, if all singletons are closed, then for $x \neq y$, $X - x$ is a neighborhood of $y$ and $X - y$ is a neighborhood of $x$, and these mutually exclude each other.
-
-
-28. Random fact that I'm sticking here: In a $T_1$ space, if $a$ is a limit point of some subset $S$, then for any neighborhood $U$ of $a$ there must be infinitely many points distinct from $a$ that are in $U \cap S$, because if there are only finitely many, we can find a neighborhood of $a$ that does not intersect $S - a$, contradicting that it's a limit point.
