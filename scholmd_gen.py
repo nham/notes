@@ -31,7 +31,6 @@ class Generator:
 
     def gen_page_file(self, input_file, path_rel_to_output,
                         css_files=None,
-                        is_mathjax_on=False,
                         page_before_body=None,
                         page_after_body=None):
 
@@ -43,21 +42,16 @@ class Generator:
         ensure_dir(output_file_path)
 
         scholdoc_call = (['scholdoc', input_file,
+                      '-f', 'markdown_scholarly',
                       '-t', 'html5',
                       '-o', output_file_path,
                       '--smart'])
-
-        if is_mathjax_on:
-            pass
-            #pandoc_call += ['--mathjax']
-
 
         if css_files is None:
             css_files = self.default_css_files
 
         for file_name in css_files:
-            pass
-            #pandoc_call += ['--css', file_name]
+            scholdoc_call += ['--css', file_name]
 
 
         if page_before_body is None:
@@ -67,21 +61,8 @@ class Generator:
             pass
             #pandoc_call += ['--include-before-body', page_before_body]
 
-
-        if page_after_body is None:
-            page_after_body = self.default_page_after_body
-
-        if page_after_body is not None:
-            pass
-            #pandoc_call += ['--include-after-body', page_after_body]
-
-
         p = subprocess.call(scholdoc_call)
 
-
-# first concern is the exact organization of
-# notes. if each note is a unit of review, it seems like they
-# should be fairly small.
 
 def gen_notes(gen):
     folder_name = 'schol_notes/'
@@ -96,13 +77,10 @@ def gen_notes(gen):
         else:
             # assume it's something that needs to be copied to output
             # folder (like an image)
-            print("copying {} to {}", fname, folder_name) 
             gen.copy_file(folder_name, fname, '/')
 
 
-gen = Generator(default_css_files=['/css/style.css'],
-                default_page_before_body='includes/before_body.html',
-                default_page_after_body='includes/after_body.html')
+gen = Generator(default_css_files=['/schol_css/style.css'])
 
 gen_notes(gen)
-gen.copy_file('css/', 'style.css')
+gen.copy_file('schol_css/', 'style.css')
