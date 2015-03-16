@@ -1,4 +1,4 @@
-1. If $X$ is a topological space, $Y$ any set, and $f: X \to Y$ any map, then the **identification space on $Y$ determined by $f$** is defined to be
+1. If $X$ is a topological space, $Y$ any set, and $f: X \to Y$ any function, then the **identification space on $Y$ determined by $f$** is defined to be
 
     $$(Y, \{V \subseteq Y : f^{pre}(V) \text{ open in } X\})$$
 
@@ -8,13 +8,11 @@
     
 2. There's an important special case of this: if $X$ is a topological space and $\sim$ an equivalence relation on $X$, the **quotient space on $X$ determined by $\sim$** is defined to be the identification space on $X / \sim$ determined by $\pi: X \to X / \sim$, the canonical projection that sends elements of $X$ to their equivalence classes under $\sim$.
 
-3. The quotient space is actually not so much a special case of identification spaces, since every surjective map $f: X \to Y$ determines an equivalence relation $\sim$ on $X$, the one whose classes are the fibers of $f$. Then the map $g: X / \sim \to Y$ defined by $g([x]) = f(x)$ is a homeomorphism: it's clearly bijective and $V$ is open in  $Y$ iff $f^{pre}(V) = \bigcup_{v \in V} f^{pre}(\{v\}) = g^{pre}(V)$ is open in $X / \sim$.
+3. If $X$ is a space, $Y$ is a set and $f: X \to Y$ is a surjective function, then there is an equivalence relation on $X$ given by the fibers of $f$. So any surjective $f$ defined on a topological space $X$ determines a quotient space.
 
-(If $f$ is not surjective then we probably have to consider a topology on $Y$ such that the subspace topology for $f(X)$ is the quotient/identification topology. I don't think it's too hard to do that, but I'm also not sure I need it, so I'm leaving it alone for now. Lee only introduces identification spaces for surjective maps anyways).
+4. A **quotient map** is a map $f: X \to Y$ between topological spaces such that $f$ is surjective, continuous, and the topology on $Y$ is the identification topology determined by $f$.
 
-3. A **quotient map** is a map $f: X \to Y$ between topological spaces such that $f$ is surjective, continuous, and the topology on $Y$ is the identification topology determined by $f$.
-
-4. If we have
+5. If we have
 
      - topological spaces $X, Y$
      - a closed subset $A$ of $Y$

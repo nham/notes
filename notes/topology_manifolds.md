@@ -53,3 +53,7 @@ For $1 \leq i \leq n + 1$. These are open sets in $\mathbb{R}^{n+1}$, so each $U
 $$f_i^{\pm}(x_j : 1 \leq j \leq n + 1, j \neq i) := \pm \sqrt{1 - \sum_j x_j^2}$$
 
 So we have this collection $U_i^{\pm} \cap \mathbb{S}^n$ of open sets that cover $\mathbb{S}^n$, and each of them is homeomorphic to an $n$-manifold. Effectively what we've proved is that each point in $\mathbb{S}^n$ has a neighborhood that is homeomorphic to a space that is locally Euclidean of dimension $n$. This means that every point has a neighborhood that is locally Euclidean of dimension $n$, which establishes that $\mathbb{S}^n$ is locally Euclidean of dimension $n$.
+
+9. The **real projective space of dimension $n$** is set defined in the following way: We first take $X := \mathbb{R}^{n+1} - \{0\}$, and then define an equivalence relation on $X$ by $a \sim b$ iff there is a $\lambda \neq 0$, $a = \lambda b$. Then $\mathbb{R} \mathbb{P}^n := X / \sim$, and it has the quotient topology determined by $\pi: X \to \mathbb{R} \mathbb{P}^n$ defined by setting $\pi(x) = \{\lambda x : \lambda \neq 0\} \in \mathbb{R} \mathbb{P}^n$. $\mathbb{R} \mathbb{P}^2$ is called the **projective plane**.
+
+    (I think $\mathbb{R} \mathbb{P}^n$ is metrizable, with a metric defined by the angle between two lines. This means that open balls in $\mathbb{R} \mathbb{P}^n$ can be thought of as "open cones". Don't know how to make this rigorous).
