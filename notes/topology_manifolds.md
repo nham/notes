@@ -25,3 +25,31 @@
     is a topological manifold of dimension $n$ when considered to have the subspace topology relative to $\mathbb{R}^n \times \mathbb{R}^k$. (Defining $\Gamma(f)$ is really only done for emphasis, since set-theoretically a function is defined to *be* it's graph set). It is second countable and Hausdorff because the finite product of second-countable Hausdorff spaces is second-countable Hausdorff, and because $\Gamma(f)$ is a subspace of a second-countable Hausdorff space.
 
     To prove that $\Gamma(f)$ is locally Euclidean of dimension $n$, note that $\phi: \Gamma(f) \to U$ defined by $\phi(x, y) := x$ is a restriction of the projection $\mathbb{R}^n \times \mathbb{R}^k \to \mathbb{R}^n$, so $\phi$ is continuous. It is also bijective since it has an inverse: $\phi^{-1}(x) := (x, f(x))$.
+
+8. The **$n$-sphere** for any $n$ is the collection of points in $\mathbb{R}^{n+1}$ that are distance $1$ away from the origin:
+
+$$\mathbb{S}^n := \{x \in \mathbb{R}^{n+1} : |x| = 1\}$$
+
+Familiar examples of $n$-spheres include the $1$-sphere, also known as the unit circle, and the $2$-sphere, also known as the unit sphere in $\mathbb{R}^3$.
+
+Being a subspace of a second-countable Hausdorff space, the $n$-sphere is also second-countable Hausdorff. To prove that it's a topological manifold of dimension $n$, it remains to prove it is locally Euclidean of dimension $n$.
+
+Let's write $\mathbb{B}^n$ for the open ball of radius $1$ centered at $0$ in $\mathbb{R}^n$. Consider the function $f: \mathbb{B}^n \to \mathbb{R}$ defined by
+
+$$f(u) := \sqrt{1 - |u|^2}$$
+
+Since $0 \leq |u| < 1$, we have $0 < f(u) \leq 1$. Also $f(u) = f(v)$ implies $|u| = |v|$. So the fibers of $f$ are circles of radius $\delta$, $0 \leq \delta < 1$. So the preimage of any open interval $(a, b)$ under $f$ is all the points whose magnitudes lie (strictly) between $\sqrt{1 - b^2}$ and $\sqrt{1 - a^2}$. This is open, so $f$ is continuous. That means the graph of $f$, $\Gamma(f)$, is a topological manifold of dimension $n$.
+
+Now consider
+
+$$U_i^+ := \{x \in \mathbb{R}^{n+1} : x_i > 0\}$$
+
+and
+
+$$U_i^- := \{x \in \mathbb{R}^{n+1} : x_i < 0\}$$
+
+For $1 \leq i \leq n + 1$. These are open sets in $\mathbb{R}^{n+1}$, so each $U_i^{\pm} \cap \mathbb{S}^n$ is open in $\mathbb{S}^n$. We can consider each $U_i \cap \mathbb{S}^n$ to be the graph of $f_i^{\pm}: \mathbb{B}^n \to \mathbb{R}$ by defining
+
+$$f_i^{\pm}(x_j : 1 \leq j \leq n + 1, j \neq i) := \pm \sqrt{1 - \sum_j x_j^2}$$
+
+So we have this collection $U_i^{\pm} \cap \mathbb{S}^n$ of open sets that cover $\mathbb{S}^n$, and each of them is homeomorphic to an $n$-manifold. Effectively what we've proved is that each point in $\mathbb{S}^n$ has a neighborhood that is homeomorphic to a space that is locally Euclidean of dimension $n$. This means that every point has a neighborhood that is locally Euclidean of dimension $n$, which establishes that $\mathbb{S}^n$ is locally Euclidean of dimension $n$.
