@@ -4,11 +4,21 @@
 
     So if $X$ is locally Euclidean of dimension $n$, for each $x \in X$, there is some neighborhood $U$ of $x$ such that some homeomorphism $f: U \to f(U)$ exists, where $f(U)$ is open. Now there must be some open ball $B$ centered at $f(x)$ and contained in $f(U)$ because $f(U)$ is open, and its pre-image $f^{pre}(B)$ is a neighborhood of $x$ since $f$ is continuous. So the restriction of $f$ to $f^{pre}(B) \to B$ is again a homeomorphism
 
-3. A **topological manifold of dimension $n$** (according to Lee) is a second-countable, Hausdorff space that is locally Euclidean of dimension $n$.
+3. If $X$ and $Y$ are homeomorphic, then $X$ is locally Euclidean of dimension $n$ iff $Y$ is. In other words, "locally Euclidean" is a topological property. To see this, note that if $X$ is locally Euclidean, then for every $x \in X$, there is a neighborhood $U_x$ that is homeomorphic to an open subset $V_x$ of $\mathbb{R}^n$. Since $X$ and $Y$ are homeomorphic, let $\phi: X \to Y$ be a homeomorphism. Now suppose that $y \in Y$ is arbitrary. Then $x := \phi^{-1}(y)$ has a neighborhood $U_x$ homeomorphic to $V_x \subseteq \mathbb{R}^n$, so $\phi(U_x)$ is a neighborhood of $y$ homeomorphic to $U_x$ and hence to $V_x$.
 
-4. The first example of a topological manifold of dimension $n$ is $\mathbb{R}^n$ itself: elsewhere in the notes it is proved that $\mathbb{R}^n$ is second-countable, it is certainly Hausdorff (being a metric space), and it is homeomorphic to itself. More generally, any open subset of $\mathbb{R}^n$ is a topological manifold of dimension $n$, since subspaces of Hausdorff/second-countable spaces are Hausdorff/second-countable.
+4. A **topological manifold of dimension $n$** (according to Lee) is a second-countable, Hausdorff space that is locally Euclidean of dimension $n$.
 
-5. If $U$ is an open subset of $\mathbb{R}^n$ and $f: U \to \mathbb{R}^k$ is a continuous map, then the graph of $f$, denoted
+5. Being a manifold is a topological property. If $X$ and $Y$ are homeomorphic, then individually we have
+
+     - $X$ is second-countable iff $Y$ is
+     - $X$ is Hausdorff iff $Y$ is
+     - $X$ is locally Euclidean of dimension $n$ iff $Y$ is
+
+    So that we have $X$ is a topological manifold iff $Y$ is.
+
+6. The first example of a topological manifold of dimension $n$ is $\mathbb{R}^n$ itself: elsewhere in the notes it is proved that $\mathbb{R}^n$ is second-countable, it is certainly Hausdorff (being a metric space), and it is homeomorphic to itself. More generally, any open subset of $\mathbb{R}^n$ is a topological manifold of dimension $n$, since subspaces of Hausdorff/second-countable spaces are Hausdorff/second-countable.
+
+7. If $U$ is an open subset of $\mathbb{R}^n$ and $f: U \to \mathbb{R}^k$ is a continuous map, then the graph of $f$, denoted
 
     $$\Gamma(f) := \{(x, y) \in \mathbb{R}^n \times \mathbb{R}^k : x \in U, y = f(x)\}$$
 

@@ -24,7 +24,7 @@ Related notes: [basic topology](topology_basic.html)
 
     *Proof:* Clearly $\mathcal{C}$ covers the space. But any intersection of two sets in $\mathcal{C}$ is open, so every point in the intersection has a $\mathcal{C}$-set contained in the intersection.
 
-    Note this is just saying "if $\mathcal{C}$ is a collection of open subsets and every open $U$ is a union of sets in $\mathcal{C}$, then $\mathcal{C}$ is a basis for the topology."
+    To rephrase the above: if $\mathcal{C}$ is a collection of open subsets and every open $U$ is a union of sets in $\mathcal{C}$, then $\mathcal{C}$ is a basis for the topology.
 
 4. If $\mathcal{B}$ and $\mathcal{C}$ are bases for a set $X$, let $\mathcal{S}$ and $\mathcal{T}$ be the respective induced topologies.
 
@@ -33,6 +33,12 @@ Related notes: [basic topology](topology_basic.html)
     The converse is true too: if $\mathcal{S}$ is finer than $\mathcal{T}$, every $C \in \mathcal{C}$ must be $\mathcal{S}$-open, hence a union of $\mathcal{B}$-elements, which is equivalent to the condition we stated above.
 
     A corollary of the above is that the topologies induced by two bases are equivalent iff each $\mathcal{C}$-element is a union of $\mathcal{B}$-elements and vice versa.
+
+5. I don't know what to call this, the **homeomorphism basis**? If $X$ and $Y$ are spaces and $f: X \to Y$ is a homeomorphism, and $\mathcal{B}$ is a basis for the topology on $X$, then
+
+    $$f(\mathcal{B}) := \{f(B) : B \in \mathcal{B}\}$$
+
+    is a basis for the topology on $Y$. To prove that $f(\mathcal{B})$ is a basis for the topology on $Y$, it suffices to prove a) that $f(\mathcal{B})$ is a collection of open subsets in $Y$ (which is true by definition), and b) that every $V$ open in $Y$ is the union of sets in $f(\mathcal{B})$, which can be seen by noting that $f^{pre}(V)$ is open in $X$, so $f^{pre}(V) = \bigcup_i B_i$ for some $B_i$'s in $\mathcal{B}$, so $V = \bigcup_i f(B_i)$.
 
 
 5. A space is **second-countable** if it has a countable (finite or countably infinite) basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
@@ -43,25 +49,27 @@ Related notes: [basic topology](topology_basic.html)
      - the sup-norm on $\mathbb{R}^n$ is topologically equivalent to the Euclidean norm, and every open box under the sup-norm contains a point with rational coordinates (using density of $\mathbb{Q}$ in $\mathbb{R}$) so $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ 
      - from this we get that the collection of open balls centered at rational coordinates with rational radii covers the whole space. Intersections of such balls are clearly open, so the collection is a countable basis for $\mathbb{R}^n$
 
-6. A space is **separable** if it has a countable dense subset.
+6. Being second-countable is a topological property. That is, if $X$ and $Y$ are homeomorphic, then $X$ is second-countable iff $Y$ is. This can be immediately seen by using the homeomorphism basis: if we have a countable basis for $X$, then we immediately have one for $Y$ as well.
 
-7. Second-countable spaces are separable: if $X$ is second countable, pick an element in each basis element. This is a countable subset of $X$, and every non-empty open set, being a union of basis elements, contains an element of this set, so it is dense in $X$.
+7. A space is **separable** if it has a countable dense subset.
 
-8. A **neighborhood basis** for point $a \in X$ is some collection $\mathcal{B}$ of neighborhoods of $a$ such that every neighborhood of $a$ contains some $B \in \mathcal{B}$.
+8. Second-countable spaces are separable: if $X$ is second countable, pick an element in each basis element. This is a countable subset of $X$, and every non-empty open set, being a union of basis elements, contains an element of this set, so it is dense in $X$.
 
-9. A space is **first-countable** if every point has a countable neighborhood basis.
+9. A **neighborhood basis** for point $a \in X$ is some collection $\mathcal{B}$ of neighborhoods of $a$ such that every neighborhood of $a$ contains some $B \in \mathcal{B}$.
 
-10. Any second-countable space is first countable. Let $\mathcal{B}$ be a countable basis for $X$. Then one basis that works for any $a \in X$ is all the sets in $\mathcal{B}$ that are neighborhoods of $a$. It's countable since it's a subset of $\mathcal{B}$, and clearly any neighborhood $U$ of $a$ contains some basis set around $a$.
+10. A space is **first-countable** if every point has a countable neighborhood basis.
 
-11. A **cover** for a subset $S$ of some topological space $X$ is any collection of subsets of $X$ whose union is a superset of $S$. An **open cover** is a cover consisting of open sets. A **subcover** is a subcollection of cover elements that still acts as a cover for the set.
+11. Any second-countable space is first countable. Let $\mathcal{B}$ be a countable basis for $X$. Then one basis that works for any $a \in X$ is all the sets in $\mathcal{B}$ that are neighborhoods of $a$. It's countable since it's a subset of $\mathcal{B}$, and clearly any neighborhood $U$ of $a$ contains some basis set around $a$.
 
-12. A space is said to be a **Lindelöf space** if every open cover of the space has a countable subcover. A useful fact (I'm foggy on how useful, exactly) is that every second-countable space is Lindelöf.
+12. A **cover** for a subset $S$ of some topological space $X$ is any collection of subsets of $X$ whose union is a superset of $S$. An **open cover** is a cover consisting of open sets. A **subcover** is a subcollection of cover elements that still acts as a cover for the set.
+
+13. A space is said to be a **Lindelöf space** if every open cover of the space has a countable subcover. A useful fact (I'm foggy on how useful, exactly) is that every second-countable space is Lindelöf.
 
     Proof: There is some countable basis for the space, so (WLOG) assume $\mathcal{U}$ is an open cover containing $\emptyset$. For every basis element $B$, we define $U_B$ to be either one of the cover elements that contains that basis element if one such cover element exists, or $U_B = \emptyset$ otherwise. If the collection of $U_B$'s is not a subcover, then for some point $x$, every basis element containing $x$ is not contained in any cover element of $\mathcal{U}$, which contradicts that $x$ is in at least one cover element $U$ and that therefore there is some basis element that is a neighborhood of $x$ and is contained in $U$. So the $U_B$'s are a subcover, and they are countable since we are working with a countable basis.
 
-13. The **subspace basis** for a subspace $A$ of some space $X$ w.r.t. a basis $\mathcal{B}$ is just all the basis element intersected with $A$. This construction is easily seen to be a basis (it obviously covers $A$, and if $U_1 = A \cap V_1, U_2 = A \cap V_2$ for $V_1, V_2 \in \mathcal{B}$, for any $x \in U_1 \cap U_2$ there is a $D \in \mathcal{B}$ such that $x \in D \subseteq V_1 \cap V_2$, so $x \in D \cap A \subseteq U_1 \cap U_2$.) It generates the subspace the topology because of distributivity: the union of subspace basis elements is actually the intersection of $A$ with a union of basis elements in $\mathcal{B}$, (so every open set in the topology induced by the subspace basis is open in the subspace topology, but also if it's open in the subspace topology, it must be a union of (original) basis elements intersected with $A$, so is open in the subspace basis induced topology).
+14. The **subspace basis** for a subspace $A$ of some space $X$ w.r.t. a basis $\mathcal{B}$ is just all the basis element intersected with $A$. This construction is easily seen to be a basis (it obviously covers $A$, and if $U_1 = A \cap V_1, U_2 = A \cap V_2$ for $V_1, V_2 \in \mathcal{B}$, for any $x \in U_1 \cap U_2$ there is a $D \in \mathcal{B}$ such that $x \in D \subseteq V_1 \cap V_2$, so $x \in D \cap A \subseteq U_1 \cap U_2$.) It generates the subspace the topology because of distributivity: the union of subspace basis elements is actually the intersection of $A$ with a union of basis elements in $\mathcal{B}$, (so every open set in the topology induced by the subspace basis is open in the subspace topology, but also if it's open in the subspace topology, it must be a union of (original) basis elements intersected with $A$, so is open in the subspace basis induced topology).
 
-14. The **product basis** given bases $\mathcal{B}_i$ for spaces $X_i$, $1 \leq i \leq n$ is (predictably) the collection of all products of basis sets. This is indeed a basis, since for every $x = (x_i : 1 \leq i \leq n) \in \prod_1^n X_i$, we can bind basis elements $B_i$ such that $x_i \in B_i$, so $x \in \prod_1^n B_i$. Also, we have:
+15. The **product basis** given bases $\mathcal{B}_i$ for spaces $X_i$, $1 \leq i \leq n$ is (predictably) the collection of all products of basis sets. This is indeed a basis, since for every $x = (x_i : 1 \leq i \leq n) \in \prod_1^n X_i$, we can bind basis elements $B_i$ such that $x_i \in B_i$, so $x \in \prod_1^n B_i$. Also, we have:
 
     $$\prod_1^n B_i \cap \prod_1^n C_i = \prod_1^n (B_i \cap C_i)$$
 
