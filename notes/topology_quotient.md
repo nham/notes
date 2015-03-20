@@ -1,16 +1,31 @@
-1. If $X$ is a topological space, $Y$ any set, and $f: X \to Y$ any function, then the **identification space on $Y$ determined by $f$** is defined to be
+1. If $X$ is a topological space and $\sim$ an equivalence relation on $X$, the **quotient space on $X$ determined by $\sim$** is defined to be the  set:
 
-    $$(Y, \{V \subseteq Y : f^{pre}(V) \text{ open in } X\})$$
+$$\{U \subseteq X / \sim : q^{pre}(U) \text{ is open in } X\}
 
-    This is a topology because $f^{pre}(Y) = X$ and $f^{pre}(\emptyset) = \emptyset$, and also due to the preimage preserving arbitrary unions and intersections. Clearly this topology on $Y$ makes $f$ continuous.
+where $q: X \to X / \sim$ is the (surjective) map that sends each point to its equivalence class.
 
-    The topology defined in this way is the finest topology on $Y$ such that $f$ is continuous. This is basically immediate since any topology on $Y$ that makes $f$ continuous must be contained in the identification topology.
-    
-2. There's an important special case of this: if $X$ is a topological space and $\sim$ an equivalence relation on $X$, the **quotient space on $X$ determined by $\sim$** is defined to be the identification space on $X / \sim$ determined by $\pi: X \to X / \sim$, the canonical projection that sends elements of $X$ to their equivalence classes under $\sim$.
+The quotient space on $X$ determined by $\sim$ is the finest topology on $X/\sim$ such that $q: X \to X / \sim$, the canonical map, is continuous.
 
-3. If $X$ is a space, $Y$ is a set and $f: X \to Y$ is a surjective function, then there is an equivalence relation on $X$ given by the fibers of $f$. So any surjective $f$ defined on a topological space $X$ determines a quotient space.
+2. If $X$ and $Y$ are spaces and $f: X \to Y$ is a surjective function, then $f$ is said to be a **quotient map** if for all $U \subseteq Y$, $U$ is open in $Y$ iff $f^{pre}(U) is open in $X$.
 
-4. A **quotient map** is a map $f: X \to Y$ between topological spaces such that $f$ is surjective, continuous, and the topology on $Y$ is the identification topology determined by $f$.
+    Equivalently, surjective $f$ is a quotient map iff for all $C \subseteq Y$, $C$ is closed in $Y$ iff $f^{pre}(C)$ is closed in $X$. To see the equivalence, assume $f$ is a quotient map and $C \subseteq Y$ is closed. Then $Y-C$ is open, so $f^{pre}(Y-C) = X - f^{pre}(C)$ is open, meaning $f^{pre}(C)$ is closed. The converse is proved in a similar way.
+
+3. For any function $f: X \to Y$ (where $X$ and $Y$ are any sets, this is now set theory), $U \subseteq X$ is said to be **saturated with respect to $f$** if $U = f^{pre}(f(U))$ (i.e. if $U$ is the entire preimage of its image). This means that the only points that $f$ maps into $f(U)$ are points in $U$.
+
+    A set $U$ is saturated w.r.t. $f$ iff $U$ is a union of fibers. *Proof:* $U$ being saturated clearly implies that it's a union of the fibers of points in $f(U)$. Conversely, if $U$ is not saturated, there's at least one point $x \notin U$ such that $f(x) \in f(U)$, so the fiber of $f(x)$ is not contained in $U$, proving $U$ is not a union of fibers.
+
+4. If $X$ and $Y$ are topological spaces and $f: X \to Y$ is a surjective function, then the following three conditions are equivalent:
+
+ 1. $f$ is a quotient map
+ 2. $f$ is continuous and maps saturated open sets to open sets
+ 3. $f$ is continuous and maps saturated closed sets to closed sets
+
+    *Proof:* First, if condition (2) holds, then if $C$ is saturated w.r.t. $f$ and closed in $X$, then $X - C$ is open and also saturated. Since $f(X - C) = Y - f(C)$ (since $f$ is surjective), we have proved that $f(C)$ is closed. Hence (3) holds. Similarly, (3) implies (2).
+
+    Now if $f$ is a quotient map, and $U \subseteq X$ is saturated and open, then $f^{pre}(f(U)) = U$ is open, so by the quotient map property we must have $f(U)$ open. Hence (2) holds.
+
+    Conversely, if (2) holds, then for any $U \subseteq Y$, if $U$ is open then $f^{pre}(U)$ is (by continuity, an assumption of (2)), and if $f^{pre}(U) is open, it is by definition saturated so $f(f^{pre}(U))$ is open (since $f^{pre}(U)$ is saturated, open) in $Y$. But $f(f^{pre}(U)) = U because $f$ is surjective.
+
 
 5. If we have
 
