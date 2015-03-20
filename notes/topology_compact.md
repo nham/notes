@@ -16,7 +16,7 @@ title: "Topology: compact spaces"
 
     Must $U_1, \ldots, U_n$ therefore be a finite subcover for $f(X)$? If $z \in f(X)$, there is an $x \in X$ and an $i$ such that $f(x) = z$ and $x \in f^{pre}(U_i)$. So $z \in U_i$.
 
-3. An immediate corollary of this is that if two spaces $X$ and $Y$ are homeomorphic, then $X$ is compact iff $Y$ is.
+3. An immediate corollary of this is that if two spaces $X$ and $Y$ are homeomorphic, then $X$ is compact iff $Y$ is. That is, compactness is a topological property.
 
 4. Closed subsets of compact spaces are compact. Let $X$ be compact and $C$ closed in $X$. Any open cover for $C$ (under the subspace topology) can be expanded into an open cover for $X$, which has a finite subcover $U_1, \ldots, U_n$. This can be shrunk down into open sets in $C$, and they are a finite subcover for $C$.
 
