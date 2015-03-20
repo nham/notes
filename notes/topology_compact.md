@@ -83,3 +83,15 @@ title: "Topology: compact spaces"
 18. Any compact metric space is complete. This is actually real easy to do using (11): A metric space is compact iff it is sequentially compact, so any Cauchy sequence $(x_n)$ in a compact metric space has a convergent subsequence (by sequential compactness), which implies that $(x_n)$ converges.
 
 19. A **compactification** of a space $X$ is any superset $Y$ equipped with a topology that makes $Y$ compact, makes $X$ a dense subset of $Y$, and makes the subspace topology on $X$ (w.r.t. $Y$) the original topology on $X$.
+
+20. A space $X$ is **locally compact** if every point has a neighborhood contained in some compact subset of $X$.
+
+21. A useful example: for any set $X$, the **included point topology on $X$ for $p \in X$** is the empty set and all subsets of $X$ that contain $p$. This is a topology.
+
+    If $X$ is infinite, then $X$ is not compact under the included point topology, for the sets $\{x, p\}$ for $x \in X$, $x \neq p$ are an open cover with no finite subcover. $X$ is locally compact however, since for each $x \in X$, $\{x, p\}$ is an open neighborhood, which, being finite, is compact.
+
+    Note that $X$ is not Hausdorff, since any neighborhoods of $a$ and $b$ will not be disjoint: being open and non-empty, they must both contain $p$.
+
+21. A subset $A$ of $X$ is **precompact** if its closure is compact.
+
+    Any Hausdorff space is locally compact iff every point has a precompact neighborhood. One direction is immediate. Conversely, if $X$ is a locally compact Hausdorff space, let $x \in X$. We know there is some compact set $K$ that contains $x$. Since $X$ is Hausdorff, $K$ is closed. Thus, the closure of $\text{int}(K)$ is a closed subset of $K$, hence compact.
