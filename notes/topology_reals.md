@@ -89,3 +89,7 @@ $B(0; 1)$ in $\mathbb{R}^n$ is homeomorphic to $\mathbb{R}^n$.
 
 
 18. I'm assuming it to be well-known that the rationals are dense in the reals, which makes $\mathbb{R}$ separable and hence second-countable (every separable metric space is second-countable). To prove that $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$, we use the fact that the Euclidean norm and $\infty$-norm induce the same topology. Then every open subset of $\mathbb{R}^n$ contains some open box, the open box is a product of closed intervals, each of which contains a rational number. So the product contains a tuple of rationals, i.e. an element of $\mathbb{Q}^n$. This proves that $\mathbb{R}^n$ is separable and hence second-countable.
+
+19. $\mathbb{R}^n$ is clearly path-connected (consider $a, b \in \mathbb{R}^n$. then $t \mapsto a + t(b-a)$ is a path from $a$ to $b$).
+
+    Any open ball is path-connected as well, which is a consequence of open balls being convex. The proof is not tricky: if $a, b \in B(x; \epsilon)$ and $0 \leq t \leq 1$, then $|a + t(b-a) - x| = |(1-t)(a-x) + t(b-x)| \leq (1-t) |a-x| + t |b-x| < \epsilon$.
