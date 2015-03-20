@@ -1,4 +1,6 @@
-# Introductory measure theory
+---
+title: "Introductory measure theory"
+---
 
 ## Algebras and ``\sigma``-algebras
 
