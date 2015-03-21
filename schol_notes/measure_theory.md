@@ -130,6 +130,61 @@ The Lebesgue outer measure assigns any interval ``[a, b]`` its length ``b - a``.
 
 For the reverse direction: ``[a, b]`` is compact, so any countable cover ``I`` of ``[a, b]`` by open intervals has a finite subcover, which means there is an `n` such that ``[a, b] \subseteq \bigcup_1^n (a_i, b_i)``. So ``b - a \leq \sum_1^n b_i - a_i`` (I think this is because we must have ``(a_{j_1}, b_{j_1}), \ldots, (a_{j_k}, b_{j_k})`` such that ``a_{j_{i+1}} < b_{j_i}`` for all ``j`` and ``a_{j_1} < a, b < b_{j_k}``). This proves that ``b - a \leq |I|``. So ``b - a`` is a lower bound of countable covers of ``[a, b]``, which establishes the other inequality.
 
+### Lebesgue outer measure on ``\mathbb{R}^d``
+
+To define the Lebesgue outer measure on ``\mathbb{R}^d``, define the **volume** of any open box ``I = \prod_1^d I_k`` to be ``\text{vol}(I) = \prod_1^d |I_k|``. Then the **amount** of any countable collection ``C`` of open boxes is defined to be
+
+```math
+    |I| := \sum_{k=1}^{\infty} \text{vol}(C_k)
+```
+
+And we define
+
+```math
+    \lambda^{\ast}(A) := \inf{ |I| : I \text{ is a countable collection of open boxes and covers } A}
+```
+
+### ``\lambda^{\ast}`` is actually an outer measure on ``\mathbb{R}^d``
+
+TODO
+
+### Measurable set (w.r.t. outer measure)
+
+``B \subseteq X`` is **measurable** with respect to outer measure ``\mu^{\ast}`` on ``X`` when
+
+```math
+    \mu^{\ast}(A) = \mu^{\ast}(A \cap B^c) + \mu^{\ast}(A \cap B)
+```
+
+is true for *every* ``A \subseteq X``.
+
+Sets that are measurable w.r.t. the Lebesgue outer measure are called **Lebesgue measurable**.
+
+Note that by sub-additivity, every ``A`` and ``B`` have
+
+```math
+    \mu^{\ast}(A) \leq \mu^{\ast}(A \cap B^c) + \mu^{\ast}(A \cap B)
+```
+
+### Measurable sets and outer measure zero
+
+If ``\mu^{\ast}`` is any outer measure for ``X``, any subset ``B`` such that ``\mu^{\ast}(B) = 0`` or ``\mu^{\ast}(B^c) = c`` is ``\mu^{\ast}``-measurable.
+
+*Proof:*  If ``\mu^{\ast}(B) = 0`` then ``\mu^{\ast}(A \cap B) = 0`` (by monotonicity), so
+
+```math
+    \mu^{\ast}(A) \geq \mu^{\ast}(A \cap B^c) + \mu^{\ast}(A \cap B)
+```
+
+is true by simple monotonicity since ``A \cap B^c \subseteq A``. If instead ``\mu^{\ast}(B^c) = 0``, then ``\mu^{\ast}(A \cap B^c) = 0`` again, and we again have the inequality.
+
+
+### Recovering a measure from an outer measure
+
+If ``X`` is a set and ``\mu^{\ast}`` is an outer measure on ``X``, then the collection of all ``\mu^{\ast}``-measurable sets is a ``\sigma``-algebra on ``X`` and when ``\mu^{\ast}`` is restricted to the ``\mu^{\ast}``-measurable sets, it becomes a measure.
+
+*Proof:* TODO
+
 ## Dynkin systems and stuff (TODO: organize this)
 
 ### p-system, d-system
