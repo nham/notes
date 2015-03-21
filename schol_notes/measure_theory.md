@@ -122,7 +122,7 @@ Then  ``\bigcup_k I_k`` is a countable cover by open intervals of ``\bigcup_k A_
     |\bigcup_k I_k| = \sum_k |I_k| < \sum_k (\lambda^{\ast}(A_k) + \epsilon / 2^k) = (\sum_k \lambda^{\ast}(A_k)) + \epsilon
 ```
 
-So ``\lambda^{\ast}(\bigcup_k I_k) < \sum_k \lambda^{\ast}(A_k) + \epsilon`` for all ``\epsilon`, which establishes countable sub-additivity.
+So ``\lambda^{\ast}(\bigcup_k A_k) < \sum_k \lambda^{\ast}(A_k) + \epsilon`` for all ``\epsilon``, which establishes countable sub-additivity.
 
 ### More Lebesgue outer measure on ``\mathbb{R}``
 
@@ -146,7 +146,7 @@ And we define
 
 ### ``\lambda^{\ast}`` is actually an outer measure on ``\mathbb{R}^d``
 
-TODO
+The proof is virtually identical to the case for ``\mathbb{R}``.
 
 ### Measurable set (w.r.t. outer measure)
 
@@ -179,11 +179,16 @@ If ``\mu^{\ast}`` is any outer measure for ``X``, any subset ``B`` such that ``\
 is true by simple monotonicity since ``A \cap B^c \subseteq A``. If instead ``\mu^{\ast}(B^c) = 0``, then ``\mu^{\ast}(A \cap B^c) = 0`` again, and we again have the inequality.
 
 
+A simple corollary of this is that ``\emptyset`` and ``X`` are ``\mu^{\ast}``-measurable for any outer measure ``\mu^{\ast}``.
+
+
 ### Recovering a measure from an outer measure
 
 If ``X`` is a set and ``\mu^{\ast}`` is an outer measure on ``X``, then the collection of all ``\mu^{\ast}``-measurable sets is a ``\sigma``-algebra on ``X`` and when ``\mu^{\ast}`` is restricted to the ``\mu^{\ast}``-measurable sets, it becomes a measure.
 
-*Proof:* TODO
+*Proof:* The collection ``M`` of measurable sets contains ``\emptyset`` and ``X``, as was proven before. It is also closed under complements due to the definition.
+
+TODO
 
 ## Dynkin systems and stuff (TODO: organize this)
 
