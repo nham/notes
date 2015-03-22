@@ -33,12 +33,20 @@ These notes depend on [basic topology](topology_basic.html) notes, the [subspace
 6. If $f: X \to Y$ is a map and $Y$ has some basis, then $f$ is continuous iff the inverse image of basis elements in $Y$ is open. This follows from the pre-image of a union being a union of pre-images.
 
 
+7. Here are a couple equivalent characterizations of homeomorphisms, similar to what was done for continuous maps. For any bijective $f: X \to Y$, the following are equivalent:
 
-7. A map $f: X \to Y$ is a homeomorphism iff $f$ is bijective and $U$ is open in $Y$ iff $f^{pre}(U)$ is open in $X$ for all $U$.
+     a. $f$ is a homeomorphism
+     b. $U$ is open in $Y$ iff $f^{pre}(U)$ is open in $X$ for all $U$
+     c. $C$ is closed in $Y$ iff $f^{pre}(C)$ is closed in $X$ for all $U$
+     d. $f(\text{clo}(A)) = clo(f(A))$ for all $A \subseteq X$
 
-    If $f$ is a homeomorphism, then $f^{pre}(U) open in $X$ implies that $g^{pre}(f^{pre}(U) = U$, where $g := f^{-1}$, since $g^{pre}(S) = f(S)$ for all $S \subseteq X$ (and since $f(f^{pre}(S)) = S$ due to bijectivity).
+    *Proof:* To prove (a) implies (b), if $f$ is a homeomorphism, then $f^{pre}(U) open in $X$ implies that $g^{pre}(f^{pre}(U) = U$ is open, where $g := f^{-1}$, since $g^{pre}(S) = f(S)$ for all $S \subseteq X$ (and since $f(f^{pre}(S)) = S$ due to bijectivity).
 
-    Conversely, assuming the latter condition we need to prove that $g := f^{-1}$ is continuous. Similar manipulations prove it.
+    If (b) holds, then for $C \subseteq Y$, $C$ is closed iff $Y - C$ is open iff $f^{pre}(Y - C) = X - f^{pre}(C)$ is open iff $f^{pre}(C)$ is closed.
+
+    If (c) holds, for any $A$ we have $f(\text{clo}(A))$ must be closed and containing $f(A)$, so $\text{clo}(f(A)) \subseteq f(\text{clo}(A))$. We also know that $f^{pre}(\text{clo}(f(A)))$ is closed in $X$ and contains $A$, so $\text{clo}(A) \subseteq f^{pre}(\text{clo}(f(A)))$ and thus $f(\text{clo}(A)) \subseteq \text{clo}(f(A))$.
+
+    Finally, if (d) holds, then we immediately have that $f$ is closed (using the closure points characterization of continuity). It remains to prove that $f^{-1}(\text{clo}(B)) \subseteq \text{clo}(f^{-1}(B))$ for all $B \subseteq Y$. But $f^{-1}(B) \subseteq X$, so $f(\text{clo} f^{-1}(B)) = \text{clo}(B)$, so applying $f^{-1}$ to both sides gives the desired inequality.
 
 
 8. There are a couple notions of continuous maps that we can define with the notion of subspaces.
