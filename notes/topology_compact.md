@@ -95,3 +95,5 @@ title: "Topology: compact spaces"
 21. A subset $A$ of $X$ is **precompact** if its closure is compact.
 
     Any Hausdorff space is locally compact iff every point has a precompact neighborhood. One direction is immediate. Conversely, if $X$ is a locally compact Hausdorff space, let $x \in X$. We know there is some compact set $K$ that contains $x$. Since $X$ is Hausdorff, $K$ is closed. Thus, the closure of $\text{int}(K)$ is a closed subset of $K$, hence compact.
+
+22. Homeomorphism preserves precompactness: If $f: X \to Y$ is a homeomorphism, then $A \subseteq X$ is precompact iff $f(A)$ is precompact. Suppose that $A$ is precompact. Then its closure is some compact $K$. So $f(K)$ is compact, and by one characterization of homeomorphism, $f(K) = \text{clo}(f(A))$. So $f(A)$ is precompact in $Y$. The converse holds by applying what was just proved for $f^{-1}$.
