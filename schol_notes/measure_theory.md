@@ -88,6 +88,10 @@ by countable additivity.
 
 A measure ``\mu`` on ``(X, \mathcal{A})`` is a **finite measure** if ``\mu(X) < \infty``, and is **``\sigma``-finite** if there is a countable collection ``\{A_i\}`` of sets in ``\mathcal{A}`` with ``\mu(A_i) < \infty`` for each ``i``, such that ``X = \bigcup_1^{\infty} A_i``.
 
+## Null sets and properties that hold almost everywhere
+
+For any measure space ``(X, \mathcal{A}, \mu)``, ``A \in \mathcal{A}`` is a **null set** when ``\mu(A) = 0``. A property on ``X`` holds **almost everywhere** (or is **a.e.**) if the set where it doesn't hold is a null set.
+
 ## Lebesgue outer measure on ``\mathbb{R}``
 
 For any countable collection ``I`` of open intervals (of the form ``(a, b)``) in ``\mathbb{R}``, we can define the **amount** of ``I`` to be
@@ -116,7 +120,7 @@ You can see it is countably sub-additive as follows: let ``\{A_k\}`` be some cou
     |I_k| < \lambda^{\ast}(A_k) + \epsilon / 2^k
 ```
 
-Then  ``\bigcup_k I_k`` is a countable cover by open intervals of ``\bigcup_k A_k``, so
+Then  ``\bigcup_k I_k`` is a countable cover by open intervals of ``\bigcup_k A_k``, and
 
 ```math
     |\bigcup_k I_k| = \sum_k |I_k| < \sum_k (\lambda^{\ast}(A_k) + \epsilon / 2^k) = (\sum_k \lambda^{\ast}(A_k)) + \epsilon
@@ -186,9 +190,26 @@ A simple corollary of this is that ``\emptyset`` and ``X`` are ``\mu^{\ast}``-me
 
 If ``X`` is a set and ``\mu^{\ast}`` is an outer measure on ``X``, then the collection of all ``\mu^{\ast}``-measurable sets is a ``\sigma``-algebra on ``X`` and when ``\mu^{\ast}`` is restricted to the ``\mu^{\ast}``-measurable sets, it becomes a measure.
 
-*Proof:* The collection ``M`` of measurable sets contains ``\emptyset`` and ``X``, as was proven before. It is also closed under complements due to the definition.
+*Proof:* The collection ``M_{\mu^{\ast}}`` of ``\mu^{\ast}``-measurable sets contains ``\emptyset`` and ``X``, as was proven before. It is also closed under complements due to the definition.
+
+To finish the proof that ``M_{\mu^{\ast}}`` is a ``\sigma``-algebra, we need to prove its closure under countable unions.
+
+To see ``M_{\mu^{\ast}}`` is closed under finite union (and hence an algebra), let ``B_1, B_2 \in M_{\mu^{\ast}}``. Then
+
+```math
+    \mu^{\ast}(A \cap (B_1 \cup B_2)) = \mu^{\ast}(A \cap (B_1 \cup B_2) \cap B_1) + \mu^{\ast}(A \cap (B_1 \cup B_2) \cap B_1^c) = \mu^{\ast}(A \cap B_1) + \mu^{\ast}(A \cap B_1^c \cap B_2)
+```
+
+This means that
+
+```math
+    \mu^{\ast}(A \cap (B_1 \cup B_2)) \mu^{\ast}(A \cap B_1^c \cap B_2^c) = \mu^{\ast}(A \cap B_1) + \mu^{\ast}(A \cap B_1^c) = \mu^{\ast}(A)
+```
+
+To establish the countable version,
 
 TODO
+
 
 ## Dynkin systems and stuff (TODO: organize this)
 
