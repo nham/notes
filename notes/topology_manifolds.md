@@ -87,3 +87,5 @@
     *Proof:* The components are open since this is true for all locally path-connected spaces. Therefore they form an open cover. Manifolds are Lindelöf, so there's a countable subcover. But the components partition the space, so there must only be countably many components in the first place.
 
     This is because there's a countable basis of path-connected sets, and each of these belongs to exactly one component. That is, there's a surjective map from basis elements to connected components, and the basis set is countable. So the collection of components must be countable too.
+
+14. Any topological manifold $M$ is locally compact. This is immediate from Lee's Lemma 1.10 since, since Hausdorff spaces are locally compact iff every point has a precompact neighborhood.
