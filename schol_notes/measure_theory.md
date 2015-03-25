@@ -92,67 +92,7 @@ A measure ``\mu`` on ``(X, \mathcal{A})`` is a **finite measure** if ``\mu(X) < 
 
 For any measure space ``(X, \mathcal{A}, \mu)``, ``A \in \mathcal{A}`` is a **null set** when ``\mu(A) = 0``. A property on ``X`` holds **almost everywhere** (or is **a.e.**) if the set where it doesn't hold is a null set.
 
-## Lebesgue outer measure on ``\mathbb{R}``
-
-For any countable collection ``I`` of open intervals (of the form ``(a, b)``) in ``\mathbb{R}``, we can define the **amount** of ``I`` to be
-
-```math
-    |I| := \sum_k (b_k - a_k)
-```
-
-Now, for all ``A \subseteq \mathbb{R}``, we define ``\lambda^{\ast}(A)``, the **Lebesgue outer measure on ``A``**, by
-
-```math
-    \lambda^{\ast}(A) := \inf{ |I| : I \text{ is a countable collection of open intervals and covers } A}
-```
-
-``\lambda^{\ast}`` is a function from the power set of ``\mathbb{R}`` into ``[0, \infty]``.
-
-### ``\lambda^{\ast}`` actually is an outer measure
-
-To verify that ``\lambda^{\ast}`` is an outer measure, we must prove that ``\lambda^{\ast}(\emptyset) = 0`` and that ``\lambda^{\ast}`` is monotone and has countable sub-additivity.
-
-First, ``\lambda^{\ast}(\emptyset) = 0`` is true because the empty interval is a countable cover (alternatively, any collection of a single open interval is a cover, and we can make the intervals arbitrarily small). Also, it is monotone since if ``A \subseteq B``, any cover for ``B`` is a cover for ``A``.
-
-You can see it is countably sub-additive as follows: let ``\{A_k\}`` be some countable collection of subsets of ``\mathbb{R}``. For every ``\epsilon > 0``, for every ``k`` pick a cover ``I_k`` of ``A_k`` such that
-
-```math
-    |I_k| < \lambda^{\ast}(A_k) + \epsilon / 2^k
-```
-
-Then  ``\bigcup_k I_k`` is a countable cover by open intervals of ``\bigcup_k A_k``, and
-
-```math
-    |\bigcup_k I_k| = \sum_k |I_k| < \sum_k (\lambda^{\ast}(A_k) + \epsilon / 2^k) = (\sum_k \lambda^{\ast}(A_k)) + \epsilon
-```
-
-So ``\lambda^{\ast}(\bigcup_k A_k) < \sum_k \lambda^{\ast}(A_k) + \epsilon`` for all ``\epsilon``, which establishes countable sub-additivity.
-
-### More Lebesgue outer measure on ``\mathbb{R}``
-
-The Lebesgue outer measure assigns any interval ``[a, b]`` its length ``b - a``. It can be proved that ``\lambda^{\ast}([a, b]) \leq b - a`` since ``(a - 1/n, b + 1/n)`` is a cover of ``[a, b]`` whose total amount is ``b - a + 2/n``. In other words, there are covers of ``[a, b]`` that get arbitrarily close to ``b - a`` So ``\lambda^{\ast}([a, b]) \leq b - a`` (otherwise you could find a cover of ``[a, b]`` whose amount was less than ``\lambda^{\ast}([a, b])``).
-
-For the reverse direction: ``[a, b]`` is compact, so any countable cover ``I`` of ``[a, b]`` by open intervals has a finite subcover, which means there is an `n` such that ``[a, b] \subseteq \bigcup_1^n (a_i, b_i)``. So ``b - a \leq \sum_1^n b_i - a_i`` (I think this is because we must have ``(a_{j_1}, b_{j_1}), \ldots, (a_{j_k}, b_{j_k})`` such that ``a_{j_{i+1}} < b_{j_i}`` for all ``j`` and ``a_{j_1} < a, b < b_{j_k}``). This proves that ``b - a \leq |I|``. So ``b - a`` is a lower bound of countable covers of ``[a, b]``, which establishes the other inequality.
-
-### Lebesgue outer measure on ``\mathbb{R}^d``
-
-To define the Lebesgue outer measure on ``\mathbb{R}^d``, define the **volume** of any open box ``I = \prod_1^d I_k`` to be ``\text{vol}(I) = \prod_1^d |I_k|``. Then the **amount** of any countable collection ``C`` of open boxes is defined to be
-
-```math
-    |I| := \sum_{k=1}^{\infty} \text{vol}(C_k)
-```
-
-And we define
-
-```math
-    \lambda^{\ast}(A) := \inf{ |I| : I \text{ is a countable collection of open boxes and covers } A}
-```
-
-### ``\lambda^{\ast}`` is actually an outer measure on ``\mathbb{R}^d``
-
-The proof is virtually identical to the case for ``\mathbb{R}``.
-
-### Measurable set (w.r.t. outer measure)
+## Measurable set (w.r.t. outer measure)
 
 ``B \subseteq X`` is **measurable** with respect to outer measure ``\mu^{\ast}`` on ``X`` when
 
@@ -162,15 +102,13 @@ The proof is virtually identical to the case for ``\mathbb{R}``.
 
 is true for *every* ``A \subseteq X``.
 
-Sets that are measurable w.r.t. the Lebesgue outer measure are called **Lebesgue measurable**.
-
 Note that by sub-additivity, every ``A`` and ``B`` have
 
 ```math
     \mu^{\ast}(A) \leq \mu^{\ast}(A \cap B^c) + \mu^{\ast}(A \cap B)
 ```
 
-### Measurable sets and outer measure zero
+## Measurable sets and outer measure zero
 
 If ``\mu^{\ast}`` is any outer measure for ``X``, any subset ``B`` such that ``\mu^{\ast}(B) = 0`` or ``\mu^{\ast}(B^c) = c`` is ``\mu^{\ast}``-measurable.
 
@@ -185,31 +123,108 @@ is true by simple monotonicity since ``A \cap B^c \subseteq A``. If instead ``\m
 
 A simple corollary of this is that ``\emptyset`` and ``X`` are ``\mu^{\ast}``-measurable for any outer measure ``\mu^{\ast}``.
 
+## Collection of measurable sets is an algebra
+If ``X`` is a set and ``\mu^{\ast}`` is an outer measure on ``X``, then the collection of all ``\mu^{\ast}``-measurable sets is an algebra on ``X``.
 
-### Recovering a measure from an outer measure
+*Proof:* It contains ``\emptyset`` and ``X`` by previously proven propositions, and is clearly closed under complements. If ``S`` and ``T`` are measurable sets, then
+
+```math
+    \begin{align}
+    \mu^{\ast}(A) &= \mu^{\ast}(A \cap S) + \mu^{\ast}(A \cap S^c) \\
+                  &= \mu^{\ast}(A \cap S) + \mu^{\ast}(A \cap S^c \cap T) + \mu^{\ast}(A \cap S^c \cap T^c) \\
+                  &= \mu^{\ast}(A \cap (S \cup T) \cap S) + \mu^{\ast}(A \cap (S \cup T) \cap S^c) + \mu^{\ast}(A \cap S^c \cap T^c) \\
+                  &= \mu^{\ast}(A \cap (S \cup T)) + \mu^{\ast}(A \cap (S \cup T)^c)
+    \end{align}
+```
+
+## Countable union of pairwise disjoint sets is measurable
+If ``\mu^{\ast}`` is an outer measure and ``(A_n)`` is a countable collection of pairwise disjoint ``\mu^{\ast}``-measurable sets, then ``\bigcup_1^{\infty} A_n`` is measurable, and
+
+```math
+    \mu^{\ast}(A) = \sum_1^{\infty} \mu^{\ast}(A \cap S_i) + \mu^{\ast}(A \cap (\bigcup_1^{\infty} S_i)^c)
+```
+
+for all  ``A``.
+
+To prove it, we start out by proving that
+
+```math
+    \mu^{\ast}(A) = \sum_1^k \mu^{\ast}(A \cap S_i) + \mu^{\ast}(A \cap (\bigcup_1^k S_i)^c)
+```
+
+for all ``k``. We (of course) prove this by induction. It's true for ``k = 1``, and if it's true for any ``k``, then we have 
+
+```math
+    \mu^{\ast}(A \cap (\bigcup_1^k S_i)^c) = \mu^{\ast}(A \cap (\bigcup_1^k S_i)^c \cap S_{k+1}) + \mu^{\ast}(A \cap (\bigcup_1^k S_i)^c \cap S_{k+1}^c)
+```
+
+But ``\mu^{\ast}(A \cap (\bigcup_1^k S_i)^c \cap S_{k+1}) = \mu^{\ast}(A \cap S_{k+1})`` since ``S_{k+1}`` is disjoint from every other ``S_i``. This finishes the induction step.
+
+Because each ``\bigcup_1^k S_i \subseteq \bigcup_1^{\infty} S_i``, we have (by monotonicity):
+
+```math
+    \mu^{\ast}(A) \geq \sum_1^k \mu^{\ast}(A \cap S_i) + \mu^{\ast}(A \cap (\bigcup_1^{\infty} S_i)^c)
+```
+
+holding for all ``k``. So by the order limit theorem
+
+```math
+    \mu^{\ast}(A) \geq \sum_1^{\infty} \mu^{\ast}(A \cap S_i) + \mu^{\ast}(A \cap (\bigcup_1^{\infty} S_i)^c)
+```
+
+Then, by subadditivity and monotonicity,
+
+```math
+    \begin{align}
+    \sum_1^{\infty} \mu^{\ast}(A \cap S_i) + \mu^{\ast}(A \cap (\bigcup_1^{\infty} S_i)^c) & \geq \mu^{\ast}(A \cap \bigcup_1^{\infty} S_i) + \mu^{\ast}(A \cap (\bigcup_1^{\infty} S_i)^c) \\
+                  & \geq \mu^{\ast}(A)
+    \end{align}
+```
+
+
+## Recovering a measure from an outer measure
 
 If ``X`` is a set and ``\mu^{\ast}`` is an outer measure on ``X``, then the collection of all ``\mu^{\ast}``-measurable sets is a ``\sigma``-algebra on ``X`` and when ``\mu^{\ast}`` is restricted to the ``\mu^{\ast}``-measurable sets, it becomes a measure.
 
-*Proof:* The collection ``M_{\mu^{\ast}}`` of ``\mu^{\ast}``-measurable sets contains ``\emptyset`` and ``X``, as was proven before. It is also closed under complements due to the definition.
+*Proof:* The collection ``M_{\mu^{\ast}}`` of ``\mu^{\ast}``-measurable sets was previously proved to be an algebra. To finish the proof that ``M_{\mu^{\ast}}`` is a ``\sigma``-algebra, we need to prove its closure under countable unions.
 
-To finish the proof that ``M_{\mu^{\ast}}`` is a ``\sigma``-algebra, we need to prove its closure under countable unions.
+But for any countable collection ``(A_n)`` of measurable sets, ``\bigcup_1^{\infty} A_n = \bigcup_1^{\infty} B_n``, where ``B_1 := A_1`` and ``B_n := A_n - \bigcup_1^{n-1} B_i``. But ``(B_n)`` is a pairwise disjoint collection, so ``\bigcup_1^{\infty} B_i`` is measurable.
 
-To see ``M_{\mu^{\ast}}`` is closed under finite union (and hence an algebra), let ``B_1, B_2 \in M_{\mu^{\ast}}``. Then
+This proves that ``M_{\mu^{\ast}}``, the collection of ``\mu^{\ast}``-measurable sets is a ``\sigma``-algebra.
 
-```math
-    \mu^{\ast}(A \cap (B_1 \cup B_2)) = \mu^{\ast}(A \cap (B_1 \cup B_2) \cap B_1) + \mu^{\ast}(A \cap (B_1 \cup B_2) \cap B_1^c) = \mu^{\ast}(A \cap B_1) + \mu^{\ast}(A \cap B_1^c \cap B_2)
-```
-
-This means that
+To prove that ``\mu``, the restriction of ``\mu^{\ast}`` to ``M_{\mu^{\ast}}`` is a measure, we must prove countable additivity for disjoint collections of sets. But this is an immediate corollary from the last proposition, since
 
 ```math
-    \mu^{\ast}(A \cap (B_1 \cup B_2)) \mu^{\ast}(A \cap B_1^c \cap B_2^c) = \mu^{\ast}(A \cap B_1) + \mu^{\ast}(A \cap B_1^c) = \mu^{\ast}(A)
+    \mu^{\ast}(\bigcup_1^{\infty} A_i) = \sum_1^{\infty} \mu^{\ast}((\bigcup_1^{\infty} A_i) \cap A_i) + \mu^{\ast}((\bigcup_1^{\infty} A_i) \cap (\bigcup_1^{\infty} A_i)^c) = \sum_1^{\infty} \mu^{\ast}(A_i)
 ```
 
-To establish the countable version,
+## Measurable functions
+
+If ``(X, \mathcal{A})`` is a measurable space, ``A \in \mathcal{A}`` and ``f: A \to [- \infty, \infty]``, then these conditions are equivalent:
+
+ a. for all ``t \in \mathbb{R}``, ``\{f \leq t\} := \{x \in A : f(x) \leq t\} \in \mathcal{A}``
+ b. for all ``t \in \mathbb{R}``, ``\{f < t\} := \{x \in A : f(x) < t\} \in \mathcal{A}``
+ c. for all ``t \in \mathbb{R}``, ``\{f \geq t\} := \{x \in A : f(x) \geq t\} \in \mathcal{A}``
+ d. for all ``t \in \mathbb{R}``, ``\{f > t\} := \{x \in A : f(x) > t\} \in \mathcal{A}``
+
+*Proof:* ``\{f < t\} = \bigcup_n \{f \leq t - 1/n\}``, and similarly ``\{f > t\} = \bigcup_n \{f \geq t + 1/n\}``. So (a) implies (b) and (c) implies (d). Also, ``\{f < t\}`` is the complement in ``A`` of ``\{f \geq t\}``,a nd ditto for ``\{f > t\}`` and ``\{f \leq t\}``, which establishes that (b) implies (c) and (d) implies (a).
+
+
+A function ``f: A \to [- \infty, \infty]`` is **``\mathcal{A}``-measurable** (or just **measurable**) if it satisfies any of the conditions (a) through (d) in the last proposition. For the case of ``X = \mathbb{R}^d`` and ``\mathcal{A} = \mathcal{B}(\mathbb{R}^d)`` a measurable function is said to be **Borel-measurable** or a **Borel function**. Any function measurable w.r.t. the Lebesgue outer measure is called **Lebesgue measurable**.
+
+### Alternate take on measurable functions
+
+A **simple measurable function** (or just **simple function**) for a measurable space ``(X, \mathcal{A})`` is a function ``f: X \to \mathbb{R}`` such that there are ``a_1, \ldots, a_n \in \mathbb{R}`` and ``A_1, \ldots, A_n \in \mathcal{A}`` such that
+
+```math
+    f = \sum_1^k a_i \text{ind}(A_i)
+```
+
+where ``\text{ind}(A_i)`` is the indicator function for ``A_i``.
+
+A function ``f: A \to [0, \infty]`` is **``\mathcal{A}``-measurable** (or just **measurable** when there is some sequence ``(f_n)`` of simple functions that pointwise converges to ``f``, and such that ``(f_n(x))_{n \in \mathbb{N}}`` is a non-decreasing sequence for each ``x``.
 
 TODO
-
 
 ## Dynkin systems and stuff (TODO: organize this)
 
