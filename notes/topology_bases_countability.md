@@ -3,22 +3,6 @@ title: "Topology: bases and countability"
 ---
 Related notes: [basic topology](topology_basic.html)
 
-1. One important notion for topological spaces is **bases**. The idea is that a **basis** is a collection of "primitive" open sets that is used to generate the rest of the topology. The definition is any collection $\mathcal{B}$ of subsets of $X$ such that
-
-    - $\bigcup \mathcal{B} = X$
-    - for all $A, B \in \mathcal{B}$, $A \cap B$ is a union of elements in $\mathcal{B}$.
-
-    The **topology on $X$ induced by basis $\mathcal{B}$** is defined by
-
-    $$\mathcal{T} := \{ \bigcup \mathcal{S} : \mathcal{S} \subseteq \mathcal{B} \}$$
-
-    Clearly $\emptyset \in \mathcal{T}$ since $\bigcup \emptyset = \emptyset$. Also $X \in \mathcal{T}$. If $\{U_i\}$ is any collection of sets in $\mathcal{T}$, then each $U_i$ is a union of basis elements, so $\bigcup_i U_i$ is a union of basis elements and hence in $\mathcal{T}$. Finally, for any $A, B \in \mathcal{T}$, $A = \bigcup_i A_i$ and $B = \bigcup_j B_j$ for some basis elements $A_i, B_j$. By distributivity
-
-    $$(\bigcup_i A_i) \cap (\bigcup_j B_j) = \bigcup_i \bigcup_j A_i \cap B_j$$
-
-    So that $A \cap B$ is the union of intersections of basis elements. Since each intersection of basis elements is a union of basis elements, the whole union is as well.
-
-2. The converse is true too: If $\mathcal{B$ is any collection of subsets of $X$ and $\mathcal{T}$ defined as in (1), then $\mathcal{T}$ contains $\emptyset$ and is closed under arbitrary unions automatically. If $\mathcal{T}$ is to be a topology, we must have $X \in \mathcal{T}$, or that $X = \bigcup \mathcal{S}$ for some $\mathcal{S} \subseteq \mathcal{B}$, which implies that $X = \bigcup \mathcal{B}$. For any $A, B \in \mathcal{B}$, they are in $\mathcal{T}$ by definition, and since $\mathcal{T}$ is a topology by assumption, $A \cap B$ must be a union of sets in $\mathcal{B}$, which is exactly the second basis property.
 
 3. Here's one sufficient condition for when a collection of sets is a basis for some topology: if $(X, \mathcal{T})$ is a topological space and $\mathcal{C}$ is any collection of open subsets of $X$, then if for all $U \in \mathcal{T}$ and all $x \in U$ we have some $C \in \mathcal{C} with $x \in C \subseteq U$, then $\mathcal{C}$ is a basis that induces $\mathcal{T}$.
 
@@ -40,8 +24,7 @@ Related notes: [basic topology](topology_basic.html)
 
     is a basis for the topology on $Y$. To prove that $f(\mathcal{B})$ is a basis for the topology on $Y$, it suffices to prove a) that $f(\mathcal{B})$ is a collection of open subsets in $Y$ (which is true by definition), and b) that every $V$ open in $Y$ is the union of sets in $f(\mathcal{B})$, which can be seen by noting that $f^{pre}(V)$ is open in $X$, so $f^{pre}(V) = \bigcup_i B_i$ for some $B_i$'s in $\mathcal{B}$, so $V = \bigcup_i f(B_i)$.
 
-
-5. A space is **second-countable** if it has a countable (finite or countably infinite) basis. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
+6. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
 
      - $\mathbb{Q}$ is dense in $\mathbb{R}$ by basic properties of the reals
      - $\mathbb{Q}^n$ is countable since it is a finite cartesian product of countable sets
@@ -49,7 +32,7 @@ Related notes: [basic topology](topology_basic.html)
      - the sup-norm on $\mathbb{R}^n$ is topologically equivalent to the Euclidean norm, and every open box under the sup-norm contains a point with rational coordinates (using density of $\mathbb{Q}$ in $\mathbb{R}$) so $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ 
      - from this we get that the collection of open balls centered at rational coordinates with rational radii covers the whole space. Intersections of such balls are clearly open, so the collection is a countable basis for $\mathbb{R}^n$
 
-6. Being second-countable is a topological property. That is, if $X$ and $Y$ are homeomorphic, then $X$ is second-countable iff $Y$ is. This can be immediately seen by using the homeomorphism basis: if we have a countable basis for $X$, then we immediately have one for $Y$ as well.
+
 
 7. A space is **separable** if it has a countable dense subset.
 
