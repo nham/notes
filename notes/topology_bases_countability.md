@@ -18,12 +18,6 @@ Related notes: [basic topology](topology_basic.html)
 
     A corollary of the above is that the topologies induced by two bases are equivalent iff each $\mathcal{C}$-element is a union of $\mathcal{B}$-elements and vice versa.
 
-5. I don't know what to call this, the **homeomorphism basis**? If $X$ and $Y$ are spaces and $f: X \to Y$ is a homeomorphism, and $\mathcal{B}$ is a basis for the topology on $X$, then
-
-    $$f(\mathcal{B}) := \{f(B) : B \in \mathcal{B}\}$$
-
-    is a basis for the topology on $Y$. To prove that $f(\mathcal{B})$ is a basis for the topology on $Y$, it suffices to prove a) that $f(\mathcal{B})$ is a collection of open subsets in $Y$ (which is true by definition), and b) that every $V$ open in $Y$ is the union of sets in $f(\mathcal{B})$, which can be seen by noting that $f^{pre}(V)$ is open in $X$, so $f^{pre}(V) = \bigcup_i B_i$ for some $B_i$'s in $\mathcal{B}$, so $V = \bigcup_i f(B_i)$.
-
 6. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
 
      - $\mathbb{Q}$ is dense in $\mathbb{R}$ by basic properties of the reals
