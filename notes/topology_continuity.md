@@ -3,26 +3,6 @@ title: "Topology: continuity"
 ---
 These notes depend on [basic topology](topology_basic.html) notes, the [subspace](topology_subspaces.html) notes, and the [bases and countability](topoloby_bases_countability.html) notes.
 
-1. A **continuous map** is any function $f: X \to Y$ (where $X$ and $Y$ are topological spaces) such that every open $V \subseteq Y$ has $f^{pre}(V)$ open in $X$.
-
-    If $f$ is bijective, continuous, with continuous inverse, it is called a **homeomorphism**. This is the notion of isomorphism for topological spaces.
-
-2. There's a bunch of equivalent definitions for continuous maps. Here are three. Let $f: X \to Y$ be a map between topological spaces. Then $f$ is continuous exactly when either of these hold:
-
-    1. For every $x \in X$ and any neighborhood $V$ of $f(x)$ in $Y$, there is a neighborhood $U$ of $x$ such that $f(U) \subseteq V$.
-    2. $f^{pre}(C)$ is closed for every $C$ closed in $Y$
-    3. For any $A \subseteq X$, $f$ maps closure points of $A$ to closure points of $f(A)$.
-
-    If (1) is true, for any open $V$ in $Y$, either there is some $x \in X$ such that $f(x) \in V$, or $f^{pre}(V) = \emptyset$ and is hence open. In the former case by hypothesis there is some neighborhood of $x$ contained in $f^{pre}(V)$, so this set is open, proving $f$ is continuous. The converse is proved by noting that for every $x \in X$ and neighborhood $V$ of $f(x)$, $f^{pre}(V)$ is an open neighborhood of $x$ that works.
-
-    For (2), note that $f^{pre}(Y - S) = X - f^{pre}(S)$ for any $S \subseteq Y$. So if preimages of open sets are all open, then so are preimages of closed sets, and vice versa.
-
-    For (3), if $f$ is continuous and $A \subseteq X$, if $z$ is a closure point of $A$ such that $f(z)$ isn't a closure point of $f(A)$, then $f(z)$ has a neighborhood $V$ that is disjoint from $f(A)$. So $f^{pre}(V)$ is a neighborhood of $z$ by continuity, and it must not intersect $A$, since if it contained some $a \in A$, $f(a)$ would be in $V \cap f(A)$. But we assumed $z$ was a closure point, so it must intersect $A$. Conversely, if (3) holds and $C$ is closed in $Y$, every closure point of $f^{pre}(C)$ gets mapped into a closure point of $f(f^{pre}(C)) \subseteq C$, hence a closure point of $C$. $C$ being closed, this proves that $f^{pre}(C)$ contains its closure, so is closed.
-
-3. It's actually improper to say that $f: X \to Y$ is a continuous map, since we have to specify topologies for $X$ and $Y$ as well. It's more accurate to say that $(f: X \to Y, \mathcal{T}, \mathcal{U})$ is a continuous map. Indeed, a given function $f: X \to Y$ can be continuous when $X$ is considered to have one topology, but not continuous when it has another. One way to see this has applications to coarseness of topologies:
-
-    If $\mathcal{S}, \mathcal{T}$ are two topologies on $X$, then $\mathcal{S}$ is finer than $\mathcal{T}$ iff the identity on $X$ is continuous when the domain has topology $\mathcal{S}$ and the codomain has topology $\mathcal{T}$. (This follows immediately from the definition of continuity). Intuitively, if the codomain topology is finer, then the domain topology lacks the necessary "precision" needed for the output to be kept within any neighborhood in the codomain.
-
 
 4. The composition of continuous maps is continuous: If $f: X \to Y$, $g: Y \to Z$ are continuous and $W$ is open in $Z$, then $g^{pre}(W)$ is open in $Y$, so $f^{pre}(g^{pre}(W))$ is open in $X$. But $f^{pre}(g^{pre}(S)) = (g \circ f)^{pre}(S)$ for all $S \subseteq Z$.
 
