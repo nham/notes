@@ -3,16 +3,6 @@ title: "Introduction to topology"
 ---
 
 <hr>
-pt2
-
-## Coarseness/fineness of topologies
-
-If ``X`` is a set and ``\mathcal{S}`` and ``\mathcal{T}`` are topologies on ``X`` such that every open set in ``\mathcal{S}`` is an open set in ``\mathcal{T}``, then ``\mathcal{S}`` is said to be **coarser** than ``\mathcal{T}`` (and ``\mathcal{T}`` is **finer** than ``\mathcal{S}``).
-
-The coarsest topology on any set ``X`` is the **trivial topology** ``\{ \emptyset, X\}``, while the finest topology, the power set of ``X``, is called the **discrete topology**.
-
-
-<hr>
 
 ## Dense/nowhere dense subsets
 
