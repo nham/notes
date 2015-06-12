@@ -3,20 +3,11 @@ title: "Topology: bases and countability"
 ---
 Related notes: [basic topology](topology_basic.html)
 
-
 3. Here's one sufficient condition for when a collection of sets is a basis for some topology: if $(X, \mathcal{T})$ is a topological space and $\mathcal{C}$ is any collection of open subsets of $X$, then if for all $U \in \mathcal{T}$ and all $x \in U$ we have some $C \in \mathcal{C} with $x \in C \subseteq U$, then $\mathcal{C}$ is a basis that induces $\mathcal{T}$.
 
     *Proof:* Clearly $\mathcal{C}$ covers the space. But any intersection of two sets in $\mathcal{C}$ is open, so every point in the intersection has a $\mathcal{C}$-set contained in the intersection.
 
     To rephrase the above: if $\mathcal{C}$ is a collection of open subsets and every open $U$ is a union of sets in $\mathcal{C}$, then $\mathcal{C}$ is a basis for the topology.
-
-4. If $\mathcal{B}$ and $\mathcal{C}$ are bases for a set $X$, let $\mathcal{S}$ and $\mathcal{T}$ be the respective induced topologies.
-
-    If for every $C \in \mathcal{C}$ and every $x \in C$ we have a $B \in \mathcal{B}$ with $x \in B \subseteq C$, then $\mathcal{S}$ is finer than $\mathcal{T}$. This is so because the hypothesis implies that $\mathcal{C}$-elements are unions of $\mathcal{B}$-elements, so every $\mathcal{T}$-open set is $\mathcal{S}-open$.
-
-    The converse is true too: if $\mathcal{S}$ is finer than $\mathcal{T}$, every $C \in \mathcal{C}$ must be $\mathcal{S}$-open, hence a union of $\mathcal{B}$-elements, which is equivalent to the condition we stated above.
-
-    A corollary of the above is that the topologies induced by two bases are equivalent iff each $\mathcal{C}$-element is a union of $\mathcal{B}$-elements and vice versa.
 
 6. $\mathbb{R}^n$ with the Euclidean topology is second countable. An outline of a proof is:
 
@@ -26,11 +17,6 @@ Related notes: [basic topology](topology_basic.html)
      - the sup-norm on $\mathbb{R}^n$ is topologically equivalent to the Euclidean norm, and every open box under the sup-norm contains a point with rational coordinates (using density of $\mathbb{Q}$ in $\mathbb{R}$) so $\mathbb{Q}^n$ is dense in $\mathbb{R}^n$ 
      - from this we get that the collection of open balls centered at rational coordinates with rational radii covers the whole space. Intersections of such balls are clearly open, so the collection is a countable basis for $\mathbb{R}^n$
 
-
-
-7. A space is **separable** if it has a countable dense subset.
-
-8. Second-countable spaces are separable: if $X$ is second countable, pick an element in each basis element. This is a countable subset of $X$, and every non-empty open set, being a union of basis elements, contains an element of this set, so it is dense in $X$.
 
 9. A **neighborhood basis** for point $a \in X$ is some collection $\mathcal{B}$ of neighborhoods of $a$ such that every neighborhood of $a$ contains some $B \in \mathcal{B}$.
 
