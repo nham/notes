@@ -1,23 +1,4 @@
-1. An **interval** of $\mathbb{R}$ is a subset $I$ such that for all $a, b \in I$, $a < x < b$ implies that $x \in I$. This includes as degenerate cases singletons and the empty set.
-
-2. Every interval is connected. *Proof:* We can clearly ignore degenerate cases, they are connected. Suppose $A$ and $B$ are a disconnection of $I$. There is some $a \in A$, $b \in B$. WLOG we assume $a < b$. Then interval $[a, b]$ has to be contained in $I$.
-Consider $c := \inf \{ x \in B : a < x \}$, which is valid since $a$ is a lower bound of the set. $c$ has to be a boundary point of $A$ (and $B$), because
-
-     - every open ball centered at $c$ must intersect $A$ (if one did not,it would contradict the definition of $c$ since we could find elements of the set smaller than $c$)
-
-     - every open ball centered at $c$ must also intersect $B$ by definition of infimum (if one did not, we could find a greater lower bound)
-
-    But $A$ and $B$ are open, and so do not contain boundary points. But they also cover $I$, so one of them must contain $c$. This is a contradiction.
-
-3. Conversely, any connected subset $S$ of $\mathbb{R}$ must be an interval. We again neglect the case of $S$ with less than two points. If $S$ is connected and contains $a, b$ with $a < b$ and is missing some $x$ with $a < x < b$, then $(- \infty, x) \cap I$ and $(x, \infty) \cap I$ are together a disconnection of $I$.
-
-4. The **intermediate value theorem** says that if $X$ is a connected topological space and $f: X \to \mathbb{R}$ is continuous, then for any $a, b \in X$, WLOG supposing $f(a) \leq f(b)$, we have that for every $z \in \mathbb{R}$ with $f(a) < z < f(b)$, there is a $c \in X$ such that $f(c) = z$. This is because the image of $f$ must be a connected subset of $\mathbb{R}$, which we have just proven must be an interval.
-
 5. There are two ways to view the standard topology on $\mathbb{R}$: either as the metric topology induced by $d(x, y) := |x - y|$, or as the order topology on $\mathbb{R}$. This latter characterization is equivalent to the former due to the fact that the basis for the order topology is the same as the open balls of the metric space: the collection of all open intervals $(a, b)$.
-
-6. Here's a neat/useful fact about $\mathbb{R}$: every open subset $U$ of $\mathbb{R}$ is the disjoint union of countable open intervals. One proof goes like this: we partition $U$ by defining an equivalence relation $x \sim y$ iff $[\min{x,y}, \max{x,y}] \subseteq U$. It's easy to prove this really is an equivalence relation. Furthermore the equivalence classes are intervals because if $a \sim b$ with $a < b$, for any $x \in U$ with $a < x < b$, by definition $x \in [a, b] \subseteq U$ so $x$ is in the same equivalence class. What's more, they must be *open intervals* because if there's an inclusive end point, that implies that $U$ contains a boundary point, contrary to it being open.
-
-    So we've just shown that $U$ has a partition of open intervals. But it is a basic theorem that between any two real numbers is a rational number. So pick a rational number in each open interval. This gives an injective map from intervals to rationals, proving the collection of partition elements is countable.
 
 7. There's a homeomorphism between $(-1, 1) \subseteq \mathbb{R}$ and $\mathbb{R}$ itself. First: prove that $f: (-1, 1) \to \mathbb{R}$ defined by
 
